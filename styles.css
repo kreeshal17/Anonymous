@@ -759,3 +759,46 @@ section.visible {
     transform: translateY(-2px);
     box-shadow: 0 0 15px var(--primary-color);
 }
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #222;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .hero {
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
