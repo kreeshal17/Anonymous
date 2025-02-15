@@ -201,3 +201,54 @@ document.getElementById("menu-toggle").addEventListener("click", function () {
         menu.style.display = "block";
     }
 });
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Navigation toggle functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const navLinksItems = document.querySelectorAll('.nav-links a');
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // Hamburger menu toggle
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking nav items
+    navLinksItems.forEach(item => {
+        item.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Theme toggle functionality
+    themeToggle.addEventListener('click', function() {
+        document.documentElement.setAttribute('data-theme', 
+            document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+        );
+        
+        // Update icon
+        const icon = this.querySelector('i');
+        icon.classList.toggle('fa-moon');
+        icon.classList.toggle('fa-sun');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.navbar') && navLinks.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
+    });
+
+    // Chatbot toggle
+    const chatbotToggle = document.querySelector('.chatbot-toggle');
+    const chatbotFrame = document.querySelector('.chatbot-frame');
+    
+    chatbotToggle.addEventListener('click', function() {
+        chatbotFrame.classList.toggle('active');
+    });
+});
+
