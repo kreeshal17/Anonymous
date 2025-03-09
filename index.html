@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,9 @@
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js"></script>
     <script src="contact.js"></script>
-
+    <!-- Add AOS animation library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
@@ -23,17 +25,22 @@
             <ul class="nav-links">
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#career">Career</a></li>
+                <li><a href="#code-activity">Code Activity</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#videos">Videos</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <span id="theme-toggle" class="theme-toggle">
-                <i class="fas fa-moon"></i>
-            </span>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-right">
+                <span id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-sun"></i>
+                </span>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -44,12 +51,12 @@
         <a href="#certificates">Certificates</a>
         <a href="#videos">Videos</a>
         <a href="#contact">Contact</a>
-    </div> -->
+    </div> --> `
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <div class="hero-text">
+            <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
                 <h1>Android Developer</h1>
                 <p>Specializing in Jetpack Compose, Firebase, and modern Android development</p>
                 <div class="cta-buttons">
@@ -62,7 +69,7 @@
                     <a href="https://leetcode.com/u/Y0MeqFvrwP/" target="_blank"><i class="fas fa-code"></i></a>
                 </div>
             </div>
-            <div class="hero-image">
+            <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
                 <img src="photo.jpg" alt="Krishal Karna" class="profile-image">
             </div>
         </div>
@@ -71,15 +78,15 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2>Featured Projects</h2>
+            <h2 data-aos="fade-up">Featured Projects</h2>
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                     <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb" alt="Calculator App">
                     <h3>All-in-One Calculator</h3>
                     <p>BMI, Love, and Birthday Age calculators using Jetpack Compose</p>
                     <a href="https://github.com/krishalkarna" class="btn secondary" target="_blank">View Project</a>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <img src="https://images.unsplash.com/photo-1618761714954-0b8cd0026356" alt="Firebase Auth">
                     <h3>Firebase Auth Demo</h3>
                     <p>User authentication implementation using Firebase</p>
@@ -92,37 +99,37 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2>Skills & Expertise</h2>
+            <h2 data-aos="fade-up">Skills & Expertise</h2>
             <div class="skills-grid">
-                <div class="skill-card">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
                     <i class="fab fa-android"></i>
                     <h3>Android</h3>
                     <div class="progress-bar">
                         <div class="progress" style="width: 90%"></div>
                     </div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="fab fa-java"></i>
                     <h3>Java</h3>
                     <div class="progress-bar">
                         <div class="progress" style="width: 85%"></div>
                     </div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
                     <i class="fas fa-mobile-alt"></i>
                     <h3>Kotlin</h3>
                     <div class="progress-bar">
                         <div class="progress" style="width: 90%"></div>
                     </div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
                     <i class="fas fa-database"></i>
                     <h3>Room-db</h3>
                     <div class="progress-bar">
                         <div class="progress" style="width: 90%"></div>
                     </div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
                     <i class="fas fa-database"></i>
                     <h3>Firebase</h3>
                     <div class="progress-bar">
@@ -133,12 +140,309 @@
         </div>
     </section>
 
+    <!-- Career Journey Section -->
+    <section id="career" class="career-journey">
+        <div class="container">
+            <h2 data-aos="fade-up">My Career Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <h3>Figma & Canva</h3>
+                        <div class="date">2020</div>
+                        <p>Started my design journey by learning Figma and Canva, creating UI mockups and digital
+                            designs that helped me understand the importance of user experience.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <h3>C & Python</h3>
+                        <div class="date">2021</div>
+                        <p>Mastered the fundamentals of programming with C and expanded my skills with Python, building
+                            a strong foundation in algorithms and data structures.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <h3>Java</h3>
+                        <div class="date">2022-2023</div>
+                        <p>Dove deep into Java development, learning object-oriented programming principles and creating
+                            robust applications with clean architecture.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <h3>MySQL</h3>
+                        <div class="date">2023</div>
+                        <p>Mastered database design and SQL queries with MySQL, implementing efficient data storage
+                            solutions and complex database operations for web and mobile applications.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <h3>Kotlin</h3>
+                        <div class="date">2024</div>
+                        <p>Embraced Kotlin for Android development, leveraging its modern features to build more
+                            concise, safe, and expressive mobile applications.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <h3>Spring Boot</h3>
+                        <div class="date">2024</div>
+                        <p>Currently mastering Spring Boot for backend development, creating RESTful APIs and
+                            microservices to complement my mobile development skills.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Activity Section -->
+    <section id="code-activity" class="code-activity">
+        <div class="container">
+            <h2 data-aos="fade-up">My Coding Activity</h2>
+            <div class="activity-container">
+                <!-- LeetCode Activity Card -->
+                <div class="activity-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="activity-header">
+                        <i class="fas fa-code"></i>
+                        <h3>LeetCode Activity</h3>
+                    </div>
+                    <div class="activity-content" id="leetcode-activity">
+                        <!-- LeetCode Stats -->
+                        <div class="leetcode-stats">
+                            <div class="leetcode-stat">
+                                <div class="leetcode-stat-value">37</div>
+                                <div class="leetcode-stat-label">Total Active Days</div>
+                            </div>
+                            <div class="leetcode-stat">
+                                <div class="leetcode-stat-value">32</div>
+                                <div class="leetcode-stat-label">Max Streak</div>
+                            </div>
+                        </div>
+
+                        <!-- LeetCode Contribution Grid -->
+                        <div class="github-grid" id="leetcode-grid">
+                            <!-- Grid will be generated by JavaScript -->
+                        </div>
+                        <div class="github-months">
+                            <span>Nov</span>
+                            <span>Dec</span>
+                            <span>Jan</span>
+                            <span>Feb</span>
+                            <span>Mar</span>
+                        </div>
+
+                        <!-- LeetCode Streak -->
+                        <div class="leetcode-streak">
+                            <div class="leetcode-streak-title">Current Streak</div>
+                            <div class="leetcode-streak-value">12</div>
+                            <div class="leetcode-streak-subtitle">days</div>
+                        </div>
+
+                        <!-- LeetCode Recent Problems -->
+                        <h4 style="margin-top: 20px; margin-bottom: 15px;">Recent Problems</h4>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="activity-details">
+                                <div class="activity-title">Two Sum</div>
+                                <div class="activity-description">
+                                    Given an array of integers nums and an integer target, return indices of the two
+                                    numbers such that they add up to target.
+                                </div>
+                                <div class="activity-date">March 15, 2024</div>
+                                <span class="activity-badge easy">Easy</span>
+                                <span class="activity-language">Java</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="activity-details">
+                                <div class="activity-title">Add Two Numbers</div>
+                                <div class="activity-description">
+                                    You are given two non-empty linked lists representing two non-negative integers.
+                                </div>
+                                <div class="activity-date">March 10, 2024</div>
+                                <span class="activity-badge medium">Medium</span>
+                                <span class="activity-language">Kotlin</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="activity-details">
+                                <div class="activity-title">Longest Substring Without Repeating Characters</div>
+                                <div class="activity-description">
+                                    Given a string s, find the length of the longest substring without repeating
+                                    characters.
+                                </div>
+                                <div class="activity-date">March 5, 2024</div>
+                                <span class="activity-badge medium">Medium</span>
+                                <span class="activity-language">Java</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="activity-details">
+                                <div class="activity-title">Median of Two Sorted Arrays</div>
+                                <div class="activity-description">
+                                    Given two sorted arrays nums1 and nums2 of size m and n respectively, return the
+                                    median of the two sorted arrays.
+                                </div>
+                                <div class="activity-date">February 28, 2024</div>
+                                <span class="activity-badge hard">Hard</span>
+                                <span class="activity-language">Kotlin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GitHub Activity Card -->
+                <div class="activity-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="activity-header">
+                        <i class="fab fa-github"></i>
+                        <h3>GitHub Activity</h3>
+                    </div>
+                    <div class="activity-content" id="github-activity">
+                        <!-- GitHub Stats -->
+                        <div class="github-stats">
+                            <span>Total contributions: 247</span>
+                            <span>Last year: 183</span>
+                        </div>
+
+                        <!-- GitHub Contribution Grid -->
+                        <div class="github-grid" id="github-grid">
+                            <!-- Grid will be generated by JavaScript -->
+                        </div>
+                        <div class="github-months">
+                            <span>Nov</span>
+                            <span>Dec</span>
+                            <span>Jan</span>
+                            <span>Feb</span>
+                            <span>Mar</span>
+                        </div>
+
+                        <!-- GitHub Recent Activity -->
+                        <h4 style="margin-top: 20px; margin-bottom: 15px;">Recent Activity</h4>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <div class="activity-details">
+                                <div class="activity-title">Pushed to android-calculator</div>
+                                <div class="activity-description">
+                                    Added new BMI calculation feature with improved UI
+                                </div>
+                                <div class="activity-date">March 18, 2024</div>
+                                <span class="activity-badge">5 commits</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <div class="activity-details">
+                                <div class="activity-title">Created firebase-auth-demo</div>
+                                <div class="activity-description">
+                                    New repository for Firebase Authentication implementation
+                                </div>
+                                <div class="activity-date">March 12, 2024</div>
+                                <span class="activity-badge">New repo</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="activity-details">
+                                <div class="activity-title">Starred jetpack-compose-samples</div>
+                                <div class="activity-description">
+                                    Official samples for Jetpack Compose by Google
+                                </div>
+                                <div class="activity-date">March 8, 2024</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <div class="activity-details">
+                                <div class="activity-title">Forked spring-boot-samples</div>
+                                <div class="activity-description">
+                                    Learning Spring Boot through official examples
+                                </div>
+                                <div class="activity-date">March 1, 2024</div>
+                                <span class="activity-badge">Fork</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 data-aos="fade-up">My Blog</h2>
+            <div class="blog-container">
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image">
+                        <img src="blogspot.jpg" alt="Blog Platform">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Insights Hub</h3>
+                        <p>A platform where I share my thoughts, insights, and experiences in the world of Android
+                            development, programming, and technology.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Updated Weekly</span>
+                            <span><i class="fas fa-tag"></i> Tech, Android, Programming</span>
+                        </div>
+                        <a href="https://blinder17.blogspot.com/" target="_blank" class="btn primary">Visit Blog</a>
+                    </div>
+                </div>
+
+                <div class="blog-posts">
+                    <h3>Recent Posts</h3>
+                    <div class="blog-post-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="blog-post-date">Mar 20, 2024</div>
+                        <h4>Getting Started with Jetpack Compose</h4>
+                        <p>A comprehensive guide to building modern Android UIs with Jetpack Compose.</p>
+                        <a href="https://blinder17.blogspot.com/" target="_blank" class="read-more">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="blog-post-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="blog-post-date">Mar 15, 2024</div>
+                        <h4>Firebase Authentication Best Practices</h4>
+                        <p>Learn how to implement secure authentication in your Android apps using Firebase.</p>
+                        <a href="https://blinder17.blogspot.com/" target="_blank" class="read-more">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="blog-post-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="blog-post-date">Mar 10, 2024</div>
+                        <h4>Room Database vs. SQLite: Which to Choose?</h4>
+                        <p>A comparison of local database options for Android developers.</p>
+                        <a href="https://blinder17.blogspot.com/" target="_blank" class="read-more">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Certificates Section -->
     <section id="certificates" class="certificates">
         <div class="container">
-            <h2>Certifications</h2>
+            <h2 data-aos="fade-up">Certifications</h2>
             <div class="certificates-grid">
-                <div class="certificate-card">
+                <div class="certificate-card" data-aos="flip-up" data-aos-delay="100">
                     <img src="gdsc.jpg" alt="Generative AI Certificate">
                     <h3>Generative AI</h3>
                     <p>This certification showcases proficiency in modern AI tools and frameworks, emphasizing
@@ -146,14 +450,14 @@
                     <a href="https://www.cloudskillsboost.google/public_profiles/d92eb8ed-3cfb-4cf8-a107-380ae821b260"
                         target="_blank" class="btn primary">View Certificate</a>
                 </div>
-                <div class="certificate-card">
+                <div class="certificate-card" data-aos="flip-up" data-aos-delay="200">
                     <img src="ibmskill.jpg" alt="IBM AI Certificate">
                     <h3>IBM Applied AI Certificate</h3>
                     <p>Earned an industry-recognized credential by mastering essential AI concepts and tools, including
                         machine learning and natural language processing.</p>
                     <a href="https://www.ibm.com/" target="_blank" class="btn primary">View Certificate</a>
                 </div>
-                <div class="certificate-card">
+                <div class="certificate-card" data-aos="flip-up" data-aos-delay="300">
                     <img src="coursera.jpg" alt="OS Certificate">
                     <h3>Certified OS certificate</h3>
                     <p>Demonstrated expertise in operating system concepts, including process management, memory
@@ -161,7 +465,7 @@
                     <a href="https://www.coursera.org/account/accomplishments/verify/57GY6HNA0JZY" target="_blank"
                         class="btn primary">View Certificate</a>
                 </div>
-                <div class="certificate-card">
+                <div class="certificate-card" data-aos="flip-up" data-aos-delay="400">
                     <img src="graphtheory.jpg" alt="Graph Theory Certificate">
                     <h3>Graph Theory Mastery</h3>
                     <p>Gained expertise in graph algorithms and their applications through advanced projects and
@@ -169,7 +473,7 @@
                     <a href="https://www.coursera.org/account/accomplishments/verify/BCSL7VRWGO2N" target="_blank"
                         class="btn primary">View Certificate</a>
                 </div>
-                <div class="certificate-card">
+                <div class="certificate-card" data-aos="flip-up" data-aos-delay="500">
                     <img src="microsoft.jpg" alt="Microsoft AI Certificate">
                     <h3>Microsoft AI Fundamentals</h3>
                     <p>Acquired comprehensive skills in AI fundamentals, aligning with Microsoft's industry standards.
@@ -177,21 +481,13 @@
                     <a href="https://www.coursera.org/account/accomplishments/verify/57GY6HNA0JZY" target="_blank"
                         class="btn primary">View Certificate</a>
                 </div>
-                <div class="certificate-card">
-                    <img src="blogspot.jpg" alt="Blog Platform">
-                    <h3>Blog Platform: Insights Hub</h3>
-                    <p>Created a blogging platform to empower users in sharing insights and ideas with a global
-                        audience.</p>
-                    <a href="https://blinder17.blogspot.com/" target="_blank" class="btn primary">View Blog</a>
-                </div>
-                <div class="certificate-card">
+                <div class="certificate-card" data-aos="flip-up" data-aos-delay="600">
                     <img src="ibm2skill.jpg" alt="IBM Database Certificate">
                     <h3>IBM DataBase and Transaction Practitioner</h3>
                     <p>Demonstrated advanced proficiency in data science concepts, securing a prestigious IBM
                         certificate.</p>
                     <a href="https://www.ibm.com/" target="_blank" class="btn primary">View Certificate</a>
                 </div>
-
             </div>
         </div>
     </section>
@@ -199,9 +495,9 @@
     <!-- Videos Section -->
     <section id="videos" class="videos">
         <div class="container">
-            <h2>Project Demos</h2>
+            <h2 data-aos="fade-up">Project Demos</h2>
             <div class="video-grid">
-                <div class="video-card">
+                <div class="video-card" data-aos="zoom-in" data-aos-delay="100">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/ytu_YdCeLmU" frameborder="0"
                             allowfullscreen></iframe>
@@ -209,13 +505,10 @@
                     <h3>Calculator App Demo</h3>
                     <p>Demonstration of the All-in-One Calculator features</p>
                 </div>
-                <div class="video-card">
-
+                <div class="video-card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/QShLR1IgrAA?playsinline=1" frameborder="0"
                             allowfullscreen></iframe>
-
-
                     </div>
                     <h3>Firebase Auth Demo</h3>
                     <p>Walkthrough of the authentication system</p>
@@ -227,19 +520,23 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Get in Touch</h2>
-            <form id="contact-form">
+            <h2 data-aos="fade-up">Get in Touch</h2>
+            <form id="contact-form" action="mailto:krishalkarna@gmail.com" method="POST" enctype="text/plain"
+                data-aos="fade-up">
                 <div class="form-group">
-                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" id="email" placeholder="Your Email" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
                 </div>
                 <div class="form-group">
-                    <textarea id="message" placeholder="Your Message" required></textarea>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
                 </div>
                 <button type="submit" class="btn primary">Send Message</button>
             </form>
+            <div class="direct-contact" data-aos="fade-up" data-aos-delay="200">
+                <p>Or reach me directly at: <a href="mailto:krishalkarna@gmail.com">krishalkarna@gmail.com</a></p>
+            </div>
         </div>
     </section>
 
@@ -248,33 +545,34 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>About Me</h3>
-                    <p>Passionate Android Developer specializing in creating innovative mobile solutions. With expertise
-                        in Kotlin, Java, and modern Android development practices, I strive to build applications that
-                        make a difference.</p>
+                    <p>Android developer passionate about creating beautiful, functional mobile experiences with modern
+                        technologies.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact Info</h3>
+                    <h3>Quick Links</h3>
                     <ul>
-                        <li><i class="fas fa-envelope"></i> kreeshalkarna@gmail.com</li>
-                        <li><i class="fas fa-phone"></i> +977 9827897983</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#career">Career Journey</a></li>
+                        <li><a href="#code-activity">Code Activity</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#certificates">Certificates</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Social Media</h3>
+                    <h3>Connect</h3>
                     <ul class="social-links-footer">
-                        <li><a href="https://facebook.com/krishalkarna" target="_blank"><i class="fab fa-facebook"></i>
-                                Facebook</a></li>
-                        <li><a href="https://twitter.com/krishalkarna" target="_blank"><i class="fab fa-twitter"></i>
-                                Twitter</a></li>
-                        <li><a href="https://instagram.com/krishalkarna" target="_blank"><i
-                                    class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://github.com/kreeshal17" target="_blank"><i class="fab fa-github"></i>
+                                GitHub</a></li>
+                        <li><a href="https://linkedin.com/in/krishalkarna" target="_blank"><i
+                                    class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="mailto:krishalkarna@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Krishal Karna. All rights reserved. | Crafted with <i class="fas fa-heart"></i> and
-                    modern technologies</p>
+                <p>&copy; 2024 Krishal Karna. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -293,6 +591,17 @@
 
     <!-- Important: Load JavaScript at the end of body -->
     <script src="/script.js"></script>
+    <script>
+        // Initialize AOS animation library
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                once: false,
+                mirror: true,
+                duration: 800,
+                offset: 100
+            });
+        });
+    </script>
 </body>
 
 </html>
