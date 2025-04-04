@@ -484,11 +484,25 @@ function fetchBlogPosts() {
                 tags: ["Android", "Jetpack Compose", "UI"]
             },
             {
+                title: "Building RESTful APIs with Spring Boot",
+                date: "Mar 18, 2024",
+                summary: "A step-by-step guide to creating secure and efficient RESTful APIs using Spring Boot and JPA.",
+                url: "https://blinder17.blogspot.com/",
+                tags: ["Spring Boot", "Backend", "REST API"]
+            },
+            {
                 title: "Firebase Authentication Best Practices",
                 date: "Mar 15, 2024",
                 summary: "Learn how to implement secure authentication in your Android apps using Firebase.",
                 url: "https://blinder17.blogspot.com/",
                 tags: ["Firebase", "Security", "Authentication"]
+            },
+            {
+                title: "Spring Boot and MySQL Integration Guide",
+                date: "Mar 12, 2024",
+                summary: "How to set up a Spring Boot application with MySQL database and implement CRUD operations.",
+                url: "https://blinder17.blogspot.com/",
+                tags: ["Spring Boot", "MySQL", "Database"]
             },
             {
                 title: "Room Database vs. SQLite: Which to Choose?",
@@ -503,6 +517,13 @@ function fetchBlogPosts() {
                 summary: "Learn how to integrate MySQL databases with your Android applications for robust data management.",
                 url: "https://blinder17.blogspot.com/",
                 tags: ["MySQL", "Database", "Backend"]
+            },
+            {
+                title: "Building a Full-Stack Application with Android and Spring Boot",
+                date: "Feb 20, 2024",
+                summary: "A comprehensive tutorial on creating a full-stack application using Android for frontend and Spring Boot for backend services.",
+                url: "https://blinder17.blogspot.com/",
+                tags: ["Android", "Spring Boot", "Full-Stack"]
             }
         ];
 
