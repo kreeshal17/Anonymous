@@ -192,6 +192,12 @@ body {
     animation: textGlow 3s ease-in-out infinite alternate;
 }
 
+.hero-text p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    max-width: 42ch;
+}
+
 @keyframes textGlow {
     0% {
         text-shadow: 0 0 5px rgba(var(--primary-color-rgb), 0.5);
@@ -862,6 +868,11 @@ section.visible {
 @media (max-width: 480px) {
     .hero-text h1 {
         font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.05rem;
+        max-width: 100%;
     }
 
     .section {
