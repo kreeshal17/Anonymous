@@ -90,35 +90,6 @@ if (chatbotToggle && chatbotFrame) {
     });
 }
 
-// Contact form submission
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        // Add submitted class for animation
-        contactForm.classList.add('submitted');
-
-        // Create success message
-        const successMessage = document.createElement('div');
-        successMessage.className = 'success-message';
-        successMessage.innerHTML = `
-            <i class="fas fa-check-circle"></i>
-            <p>Thank you for your message! I'll get back to you soon.</p>
-        `;
-
-        // Replace form with success message
-        contactForm.parentNode.replaceChild(successMessage, contactForm);
-
-        // In a real application, you would send the form data to a server here
-        console.log('Form submitted with data:', {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value
-        });
-    });
-}
-
 // Typing effect for hero title
 const heroTitle = document.querySelector('.hero-text h1');
 if (heroTitle) {

@@ -139,12 +139,18 @@ body {
 /* Hero Section with 3D float effect - Updated with Babita style */
 .hero {
     padding: 120px 0 60px;
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, var(--background-color) 0%, var(--card-bg) 100%);
     position: relative;
     overflow: hidden;
+}
+
+.hero .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
 }
 
 .hero::before {
@@ -168,34 +174,62 @@ body {
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    gap: 3rem;
     position: relative;
+    min-height: calc(90vh - 120px);
 }
 
 .hero-text {
+    width: 55%;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
 }
 
 .hero-text h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
-    line-height: 1.2;
-    background: var(--gradient-bg);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: var(--neon-glow);
-    animation: textGlow 3s ease-in-out infinite alternate;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    font-family: "Sora", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    text-shadow: none;
+    white-space: nowrap;
 }
 
 .hero-text p {
-    font-size: 1.25rem;
-    line-height: 1.8;
+    font-size: 1.1rem;
+    line-height: 1.7;
     max-width: 42ch;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+    font-weight: 500;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    opacity: 0;
+    transform: translateY(12px);
+    animation: subtitleIntro 1s ease-out forwards;
+}
+
+@keyframes subtitleIntro {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes textGlow {
@@ -210,8 +244,8 @@ body {
 }
 
 .profile-image {
-    width: 300px;
-    height: 300px;
+    width: 420px;
+    height: 420px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--primary-color);
@@ -460,6 +494,44 @@ body {
     color: var(--primary-color);
     transform: translateY(-5px) rotate(360deg);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-links .social-badge {
+    width: auto;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.social-links .kaggle-link {
+    background: transparent;
+    color: #20BEFF;
+    box-shadow: none;
+    width: 40px;
+    justify-content: center;
+}
+
+.social-links .kaggle-link:hover {
+    color: #20BEFF;
+    background: transparent;
+    transform: translateY(-5px);
+    box-shadow: none;
+}
+
+.kaggle-icon {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1;
+    text-transform: lowercase;
+    color: inherit;
 }
 
 /* Projects Section */
@@ -753,24 +825,31 @@ section.visible {
     }
 
     .hero-content {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         text-align: center;
         gap: 2rem;
+        min-height: auto;
     }
 
     .hero-text {
-        order: 2;
+        order: 1;
+        width: 100%;
     }
 
     .hero-image {
-        order: 1;
+        order: 2;
         display: flex;
         justify-content: center;
+        width: 100%;
+    }
+
+    .hero .container {
+        padding: 0 24px;
     }
 
     .profile-image {
-        width: 200px;
-        height: 200px;
+        width: 260px;
+        height: 260px;
     }
 
     .cta-buttons {
@@ -1509,6 +1588,30 @@ section.visible {
     box-shadow: 0 10px 25px var(--shadow-color);
 }
 
+.contact-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contact-layout > * {
+    flex: 1 1 320px;
+    max-width: 600px;
+}
+
+.contact-layout .contact-form {
+    margin: 0;
+}
+
+.contact-layout .linkedin-badge {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+}
+
 .form-group {
     margin-bottom: 20px;
 }
@@ -1588,6 +1691,46 @@ textarea {
 
 .direct-contact a:hover::after {
     width: 100%;
+}
+
+.contact-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: #25D366;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 6px 14px rgba(37, 211, 102, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-button i {
+    font-size: 1.1rem;
+}
+
+.whatsapp-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(37, 211, 102, 0.35);
+}
+
+@media (max-width: 768px) {
+    .contact-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-layout > * {
+        width: 100%;
+    }
 }
 
 /* Animation for form submission */

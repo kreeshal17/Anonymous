@@ -4,29 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishal Karna (Krishal) | AI & Data Science Engineer | ML & RAG Portfolio</title>
+    <title>Krishal Karna | Data Analyst & Machine Learning Enthusiast</title>
     <meta name="description"
-        content="Krishal Karna, also known as Krishal, is an AI & Data Science Engineer specializing in Machine Learning, SQL Analytics, RAG systems, and Data Visualization. Explore Krishal’s portfolio projects, blogs, and certifications.">
+        content="Krishal Karna is a Data Analyst passionate about machine learning, data analytics, and business intelligence. Explore projects, skills, and experience.">
     <meta name="keywords"
         content="Krishal Karna, Krishal, Krishal portfolio, Krishal Karna portfolio, Krishal AI engineer, Krishal data scientist, ML portfolio, RAG developer">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Krishal Karna | AI & Data Science Engineer | ML & RAG Portfolio">
+    <meta property="og:title" content="Krishal Karna | Data Analyst & Machine Learning Enthusiast">
     <meta property="og:description"
-        content="Krishal Karna (Krishal) is an AI & Data Science Engineer specializing in Machine Learning, SQL Analytics, RAG systems, and Data Visualization.">
+        content="Krishal Karna is a Data Analyst passionate about machine learning, data analytics, and business intelligence. Explore projects, skills, and experience.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.krishalkarna.com.np/">
     <meta property="og:image" content="https://www.krishalkarna.com.np/photo.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Krishal Karna | AI & Data Science Engineer | ML & RAG Portfolio">
+    <meta name="twitter:title" content="Krishal Karna | Data Analyst & Machine Learning Enthusiast">
     <meta name="twitter:description"
-        content="Krishal Karna (Krishal) is an AI & Data Science Engineer specializing in Machine Learning, SQL Analytics, RAG systems, and Data Visualization.">
+        content="Krishal Karna is a Data Analyst passionate about machine learning, data analytics, and business intelligence. Explore projects, skills, and experience.">
     <meta name="twitter:image" content="https://www.krishalkarna.com.np/photo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Krishal Karna",
-            "jobTitle": "AI & Data Science Engineer",
+            "jobTitle": "Data Analyst",
             "alternateName": "Krishal",
             "image": "https://www.krishalkarna.com.np/photo.jpg",
             "url": "https://www.krishalkarna.com.np/",
@@ -47,9 +50,6 @@
     <!-- Important: Load CSS files first -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="/styles.css">
-    <!-- Add Firebase to your project -->
-    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js"></script>
     <script src="contact.js"></script>
     <!-- Add AOS animation library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -91,14 +91,17 @@
     <section class="hero">
         <div class="container hero-content">
             <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
-                <h1>Krishal Karna &mdash; AI & Data Science Engineer</h1>
-                <p>Portfolio of Krishal Karna (Krishal), AI & Data Science Engineer.</p>
+                <h1>Krishal Karna</h1>
+                <p class="hero-subtitle">Data Analyst | Data Scientist | AI/ML Engineer</p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn primary">View Projects</a>
                     <a href="/resume.pdf" class="btn secondary" download>Download Resume</a>
                 </div>
                 <div class="social-links">
                     <a href="https://github.com/kreeshal17" target="_blank"><i class="fab fa-github"></i></a>
+                    <a class="social-badge kaggle-link" href="https://www.kaggle.com/stunningtechz" target="_blank" rel="noopener" aria-label="Kaggle profile">
+                        <span class="kaggle-icon">k</span>
+                    </a>
                     <a href="https://linkedin.com/in/krishalkarna" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="https://leetcode.com/u/Y0MeqFvrwP/" target="_blank"><i class="fas fa-code"></i></a>
                 </div>
@@ -406,7 +409,7 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 data-aos="fade-up">Contact</h2>
-            <form id="contact-form" action="mailto:karnakreeshal@gmail.com?subject=Portfolio%20Inquiry" method="GET"
+            <form id="contact-form" class="contact-form" action="#" method="GET"
                 data-aos="fade-up">
                 <div class="form-group">
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -419,7 +422,13 @@
                 </div>
                 <button type="submit" class="btn primary">Send Message</button>
             </form>
-            <div class="direct-contact" data-aos="fade-up" data-aos-delay="200">
+            <div class="contact-actions" data-aos="fade-up" data-aos-delay="200">
+                <a class="whatsapp-button" href="https://wa.me/918431172114" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+            </div>
+            <div class="direct-contact" data-aos="fade-up" data-aos-delay="300">
                 <p>Or reach me directly at: <a href="mailto:karnakreeshal@gmail.com">karnakreeshal@gmail.com</a></p>
             </div>
         </div>
@@ -475,6 +484,7 @@
 
     <!-- Important: Load JavaScript at the end of body -->
     <script src="/script.js"></script>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
     <script>
         // Initialize AOS animation library
         document.addEventListener('DOMContentLoaded', function () {
