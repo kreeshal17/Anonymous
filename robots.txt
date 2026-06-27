@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://krishalkarna.com.np/sitemap.xml
+
+# Crawl-delay hint for bots that respect it
+Crawl-delay: 10
