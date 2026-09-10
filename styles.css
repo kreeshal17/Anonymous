@@ -774,18 +774,22 @@ ul {
 }
 
 .about-highlights {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 16px;
 }
 
 .highlight-card {
+    flex: 1 1 140px;
     background: var(--bg-alt);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 24px 20px;
     text-align: center;
     transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .highlight-card:hover {
@@ -1534,8 +1538,11 @@ footer {
     }
 
     .about-highlights {
-        grid-template-columns: 1fr 1fr;
         gap: 12px;
+    }
+
+    .highlight-card {
+        flex-basis: calc(50% - 6px);
     }
 
     .highlight-card {
