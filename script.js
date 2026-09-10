@@ -129,9 +129,10 @@
 
             if (scrollPos >= top && scrollPos < bottom) {
                 navAnchors.forEach(function (a) {
-                    a.classList.remove('active');
                     if (a.getAttribute('href') === '#' + id) {
-                        a.classList.add('active');
+                        a.setAttribute('aria-current', 'true');
+                    } else {
+                        a.removeAttribute('aria-current');
                     }
                 });
             }
@@ -156,6 +157,35 @@
     revealSections.forEach(function (section) {
         revealObserver.observe(section);
     });
+
+    // --- Staggered Reveal for Cards/Rows Within Each Section ---
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion) {
+        var staggerGroups = document.querySelectorAll(
+            '.projects-grid, .more-projects-grid, .experience-timeline, .skills-table, ' +
+            '.certificates-grid, .certs-expanded-grid, .faq-list, .journey-timeline, .writing-posts'
+        );
+
+        var itemObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    itemObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        staggerGroups.forEach(function (group) {
+            Array.prototype.forEach.call(group.children, function (child, index) {
+                child.classList.add('reveal-item');
+                child.style.setProperty('--reveal-index', index % 8);
+                itemObserver.observe(child);
+            });
+        });
+    }
 
     // --- Certificate See More ---
     var certBtn = document.getElementById('certs-see-more-btn');

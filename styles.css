@@ -421,13 +421,47 @@ ul {
 .section {
     padding: 100px 0;
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: translateY(16px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .section.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Staggered reveal for cards/rows within a visible section */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition-delay: calc(var(--reveal-index, 0) * 50ms);
+}
+
+.reveal-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .section, .reveal-item {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .hero-greeting, .hero-text h1, .hero-title, .hero-tagline, .hero-stack, .hero-currently,
+    .hero-cta, .hero-socials, .hero-image-wrapper, .hero-scroll-indicator span::after {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }
 
 .section-heading {
@@ -470,11 +504,16 @@ ul {
     box-shadow: var(--shadow-md);
 }
 
+.navbar.scrolled .nav-container {
+    height: 56px;
+}
+
 .nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 70px;
+    transition: height 0.25s ease;
 }
 
 .logo {
@@ -523,7 +562,7 @@ ul {
 }
 
 .nav-links a:hover,
-.nav-links a.active {
+.nav-links a[aria-current="true"] {
     color: var(--accent);
     background: var(--accent-subtle);
 }
@@ -949,6 +988,21 @@ a.stat-item:hover .stat-number {
 /* ============================================
    EXPERIENCE
    ============================================ */
+.experience-timeline {
+    position: relative;
+    padding-left: 32px;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    bottom: 10px;
+    width: 1px;
+    background: var(--border);
+}
+
 .experience-card {
     background: var(--bg-alt);
     border: 1px solid var(--border);
@@ -956,7 +1010,6 @@ a.stat-item:hover .stat-number {
     padding: 32px;
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
 }
 
 .experience-card + .experience-card {
@@ -966,12 +1019,13 @@ a.stat-item:hover .stat-number {
 .experience-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: var(--accent);
-    border-radius: 0 2px 2px 0;
+    left: -32px;
+    top: 32px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
 }
 
 .experience-card:hover {
@@ -1120,6 +1174,24 @@ a.stat-item:hover .stat-number {
 .project-card.featured {
     display: flex;
     flex-direction: column;
+}
+
+.project-thumb {
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-sm);
+    border: 1px dashed var(--border);
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    order: -1;
+}
+
+.project-thumb span {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-style: italic;
 }
 
 /* Problem / Approach / Result rows */
