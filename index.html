@@ -4,34 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishal Karna | Full-Stack AI Engineer · Agentic AI Developer · Data Scientist — Portfolio</title>
+    <title>Krishal Karna | Backend + Applied ML Engineer — Portfolio</title>
     <meta name="description"
-        content="Krishal Karna — Full-Stack AI Engineer, Agentic AI Developer, and Data Scientist from Jain University Bangalore. CGPA 9.4/10, top 2%, EdCIL COMPEX Scholar. Builds LLM agents with LangGraph & Gemini, full-stack apps with Next.js & FastAPI, and data science pipelines with Python, SQL, Tableau & Power BI. Kaggle contributor. View projects, certifications and resume.">
-    <meta name="keywords"
-        content="Krishal Karna, krishalkarna, krishal karna portfolio, Full-Stack AI Engineer, GenAI Developer, Data Scientist, Data Analyst, LLM Engineer, LangGraph, LangChain, Gemini, RAG, Next.js, FastAPI, Python, Power BI, Kaggle, Zapier, n8n, SQL Analytics, Machine Learning, Jain University Bangalore, EdCIL COMPEX Scholar, AI portfolio India">
+        content="Krishal Karna is a backend and applied ML engineer — Django and FastAPI backends, scikit-learn and LangGraph LLM pipelines, Next.js frontends to use them.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Krishal Karna">
     <meta name="theme-color" content="#4f46e5">
     <link rel="canonical" href="https://krishalkarna.com.np/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Krishal Karna | Full-Stack AI Engineer · Agentic AI Developer · Data Scientist">
+    <meta property="og:title" content="Krishal Karna | Backend + Applied ML Engineer">
     <meta property="og:description"
-        content="Krishal Karna — builds production LLM agents, full-stack AI apps & data science pipelines. CGPA 9.4, top 2%, EdCIL COMPEX Scholar, Kaggle contributor. Based in Bangalore.">
+        content="Krishal Karna builds Django and FastAPI backends, scikit-learn and LangGraph LLM pipelines, and the Next.js frontends that make them usable.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://krishalkarna.com.np/">
     <meta property="og:image" content="https://krishalkarna.com.np/photo.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Krishal Karna — Full-Stack AI Engineer portfolio">
+    <!-- TODO(krishal): og:image is declared 1200x630 (the correct OG landscape ratio) but photo.png
+         is actually a 1212x813 portrait-ish headshot, not a designed landscape card with your name/title
+         composited on it. Metadata below now matches the real file dimensions so previews don't distort
+         it, but you still want a proper designed 1200x630 OG card here — see the TODO list at the end. -->
+    <meta property="og:image:width" content="1212">
+    <meta property="og:image:height" content="813">
+    <meta property="og:image:alt" content="Krishal Karna — Backend + Applied ML Engineer portfolio">
     <meta property="og:site_name" content="Krishal Karna Portfolio">
     <meta property="og:locale" content="en_IN">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Krishal Karna | Full-Stack AI Engineer · GenAI Developer · Data Scientist">
+    <meta name="twitter:title" content="Krishal Karna | Backend + Applied ML Engineer">
     <meta name="twitter:description"
-        content="Krishal Karna — LLM agents, full-stack AI apps & data science. CGPA 9.4/10, EdCIL COMPEX Scholar, Kaggle contributor. Jain University Bangalore.">
+        content="Krishal Karna builds Django and FastAPI backends, scikit-learn and LangGraph LLM pipelines, and the Next.js frontends that make them usable.">
     <meta name="twitter:site" content="@krishalkarna">
     <meta name="twitter:creator" content="@krishalkarna">
     <meta name="twitter:image" content="https://krishalkarna.com.np/photo.png">
@@ -50,91 +52,148 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
     <link rel="manifest" href="manifest.json">
-    <!-- JSON-LD Person Schema — rich structured data for Google Knowledge Panel -->
+    <!-- JSON-LD — single @graph: Person, WebSite, ProfilePage, one SoftwareSourceCode per featured
+         project, and an ItemList enumerating them. FAQPage is appended separately near the FAQ section.
+         TODO(krishal): CGPA below is 9.4/10 per the current site; your GitHub README says 9.5/10 — left
+         as-is pending your confirmation, same as everywhere else this number appears. Degree is left as
+         "Computer Science" without B.E./B.Tech for the same reason — confirm and I'll tighten it. -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Krishal Karna",
-        "givenName": "Krishal",
-        "familyName": "Karna",
-        "alternateName": ["krishalkarna", "kreeshal17"],
-        "jobTitle": "Full-Stack AI Engineer · Agentic AI Developer · Data Scientist",
-        "description": "Krishal Karna is a Full-Stack AI Engineer, Agentic   AI Developer, and Data Scientist. He builds production LLM agents using LangGraph & Gemini, full-stack applications with Next.js & FastAPI, and data science pipelines with Python, SQL, Tableau & Power BI. Final-year CS student at Jain University Bangalore, CGPA 9.4/10, top 2% of batch, EdCIL COMPEX Scholar.",
-        "url": "https://krishalkarna.com.np/",
-        "image": {
-            "@type": "ImageObject",
-            "url": "https://krishalkarna.com.np/photo.png",
-            "width": 400,
-            "height": 400
-        },
-        "email": "karnakreeshal@gmail.com",
-        "telephone": "+91-8431172114",
-        "nationality": {"@type": "Country", "name": "Nepal"},
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Bangalore",
-            "addressRegion": "Karnataka",
-            "addressCountry": "IN"
-        },
-        "alumniOf": {
-            "@type": "CollegeOrUniversity",
-            "name": "Jain (Deemed-to-be) University",
-            "url": "https://www.jainuniversity.ac.in/",
-            "address": {"@type": "PostalAddress", "addressLocality": "Bangalore", "addressCountry": "IN"}
-        },
-        "sameAs": [
-            "https://github.com/kreeshal17",
-            "https://krishalkarna.com.np",
-            "https://leetcode.com/u/kreeshal17/",
-            "https://www.kaggle.com/stunningtechz"
-        ],
-        "knowsAbout": [
-            "Artificial Intelligence", "Generative AI", "Large Language Models",
-            "Full-Stack Development", "Data Science", "Data Analytics",
-            "Machine Learning", "K-Means Clustering", "Natural Language Processing",
-            "LangGraph", "LangChain", "Gemini", "OpenAI",
-            "Next.js", "FastAPI", "React", "TypeScript",
-            "Python", "SQL", "PostgreSQL", "Snowflake",
-            "Power BI","Tableau", "DAX", "Pandas", "NumPy", "Scikit-learn",
-            "RAG Systems", "Prompt Engineering", "Vector Databases", "FAISS",
-            "A/B Testing", "Statistical Testing", "ETL",
-            "Kaggle", "Zapier", "n8n", "Streamlit"
-        ],
-        "hasOccupation": {
-            "@type": "Occupation",
-            "name": "Full-Stack AI Engineer",
-            "occupationLocation": {"@type": "City", "name": "Bangalore"}
-        },
-        "award": "EdCIL COMPEX Merit Scholarship — Government of India"
-    }
-    </script>
-
-    <!-- JSON-LD WebSite with SearchAction -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Krishal Karna Portfolio",
-        "alternateName": "krishalkarna.com.np",
-        "url": "https://krishalkarna.com.np/",
-        "description": "Portfolio of Krishal Karna — Full-Stack AI Engineer and Data Scientist.",
-        "author": {"@type": "Person", "name": "Krishal Karna"}
-    }
-    </script>
-
-    <!-- JSON-LD BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://krishalkarna.com.np/"},
-            {"@type": "ListItem", "position": 2, "name": "About", "item": "https://krishalkarna.com.np/#about"},
-            {"@type": "ListItem", "position": 3, "name": "Projects", "item": "https://krishalkarna.com.np/#projects"},
-            {"@type": "ListItem", "position": 4, "name": "Skills", "item": "https://krishalkarna.com.np/#skills"},
-            {"@type": "ListItem", "position": 5, "name": "Certifications", "item": "https://krishalkarna.com.np/#certificates"},
-            {"@type": "ListItem", "position": 6, "name": "Contact", "item": "https://krishalkarna.com.np/#contact"}
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": "https://krishalkarna.com.np/#person",
+                "name": "Krishal Karna",
+                "givenName": "Krishal",
+                "familyName": "Karna",
+                "alternateName": ["krishalkarna", "kreeshal17"],
+                "jobTitle": "Backend + Applied ML Engineer",
+                "description": "Krishal Karna is a backend and applied ML engineer. He builds Django and Django REST Framework backends, scikit-learn ML pipelines, and LangGraph + Gemini LLM systems, plus the Next.js frontends that make them usable. Final-year Computer Science student at Jain (Deemed-to-be) University, Bangalore, graduating June 2027, CGPA 9.4/10, top 2% of batch, EdCIL COMPEX Scholar.",
+                "url": "https://krishalkarna.com.np/",
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://krishalkarna.com.np/photo.png",
+                    "width": 1212,
+                    "height": 813
+                },
+                "email": "karnakreeshal@gmail.com",
+                "nationality": {"@type": "Country", "name": "Nepal"},
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Bangalore",
+                    "addressRegion": "Karnataka",
+                    "addressCountry": "IN"
+                },
+                "alumniOf": {
+                    "@type": "CollegeOrUniversity",
+                    "name": "Jain (Deemed-to-be) University",
+                    "url": "https://www.jainuniversity.ac.in/",
+                    "address": {"@type": "PostalAddress", "addressLocality": "Bangalore", "addressCountry": "IN"}
+                },
+                "sameAs": [
+                    "https://github.com/kreeshal17",
+                    "https://www.linkedin.com/in/krishalkarna",
+                    "https://leetcode.com/u/kreeshal17/",
+                    "https://www.kaggle.com/stunningtechz",
+                    "https://completesql.hashnode.dev/series/learn-mysql"
+                ],
+                "knowsAbout": [
+                    "Python", "TypeScript", "JavaScript", "SQL", "Java",
+                    "Django", "Django REST Framework", "FastAPI", "JWT Authentication", "REST API Design",
+                    "scikit-learn", "pandas", "NumPy", "LangChain", "LangGraph", "Google Gemini",
+                    "PostgreSQL", "MySQL", "Prisma",
+                    "Next.js", "React", "Tailwind CSS",
+                    "Docker", "AWS EC2", "Gunicorn", "Vercel", "Railway", "Git"
+                ],
+                "hasOccupation": {
+                    "@type": "Occupation",
+                    "name": "Backend + Applied ML Engineer",
+                    "occupationLocation": {"@type": "City", "name": "Bangalore"}
+                },
+                "award": "EdCIL COMPEX Merit Scholarship — Government of India"
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://krishalkarna.com.np/#website",
+                "name": "Krishal Karna Portfolio",
+                "alternateName": "krishalkarna.com.np",
+                "url": "https://krishalkarna.com.np/",
+                "description": "Portfolio of Krishal Karna — Backend + Applied ML Engineer.",
+                "author": {"@id": "https://krishalkarna.com.np/#person"}
+            },
+            {
+                "@type": "ProfilePage",
+                "@id": "https://krishalkarna.com.np/#profilepage",
+                "url": "https://krishalkarna.com.np/",
+                "name": "Krishal Karna — Portfolio",
+                "isPartOf": {"@id": "https://krishalkarna.com.np/#website"},
+                "mainEntity": {"@id": "https://krishalkarna.com.np/#person"}
+            },
+            {
+                "@type": "SoftwareSourceCode",
+                "@id": "https://krishalkarna.com.np/#project-datalens",
+                "name": "DataLens AI",
+                "description": "Full-stack data quality platform that ingests CSV datasets, profiles row- and column-level statistics, computes a quality score, and uses Isolation Forest, KNN imputation, and TF-IDF similarity plus a LangGraph + Gemini layer to diagnose and explain data quality issues.",
+                "programmingLanguage": ["Python", "TypeScript"],
+                "codeRepository": "https://github.com/kreeshal17/Datalens-AI",
+                "url": "https://github.com/kreeshal17/Datalens-AI",
+                "author": {"@id": "https://krishalkarna.com.np/#person"}
+            },
+            {
+                "@type": "SoftwareSourceCode",
+                "@id": "https://krishalkarna.com.np/#project-luma",
+                "name": "Luma AI Studio",
+                "description": "Full-stack AI coding agent that generates and incrementally edits React components from natural language, using a LangGraph tool-calling loop backed by Gemini with persistent multi-turn sessions.",
+                "programmingLanguage": ["TypeScript", "Python"],
+                "codeRepository": "https://github.com/kreeshal17/LUMA-AI-STUDIO",
+                "url": "https://codewithluma.vercel.app/",
+                "author": {"@id": "https://krishalkarna.com.np/#person"}
+            },
+            {
+                "@type": "SoftwareSourceCode",
+                "@id": "https://krishalkarna.com.np/#project-bookmandu",
+                "name": "BookMandu",
+                "description": "Multi-vendor book marketplace with a delivery-gated review system — only verified buyers who actually received a book can review it — plus seller onboarding, real-time stock management, and an AI chat assistant.",
+                "programmingLanguage": ["TypeScript"],
+                "codeRepository": "https://github.com/kreeshal17/bookbazaar",
+                "url": "https://bookmandu.vercel.app/",
+                "author": {"@id": "https://krishalkarna.com.np/#person"}
+            },
+            {
+                "@type": "SoftwareSourceCode",
+                "@id": "https://krishalkarna.com.np/#project-sql",
+                "name": "Production-Grade Retail SQL Analytics",
+                "description": "End-to-end SQL analytics project analyzing 1M+ retail sales records using CTEs, window functions, and A/B testing to surface statistically significant pricing optimizations.",
+                "programmingLanguage": ["SQL"],
+                "codeRepository": "https://github.com/kreeshal17/production-grade-sql-analytics",
+                "url": "https://github.com/kreeshal17/production-grade-sql-analytics",
+                "author": {"@id": "https://krishalkarna.com.np/#person"}
+            },
+            {
+                "@type": "ItemList",
+                "@id": "https://krishalkarna.com.np/#featured-projects",
+                "name": "Featured Projects",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "item": {"@id": "https://krishalkarna.com.np/#project-datalens"}},
+                    {"@type": "ListItem", "position": 2, "item": {"@id": "https://krishalkarna.com.np/#project-luma"}},
+                    {"@type": "ListItem", "position": 3, "item": {"@id": "https://krishalkarna.com.np/#project-bookmandu"}},
+                    {"@type": "ListItem", "position": 4, "item": {"@id": "https://krishalkarna.com.np/#project-sql"}}
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://krishalkarna.com.np/"},
+                    {"@type": "ListItem", "position": 2, "name": "About", "item": "https://krishalkarna.com.np/#about"},
+                    {"@type": "ListItem", "position": 3, "name": "Experience", "item": "https://krishalkarna.com.np/#experience"},
+                    {"@type": "ListItem", "position": 4, "name": "Projects", "item": "https://krishalkarna.com.np/#projects"},
+                    {"@type": "ListItem", "position": 5, "name": "Writing", "item": "https://krishalkarna.com.np/#writing"},
+                    {"@type": "ListItem", "position": 6, "name": "Skills", "item": "https://krishalkarna.com.np/#skills"},
+                    {"@type": "ListItem", "position": 7, "name": "Certifications", "item": "https://krishalkarna.com.np/#certificates"},
+                    {"@type": "ListItem", "position": 8, "name": "Contact", "item": "https://krishalkarna.com.np/#contact"}
+                ]
+            }
         ]
     }
     </script>
@@ -183,20 +242,23 @@
                 <div class="hero-text">
                     <p class="hero-greeting">Hello, I'm</p>
                     <h1>Krishal Karna</h1>
-                    <p class="hero-title">Full-Stack AI Engineer · Agentic AI Developer · Data Analyst</p>
-                    <p class="hero-tagline">I build production AI systems and turn complex data into clear,
-                        actionable insight — from LLM-powered agents to statistical analytics at scale.</p>
+                    <p class="hero-title">Backend + Applied ML Engineer</p>
+                    <p class="hero-tagline">I build the backend and the model. Then I build the UI so people can
+                        actually use it.</p>
+                    <p class="hero-stack">Django · DRF · FastAPI · PostgreSQL · scikit-learn · LangGraph · Gemini</p>
                     <div class="hero-cta">
                         <a href="#projects" class="btn btn-primary" id="cta-projects">View Projects</a>
                         <a href="resume.pdf" class="btn btn-outline" id="cta-resume" target="_blank"
                             rel="noopener">View Resume</a>
                     </div>
                     <div class="hero-socials">
-                        <a href="https://github.com/kreeshal17" target="_blank" rel="noopener"
+                        <a href="https://github.com/kreeshal17" target="_blank" rel="noopener me"
                             aria-label="GitHub profile"><i class="fab fa-github"></i></a>
-                        <a href="https://www.kaggle.com/stunningtechz" target="_blank" rel="noopener"
+                        <a href="https://www.linkedin.com/in/krishalkarna" target="_blank" rel="noopener me"
+                            aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.kaggle.com/stunningtechz" target="_blank" rel="noopener me"
                             aria-label="Kaggle profile"><i class="fab fa-kaggle"></i></a>
-                        <a href="https://leetcode.com/u/kreeshal17/" target="_blank" rel="noopener"
+                        <a href="https://leetcode.com/u/kreeshal17/" target="_blank" rel="noopener me"
                             aria-label="LeetCode profile"><i class="fas fa-code"></i></a>
                         <a href="mailto:karnakreeshal@gmail.com" aria-label="Send email"><i
                                 class="fas fa-envelope"></i></a>
@@ -204,7 +266,7 @@
                 </div>
                 <div class="hero-image-wrapper">
                     <div class="hero-image-ring">
-                        <img src="photo.png" alt="Krishal Karna — Full-Stack AI Engineer and Agentic AI Developer"
+                        <img src="photo.png" alt="Krishal Karna — Backend + Applied ML Engineer"
                             class="hero-image" width="380" height="380" loading="eager">
                     </div>
                 </div>
@@ -220,15 +282,20 @@
                 <h2 class="section-heading">About Me</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Final-year <strong>B.E. Computer Science &amp; Engineering</strong> student at <strong>Jain
-                                (Deemed-to-be) University, Bangalore</strong> — <strong>CGPA 9.4/10</strong> (top 2% of
-                            batch).</p>
-                        <p><strong>EdCIL COMPEX Scholar</strong> — Government of India merit scholarship covering full
-                            tuition.</p>
-                        <p>Currently building production AI systems and data analytics projects — from full-stack
-                            LLM-powered agents with LangGraph to statistical analysis on million-row datasets.</p>
-                        <p>Open to <strong>Data Analyst, Data Scientist, GenAI Engineer, and Full-Stack AI
-                                Engineer</strong> roles.</p>
+                        <!-- TODO(krishal): CGPA shows 9.4/10 here and everywhere else on the site; your
+                             GitHub README says 9.5/10. Confirm which is correct and I'll make it
+                             consistent across the hero stat bar, JSON-LD, and llms.txt. -->
+                        <!-- TODO(krishal): degree shown as "B.E." below — confirm B.E. vs B.Tech. -->
+                        <p>Krishal Karna is a backend and applied ML engineer based in Bangalore, India. He is a
+                            final-year <strong>B.E. Computer Science &amp; Engineering</strong> student at <strong>Jain
+                                (Deemed-to-be) University, Bangalore</strong>, graduating in June 2027, with a
+                            <strong>CGPA of 9.4/10</strong> (top 2% of batch).</p>
+                        <p>He is an <strong>EdCIL COMPEX Scholar</strong> — a Government of India merit scholarship
+                            covering full tuition.</p>
+                        <p>He builds Django and Django REST Framework backends, scikit-learn ML pipelines, and
+                            LangGraph + Gemini LLM systems, along with the Next.js frontends that make them usable.</p>
+                        <p>Open to <strong>backend engineering, applied ML, and AI engineering</strong> roles for the
+                            2027 graduating batch.</p>
                     </div>
                     <div class="about-highlights">
                         <div class="highlight-card">
@@ -729,32 +796,33 @@
         <section id="contact" class="section contact" aria-label="Contact">
             <div class="container">
                 <h2 class="section-heading">Get In Touch</h2>
-                <p class="contact-intro">I'm open to opportunities in Data Analytics, Data Science, GenAI Engineering,
-                    and Full-Stack AI roles. Let's connect.</p>
-                <div class="contact-grid">
+                <p class="contact-intro">Open to backend engineering, applied ML, and AI engineering roles. Let's
+                    connect.</p>
+                <address class="contact-grid">
                     <a href="mailto:karnakreeshal@gmail.com" class="contact-card" id="contact-email">
                         <i class="fas fa-envelope"></i>
                         <span class="contact-label">Email</span>
                         <span class="contact-value">karnakreeshal@gmail.com</span>
                     </a>
-                    <a href="tel:+918431172114" class="contact-card" id="contact-phone">
-                        <i class="fas fa-phone"></i>
-                        <span class="contact-label">Phone</span>
-                        <span class="contact-value">+91-8431172114</span>
+                    <a href="https://www.linkedin.com/in/krishalkarna" target="_blank" rel="noopener me"
+                        class="contact-card" id="contact-linkedin">
+                        <i class="fab fa-linkedin"></i>
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">krishalkarna</span>
                     </a>
-                    <a href="https://github.com/kreeshal17" target="_blank" rel="noopener" class="contact-card"
+                    <a href="https://github.com/kreeshal17" target="_blank" rel="noopener me" class="contact-card"
                         id="contact-github">
                         <i class="fab fa-github"></i>
                         <span class="contact-label">GitHub</span>
                         <span class="contact-value">kreeshal17</span>
                     </a>
-                    <a href="https://www.kaggle.com/stunningtechz" target="_blank" rel="noopener" class="contact-card"
+                    <a href="https://www.kaggle.com/stunningtechz" target="_blank" rel="noopener me" class="contact-card"
                         id="contact-kaggle">
                         <i class="fab fa-kaggle"></i>
                         <span class="contact-label">Kaggle</span>
                         <span class="contact-value">stunningtechz</span>
                     </a>
-                </div>
+                </address>
             </div>
         </section>
     </main>
@@ -764,18 +832,20 @@
         <div class="container footer-content">
             <div class="footer-left">
                 <p class="footer-name">Krishal Karna</p>
-                <p class="footer-tagline">Full-Stack AI Engineer · GenAI Developer · Data Analyst</p>
+                <p class="footer-tagline">Backend + Applied ML Engineer</p>
             </div>
             <div class="footer-links">
-                <a href="https://github.com/kreeshal17" target="_blank" rel="noopener" aria-label="GitHub"><i
+                <a href="https://github.com/kreeshal17" target="_blank" rel="noopener me" aria-label="GitHub"><i
                         class="fab fa-github"></i></a>
-                <a href="https://www.kaggle.com/stunningtechz" target="_blank" rel="noopener" aria-label="Kaggle"><i
+                <a href="https://www.linkedin.com/in/krishalkarna" target="_blank" rel="noopener me" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://www.kaggle.com/stunningtechz" target="_blank" rel="noopener me" aria-label="Kaggle"><i
                         class="fab fa-kaggle"></i></a>
-                <a href="https://leetcode.com/u/kreeshal17/" target="_blank" rel="noopener" aria-label="LeetCode"><i
+                <a href="https://leetcode.com/u/kreeshal17/" target="_blank" rel="noopener me" aria-label="LeetCode"><i
                         class="fas fa-code"></i></a>
                 <a href="mailto:karnakreeshal@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
-            <p class="footer-copy">&copy; 2025 Krishal Karna. All rights reserved.</p>
+            <p class="footer-copy">&copy; <span id="footer-year">2026</span> Krishal Karna. All rights reserved.</p>
         </div>
     </footer>
 
