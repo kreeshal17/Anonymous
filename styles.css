@@ -485,6 +485,31 @@ ul {
 }
 
 /* ============================================
+   ACCESSIBILITY: SKIP LINK & FOCUS
+   ============================================ */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    z-index: 2000;
+    padding: 12px 20px;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* ============================================
    NAVIGATION
    ============================================ */
 .navbar {
