@@ -140,51 +140,6 @@
 
     window.addEventListener('scroll', updateActiveNav);
 
-    // --- Project Filter Tabs ---
-    var filterTabs = document.querySelectorAll('.filter-tab');
-    var projectCards = document.querySelectorAll('.project-card');
-
-    function switchFilter(selectedTab) {
-        var filter = selectedTab.getAttribute('data-filter');
-
-        // Update active tab styles
-        filterTabs.forEach(function (tab) {
-            tab.classList.remove('active');
-            tab.setAttribute('aria-selected', 'false');
-        });
-        selectedTab.classList.add('active');
-        selectedTab.setAttribute('aria-selected', 'true');
-
-        // Show / hide cards with staggered fade-in
-        var visibleIndex = 0;
-        projectCards.forEach(function (card) {
-            card.classList.remove('fade-in');
-            if (card.getAttribute('data-cat') === filter) {
-                card.classList.remove('hidden');
-                // Stagger the animation delay
-                var delay = visibleIndex * 60;
-                card.style.animationDelay = delay + 'ms';
-                // Trigger reflow then add class
-                void card.offsetWidth;
-                card.classList.add('fade-in');
-                visibleIndex++;
-            } else {
-                card.classList.add('hidden');
-                card.style.animationDelay = '';
-            }
-        });
-    }
-
-    filterTabs.forEach(function (tab) {
-        tab.addEventListener('click', function () {
-            switchFilter(this);
-        });
-    });
-
-    // Trigger AI tab on page load to ensure clean state
-    var defaultTab = document.getElementById('tab-ai');
-    if (defaultTab) switchFilter(defaultTab);
-
     // --- Section Reveal on Scroll ---
     var revealSections = document.querySelectorAll('.section');
     var revealObserver = new IntersectionObserver(function (entries) {
@@ -214,12 +169,12 @@
                 certMore.classList.remove('expanded');
                 certBtn.classList.remove('open');
                 certBtn.setAttribute('aria-expanded', 'false');
-                certBtnLabel.textContent = 'See more';
+                certBtnLabel.textContent = 'See more certifications';
             } else {
                 certMore.classList.add('expanded');
                 certBtn.classList.add('open');
                 certBtn.setAttribute('aria-expanded', 'true');
-                certBtnLabel.textContent = 'See less';
+                certBtnLabel.textContent = 'See fewer certifications';
             }
         });
     }

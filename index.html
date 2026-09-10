@@ -54,9 +54,8 @@
     <link rel="manifest" href="manifest.json">
     <!-- JSON-LD — single @graph: Person, WebSite, ProfilePage, one SoftwareSourceCode per featured
          project, and an ItemList enumerating them. FAQPage is appended separately near the FAQ section.
-         TODO(krishal): CGPA below is 9.4/10 per the current site; your GitHub README says 9.5/10 — left
-         as-is pending your confirmation, same as everywhere else this number appears. Degree is left as
-         "Computer Science" without B.E./B.Tech for the same reason — confirm and I'll tighten it. -->
+         TODO(krishal): degree is left as "Computer Science" without B.E./B.Tech pending your
+         confirmation of that wording. -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -69,7 +68,7 @@
                 "familyName": "Karna",
                 "alternateName": ["krishalkarna", "kreeshal17"],
                 "jobTitle": "Backend + Applied ML Engineer",
-                "description": "Krishal Karna is a backend and applied ML engineer. He builds Django and Django REST Framework backends, scikit-learn ML pipelines, and LangGraph + Gemini LLM systems, plus the Next.js frontends that make them usable. Final-year Computer Science student at Jain (Deemed-to-be) University, Bangalore, graduating June 2027, CGPA 9.4/10, top 2% of batch, EdCIL COMPEX Scholar.",
+                "description": "Krishal Karna is a backend and applied ML engineer. He builds Django and Django REST Framework backends, scikit-learn ML pipelines, LangGraph LLM systems, and n8n automations, plus the Next.js frontends that make them usable. Final-year Computer Science student at Jain (Deemed-to-be) University, Bangalore, graduating June 2027, CGPA 9.5/10, top 1% of batch, EdCIL COMPEX Scholar.",
                 "url": "https://krishalkarna.com.np/",
                 "image": {
                     "@type": "ImageObject",
@@ -104,7 +103,7 @@
                     "scikit-learn", "pandas", "NumPy", "LangChain", "LangGraph", "Google Gemini",
                     "PostgreSQL", "MySQL", "Prisma",
                     "Next.js", "React", "Tailwind CSS",
-                    "Docker", "AWS EC2", "Gunicorn", "Vercel", "Railway", "Git"
+                    "Docker", "AWS EC2", "Gunicorn", "Vercel", "Railway", "Git", "n8n"
                 ],
                 "hasOccupation": {
                     "@type": "Occupation",
@@ -137,7 +136,7 @@
                 "description": "Full-stack data quality platform that ingests CSV datasets, profiles row- and column-level statistics, computes a quality score, and uses Isolation Forest, KNN imputation, and TF-IDF similarity plus a LangGraph + Gemini layer to diagnose and explain data quality issues.",
                 "programmingLanguage": ["Python", "TypeScript"],
                 "codeRepository": "https://github.com/kreeshal17/Datalens-AI",
-                "url": "https://github.com/kreeshal17/Datalens-AI",
+                "url": "https://dataquality-ai.vercel.app/",
                 "author": {"@id": "https://krishalkarna.com.np/#person"}
             },
             {
@@ -282,28 +281,27 @@
                 <h2 class="section-heading">About Me</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <!-- TODO(krishal): CGPA shows 9.4/10 here and everywhere else on the site; your
-                             GitHub README says 9.5/10. Confirm which is correct and I'll make it
-                             consistent across the hero stat bar, JSON-LD, and llms.txt. -->
                         <!-- TODO(krishal): degree shown as "B.E." below — confirm B.E. vs B.Tech. -->
-                        <p>Krishal Karna is a backend and applied ML engineer based in Bangalore, India. He is a
-                            final-year <strong>B.E. Computer Science &amp; Engineering</strong> student at <strong>Jain
-                                (Deemed-to-be) University, Bangalore</strong>, graduating in June 2027, with a
-                            <strong>CGPA of 9.4/10</strong> (top 2% of batch).</p>
-                        <p>He is an <strong>EdCIL COMPEX Scholar</strong> — a Government of India merit scholarship
-                            covering full tuition.</p>
-                        <p>He builds Django and Django REST Framework backends, scikit-learn ML pipelines, and
-                            LangGraph + Gemini LLM systems, along with the Next.js frontends that make them usable.</p>
-                        <p>Open to <strong>backend engineering, applied ML, and AI engineering</strong> roles for the
-                            2027 graduating batch.</p>
+                        <p>Krishal Karna is a backend and applied ML engineer based in Bangalore, India — a
+                            final-year B.E. Computer Science &amp; Engineering student at Jain (Deemed-to-be)
+                            University, Bangalore, graduating in June 2027 with a <strong>CGPA of 9.5/10</strong>
+                            (top 1% of batch).</p>
+                        <p>He is an EdCIL COMPEX Scholar — a Government of India merit scholarship covering full
+                            tuition.</p>
+                        <p>He builds Django and Django REST Framework backends, scikit-learn ML pipelines, LangGraph
+                            LLM systems, and n8n automations — most recently <strong>DataLens AI</strong>, a
+                            full-stack data quality platform — along with the Next.js frontends that make them
+                            usable.</p>
+                        <p>Open to backend engineering, applied ML, and AI engineering roles for the 2027 graduating
+                            batch.</p>
                     </div>
                     <div class="about-highlights">
                         <div class="highlight-card">
-                            <span class="highlight-number">9.4</span>
+                            <span class="highlight-number">9.5</span>
                             <span class="highlight-label">CGPA / 10</span>
                         </div>
                         <div class="highlight-card">
-                            <span class="highlight-number">Top 2%</span>
+                            <span class="highlight-number">Top 1%</span>
                             <span class="highlight-label">of Batch</span>
                         </div>
                         <div class="highlight-card">
@@ -327,7 +325,8 @@
                     <div class="exp-header">
                         <div class="exp-info">
                             <h3>Full Stack Developer Intern</h3>
-                            <p class="exp-org">Mahalaxmi Tech Group Pvt. Ltd. · Remote</p>
+                            <p class="exp-org"><a href="https://www.mtgpl.com.np/" target="_blank"
+                                    rel="noopener">Mahalaxmi Tech Group Pvt. Ltd.</a> · Remote</p>
                         </div>
                         <span class="exp-date"><time datetime="2026-01">Jan 2026</time> – <time
                                 datetime="2026-03">Mar 2026</time></span>
@@ -381,22 +380,82 @@
             <div class="container">
                 <h2 class="section-heading">Featured Projects</h2>
 
-                <!-- Filter Tabs -->
-                <div class="project-filters" role="tablist" aria-label="Project categories">
-                    <button class="filter-tab active" id="tab-ai" role="tab" data-filter="ai" aria-selected="true"
-                        aria-controls="projects-grid">
-                        <i class="fas fa-robot"></i> AI &amp; Full-Stack
-                    </button>
-                    <button class="filter-tab" id="tab-ds" role="tab" data-filter="ds" aria-selected="false"
-                        aria-controls="projects-grid">
-                        <i class="fas fa-flask"></i> Data Science
-                    </button>
-                </div>
+                <div class="projects-grid">
 
-                <div class="projects-grid" id="projects-grid" role="tabpanel">
+                    <article class="project-card featured" id="project-datalens">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+                            <div class="project-links">
+                                <a href="https://dataquality-ai.vercel.app/" target="_blank" rel="noopener"
+                                    aria-label="DataLens AI live demo" class="project-link-icon"><i
+                                        class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/kreeshal17/Datalens-AI" target="_blank" rel="noopener"
+                                    aria-label="DataLens AI GitHub" class="project-link-icon"><i
+                                        class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">DataLens AI</h3>
+                        <div class="project-tags">
+                            <span>Django REST</span><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>scikit-learn</span><span>LangGraph</span><span>Gemini</span><span>Docker</span><span>AWS EC2</span>
+                        </div>
+                        <p class="project-desc">Full-stack data quality platform that ingests CSV datasets, profiles
+                            row- and column-level statistics, and computes an overall quality score. The ML pipeline
+                            uses Isolation Forest for anomaly detection, KNN imputation for missing values, and
+                            TF-IDF + cosine similarity for near-duplicate detection. LLM-driven root cause analysis
+                            built with LangGraph and Google Gemini explains why each quality issue occurred. JWT
+                            auth, Dockerized backend on AWS EC2 behind Gunicorn, Postgres on Neon, frontend on
+                            Vercel.</p>
+                        <dl class="par-rows">
+                            <dt>Problem</dt>
+                            <dd>"Is this dataset any good?" is normally answered by hand.</dd>
+                            <dt>Approach</dt>
+                            <dd>Automated profiling plus three ML passes, with an LLM layer explaining causes in
+                                structured output.</dd>
+                            <dt>Result</dt>
+                            <dd>Upload a CSV, get a scored, diagnosed, explained quality verdict.</dd>
+                        </dl>
+                        <details class="project-details">
+                            <summary>Under the hood</summary>
+                            <div class="project-details-body">
+                                <h4>Profiling</h4>
+                                <p>Row- and column-level statistics — type inference, null density, cardinality,
+                                    distribution shape — rolled into a single quality score trackable across
+                                    uploads.</p>
+                                <h4>The scikit-learn pass</h4>
+                                <table class="model-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Model</th>
+                                            <th scope="col">Question it answers</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Isolation Forest</td>
+                                            <td>Which rows don't belong?</td>
+                                        </tr>
+                                        <tr>
+                                            <td>KNN imputation</td>
+                                            <td>What should the missing values have been?</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TF-IDF + cosine similarity</td>
+                                            <td>Which rows are near-duplicates of each other?</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h4>Root cause</h4>
+                                <p>A LangGraph + Gemini layer converts raw findings into plain-language explanations
+                                    plus structured fix recommendations under an enforced schema, so the frontend
+                                    renders them instead of parsing prose.</p>
+                                <h4>Shipping it</h4>
+                                <p>Docker + Gunicorn on EC2, managed Postgres, frontend on Vercel. ML runs inside the
+                                    request cycle, so latency was a design constraint rather than an afterthought.</p>
+                            </div>
+                        </details>
+                    </article>
 
-                    <!-- ===== AI & Full-Stack ===== -->
-                    <article class="project-card" data-cat="ai" id="project-luma">
+                    <article class="project-card featured" id="project-luma">
                         <div class="project-header">
                             <div class="project-icon"><i class="fas fa-robot"></i></div>
                             <div class="project-links">
@@ -415,9 +474,21 @@
                         <p class="project-desc">Full-stack AI coding agent generating/editing React components from
                             natural language. LangGraph tool-calling loop backed by Gemini, live Sandpack preview,
                             persistent multi-turn sessions, GitHub OAuth repo push, deployed on Vercel + Railway.</p>
+                        <dl class="par-rows">
+                            <dt>Problem</dt>
+                            <dd>Generating a React component from a prompt is the easy half; the hard half is the
+                                second prompt — "now make the sidebar collapsible" — without regenerating and
+                                breaking everything else.</dd>
+                            <dt>Approach</dt>
+                            <dd>Component-driven architecture where each generation is a diff against persisted
+                                session state rather than a fresh render, with a live Sandpack preview and session
+                                history in Postgres.</dd>
+                            <dt>Result</dt>
+                            <dd>Multi-turn incremental editing with GitHub OAuth push straight to a repo.</dd>
+                        </dl>
                     </article>
 
-                    <article class="project-card" data-cat="ai" id="project-bookmandu">
+                    <article class="project-card featured" id="project-bookmandu">
                         <div class="project-header">
                             <div class="project-icon"><i class="fas fa-book-open"></i></div>
                             <div class="project-links">
@@ -437,160 +508,162 @@
                         <p class="project-desc">Multi-vendor book marketplace: seller onboarding with identity
                             verification, real-time stock management, delivery-gated review system, AI chat assistant,
                             JWT auth, Redis caching, Cloudinary-backed listings, custom domain.</p>
+                        <dl class="par-rows">
+                            <dt>Problem</dt>
+                            <dd>A review from someone who never bought the book is worth nothing, but most
+                                marketplaces let anyone post one anyway.</dd>
+                            <dt>Approach</dt>
+                            <dd>A delivery-gated review system — only verified buyers who actually received the book
+                                can leave a review — that's a trust-design decision, not a CRUD feature.</dd>
+                            <dt>Result</dt>
+                            <dd>A multi-vendor marketplace where reviews mean something, backed by seller onboarding,
+                                real-time stock, and an AI chat assistant.</dd>
+                        </dl>
                     </article>
 
-                    <article class="project-card" data-cat="ai" id="project-jeevan">
-                        <div class="project-header">
-                            <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
-                            <div class="project-links">
-                                <a href="https://jeevan-mitra.vercel.app/" target="_blank" rel="noopener"
-                                    aria-label="Jeevan Mitra live demo" class="project-link-icon"><i
-                                        class="fas fa-external-link-alt"></i></a>
-                                <a href="https://github.com/kreeshal17/jeevan-mitra" target="_blank" rel="noopener"
-                                    aria-label="Jeevan Mitra GitHub" class="project-link-icon"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="project-title">Jeevan Mitra</h3>
-                        <div class="project-tags">
-                            <span>Next.js</span><span>Firebase</span><span>Vapi SDK</span><span>Gemini</span>
-                        </div>
-                        <p class="project-desc">AI-powered wellness platform combining real-time AI voice consultations,
-                            daily health tracking, gamified wellness journeys, and anonymous peer support chat (no login
-                            required) into one unified ecosystem.</p>
-                    </article>
-
-                    <article class="project-card" data-cat="ai" id="project-csv">
-                        <div class="project-header">
-                            <div class="project-icon"><i class="fas fa-chart-line"></i></div>
-                            <div class="project-links">
-                                <a href="https://analysis-csv.streamlit.app/" target="_blank" rel="noopener"
-                                    aria-label="CSV Analysis Agent live demo" class="project-link-icon"><i
-                                        class="fas fa-external-link-alt"></i></a>
-                                <a href="https://github.com/kreeshal17/CSV-Analysis-Agent" target="_blank"
-                                    rel="noopener" aria-label="CSV Analysis Agent GitHub" class="project-link-icon"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="project-title">AI-Powered CSV Analysis Agent</h3>
-                        <div class="project-tags">
-                            <span>FastAPI</span><span>Streamlit</span><span>Python</span><span>AI Agent</span>
-                        </div>
-                        <p class="project-desc">Conversational analytics over any CSV via FastAPI + Streamlit, dynamic
-                            schema inference, real-time chart generation, sub-2s latency on 100K-row datasets.</p>
-                    </article>
-
-                    <!-- ===== Data Science (hidden by default) ===== -->
-                    <article class="project-card hidden" data-cat="ds" id="project-sql">
+                    <article class="project-card featured" id="project-sql">
                         <div class="project-header">
                             <div class="project-icon"><i class="fas fa-database"></i></div>
                             <div class="project-links">
-                                <a href="https://github.com/kreeshal17/production-grade-sql-analytics" target="_blank" rel="noopener"
-                                    aria-label="Retail SQL Analytics GitHub" class="project-link-icon"><i
-                                        class="fab fa-github"></i></a>
+                                <a href="https://github.com/kreeshal17/production-grade-sql-analytics" target="_blank"
+                                    rel="noopener" aria-label="Retail SQL Analytics GitHub"
+                                    class="project-link-icon"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                         <h3 class="project-title">Production-Grade Retail SQL Analytics</h3>
                         <div class="project-tags">
                             <span>SQL</span><span>Statistics</span><span>A/B Testing</span><span>CTEs</span>
                         </div>
-                        <p class="project-desc">Analyzed 1M+ sales records using CTEs, window functions, A/B testing and
-                            t-tests at 95% CI, surfaced pricing optimizations driving 6–9% statistically significant
-                            sales uplift.</p>
+                        <p class="project-desc">Analyzed 1M+ sales records using CTEs, window functions, A/B testing
+                            and t-tests at 95% CI, surfaced pricing optimizations driving 6–9% statistically
+                            significant sales uplift.</p>
+                        <dl class="par-rows">
+                            <dt>Problem</dt>
+                            <dd>Whether a pricing change actually worked is normally answered by gut feel, not
+                                statistics.</dd>
+                            <dt>Approach</dt>
+                            <dd>CTEs, window functions, and A/B testing with t-tests at 95% confidence over 1M+
+                                retail sales records.</dd>
+                            <dt>Result</dt>
+                            <dd>Pricing optimizations with a statistically significant 6–9% sales uplift.</dd>
+                        </dl>
                     </article>
 
-                    <article class="project-card hidden" data-cat="ds" id="project-ipl">
-                        <div class="project-header">
-                            <div class="project-icon"><i class="fas fa-cricket-bat-ball" style="font-size:1rem"></i>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/kreeshal17/ipl-analytics-powerbi" target="_blank"
-                                    rel="noopener" aria-label="IPL Analytics GitHub" class="project-link-icon"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
+                </div>
+
+                <h3 class="more-projects-heading">More Projects</h3>
+                <div class="more-projects-grid">
+
+                    <article class="more-project-card" id="project-jeevan">
+                        <h4>Jeevan Mitra</h4>
+                        <div class="project-tags"><span>Next.js</span><span>Firebase</span><span>Gemini</span></div>
+                        <p>AI-powered wellness platform combining real-time voice consultations, daily health
+                            tracking, and anonymous peer support chat.</p>
+                        <div class="project-links">
+                            <a href="https://jeevan-mitra.vercel.app/" target="_blank" rel="noopener"
+                                aria-label="Jeevan Mitra live demo" class="project-link-icon"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/kreeshal17/jeevan-mitra" target="_blank" rel="noopener"
+                                aria-label="Jeevan Mitra GitHub" class="project-link-icon"><i
+                                    class="fab fa-github"></i></a>
                         </div>
-                        <h3 class="project-title">IPL Analytics Power BI Dashboard</h3>
-                        <div class="project-tags">
-                            <span>Power BI</span><span>DAX</span><span>Data Viz</span><span>Analytics</span>
-                        </div>
-                        <p class="project-desc">End-to-end Power BI analytics using IPL match and ball-by-ball data
-                            (2008–2025). Season-wise insights into team performance, player achievements,
-                            batting/bowling
-                            statistics via interactive visualizations and dynamic DAX calculations.</p>
                     </article>
 
-                    <article class="project-card hidden" data-cat="ds" id="project-rfm">
-                        <div class="project-header">
-                            <div class="project-icon"><i class="fas fa-users"></i></div>
-                            <div class="project-links">
-                                <a href="https://github.com/kreeshal17/E-commerce-Customer-Order-Data-for-Clusterin"
-                                    target="_blank" rel="noopener" aria-label="Customer Segmentation GitHub"
-                                    class="project-link-icon"><i class="fab fa-github"></i></a>
-                                <!-- TODO(krishal): Kaggle notebook link removed — the old URL 404s and
-                                     I couldn't find the current slug via the public profile. Send me the
-                                     real notebook URL and I'll add it back. -->
-                            </div>
+                    <article class="more-project-card" id="project-csv">
+                        <h4>AI-Powered CSV Analysis Agent</h4>
+                        <div class="project-tags"><span>FastAPI</span><span>Streamlit</span><span>Python</span></div>
+                        <p>Conversational analytics over any CSV with dynamic schema inference and real-time chart
+                            generation.</p>
+                        <div class="project-links">
+                            <a href="https://analysis-csv.streamlit.app/" target="_blank" rel="noopener"
+                                aria-label="CSV Analysis Agent live demo" class="project-link-icon"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/kreeshal17/CSV-Analysis-Agent" target="_blank" rel="noopener"
+                                aria-label="CSV Analysis Agent GitHub" class="project-link-icon"><i
+                                    class="fab fa-github"></i></a>
                         </div>
-                        <h3 class="project-title">Customer Segmentation using RFM + K-Means</h3>
-                        <div class="project-tags">
-                            <span>Python</span><span>K-Means</span><span>RFM</span><span>Power BI</span>
-                        </div>
-                        <p class="project-desc">Unsupervised K-Means clustering on RFM (Recency, Frequency, Monetary)
-                            metrics with an interactive Power BI dashboard visualizing segments for targeted marketing
-                            and retention insights.</p>
                     </article>
 
-                    <article class="project-card hidden" data-cat="ds" id="project-anime">
-                        <div class="project-header">
-                            <div class="project-icon"><i class="fas fa-film"></i></div>
-                            <div class="project-links">
-                                <a href="https://github.com/kreeshal17/Anime-recommendation" target="_blank"
-                                    rel="noopener" aria-label="Anime Recommendation GitHub" class="project-link-icon"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
+                    <article class="more-project-card" id="project-ipl">
+                        <h4>IPL Analytics Power BI Dashboard</h4>
+                        <div class="project-tags"><span>Power BI</span><span>DAX</span><span>Data Viz</span></div>
+                        <p>End-to-end Power BI analytics on IPL match data (2008–2025) with dynamic DAX
+                            calculations.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/kreeshal17/ipl-analytics-powerbi" target="_blank"
+                                rel="noopener" aria-label="IPL Analytics GitHub" class="project-link-icon"><i
+                                    class="fab fa-github"></i></a>
                         </div>
-                        <h3 class="project-title">Anime Recommendation Engine</h3>
-                        <div class="project-tags">
-                            <span>Python</span><span>K-Means</span><span>Flask</span><span>REST API</span>
-                        </div>
-                        <p class="project-desc">Genre-based feature extraction and K-Means clustering for anime
-                            similarity recommendations, with a Flask REST API (CORS-enabled, JSON responses) for
-                            frontend integration.</p>
                     </article>
 
-                    <article class="project-card hidden" data-cat="ds" id="project-news">
-                        <div class="project-header">
-                            <div class="project-icon"><i class="fas fa-newspaper"></i></div>
-                            <div class="project-links">
-                                <a href="https://github.com/kreeshal17/news-veracity-pipeline-advanced" target="_blank"
-                                    rel="noopener" aria-label="News Veracity Pipeline GitHub"
-                                    class="project-link-icon"><i class="fab fa-github"></i></a>
-                            </div>
+                    <article class="more-project-card" id="project-rfm">
+                        <h4>Customer Segmentation using RFM + K-Means</h4>
+                        <div class="project-tags"><span>Python</span><span>K-Means</span><span>RFM</span></div>
+                        <p>K-Means clustering on RFM metrics with an interactive Power BI dashboard for targeted
+                            marketing.</p>
+                        <!-- TODO(krishal): Kaggle notebook link removed — the old URL 404s and I couldn't
+                             find the current slug via the public profile. Send me the real notebook URL
+                             and I'll add it back. -->
+                        <div class="project-links">
+                            <a href="https://github.com/kreeshal17/E-commerce-Customer-Order-Data-for-Clusterin"
+                                target="_blank" rel="noopener" aria-label="Customer Segmentation GitHub"
+                                class="project-link-icon"><i class="fab fa-github"></i></a>
                         </div>
-                        <h3 class="project-title">News Veracity Pipeline Advanced</h3>
-                        <div class="project-tags">
-                            <span>Flask</span><span>React</span><span>TF-IDF</span><span>NLP</span>
-                        </div>
-                        <p class="project-desc">Hybrid fake news detection platform combining TF-IDF ensemble models and
-                            evidence-aware web verification within a Flask API and React + Tailwind dashboard. Supports
-                            reusable saved model artifacts and device-aware inference routing.</p>
                     </article>
 
-                    <article class="project-card hidden" data-cat="ds" id="project-summarizer">
-                        <div class="project-header">
-                            <div class="project-icon"><i class="fas fa-file-alt"></i></div>
-                            <div class="project-links">
-                                <a href="https://github.com/kreeshal17/text-summarization-app" target="_blank"
-                                    rel="noopener" aria-label="Text Summarization App GitHub"
-                                    class="project-link-icon"><i class="fab fa-github"></i></a>
-                            </div>
+                    <article class="more-project-card" id="project-anime">
+                        <h4>Anime Recommendation Engine</h4>
+                        <div class="project-tags"><span>Python</span><span>K-Means</span><span>Flask</span></div>
+                        <p>Genre-based K-Means clustering for anime similarity recommendations via a Flask REST
+                            API.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/kreeshal17/Anime-recommendation" target="_blank"
+                                rel="noopener" aria-label="Anime Recommendation GitHub" class="project-link-icon"><i
+                                    class="fab fa-github"></i></a>
                         </div>
-                        <h3 class="project-title">Text Summarization App</h3>
-                        <div class="project-tags">
-                            <span>Flask</span><span>React</span><span>TextRank</span><span>NLP</span>
+                    </article>
+
+                    <article class="more-project-card" id="project-news">
+                        <h4>News Veracity Pipeline Advanced</h4>
+                        <div class="project-tags"><span>Flask</span><span>React</span><span>TF-IDF</span></div>
+                        <p>Hybrid fake news detection combining TF-IDF ensemble models with evidence-aware web
+                            verification.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/kreeshal17/news-veracity-pipeline-advanced" target="_blank"
+                                rel="noopener" aria-label="News Veracity Pipeline GitHub"
+                                class="project-link-icon"><i class="fab fa-github"></i></a>
                         </div>
-                        <p class="project-desc">Full-stack NLP application summarizing long documents using the TextRank
-                            algorithm with TF-IDF and PageRank, built with Flask backend and React frontend.</p>
+                    </article>
+
+                    <article class="more-project-card" id="project-summarizer">
+                        <h4>Text Summarization App</h4>
+                        <div class="project-tags"><span>Flask</span><span>React</span><span>TextRank</span></div>
+                        <p>Full-stack NLP app summarizing documents using TextRank, TF-IDF, and PageRank.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/kreeshal17/text-summarization-app" target="_blank"
+                                rel="noopener" aria-label="Text Summarization App GitHub"
+                                class="project-link-icon"><i class="fab fa-github"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="more-project-card" id="project-rental">
+                        <h4>Smart Rental Tracking System</h4>
+                        <div class="project-tags"><span>Bun</span><span>Hono</span><span>Next.js</span></div>
+                        <p>QR-based asset check-in/out with demand forecasting and anomaly detection, built for the
+                            Caterpillar hackathon.</p>
+                        <!-- TODO(krishal): no repo/live URL supplied for this one — send me a link and
+                             I'll wire it up. -->
+                    </article>
+
+                    <article class="more-project-card" id="project-events">
+                        <h4>Events Platform Backend</h4>
+                        <!-- TODO(krishal): no tags or description supplied for this one — send me the
+                             stack and a one-line summary and I'll fill it in. -->
+                        <div class="project-links">
+                            <a href="https://github.com/kreeshal17/event-platform-Backend-" target="_blank"
+                                rel="noopener" aria-label="Events Platform Backend GitHub"
+                                class="project-link-icon"><i class="fab fa-github"></i></a>
+                        </div>
                     </article>
 
                 </div>
@@ -694,7 +767,8 @@
             <div class="container">
                 <h2 class="section-heading">Certifications</h2>
 
-                <!-- Priority row: 4 most relevant -->
+                <!-- 3 real certs + a "see more" tile that sits in the 4th grid cell, directly
+                     below the 2nd card in this 2-column layout. -->
                 <div class="certificates-grid" id="certs-primary">
 
                     <div class="cert-badge-card">
@@ -707,8 +781,8 @@
                                 <p class="cert-issuer-name">HackerRank</p>
                             </div>
                         </div>
-                        <p class="cert-desc">Validated advanced SQL skills for analytics and database querying with
-                            real-world scenarios.</p>
+                        <p class="cert-desc">Covers joins, subqueries, window functions, and query optimization for
+                            analytics use cases.</p>
                         <a href="https://www.hackerrank.com/certificates/iframe/615ca67bee15" target="_blank"
                             rel="noopener noreferrer" class="btn-cert-badge">
                             <i class="fas fa-external-link-alt"></i> View Certificate
@@ -728,8 +802,7 @@
                                 <p class="cert-issuer-name">IBM SkillsBuild</p>
                             </div>
                         </div>
-                        <p class="cert-desc">IBM SkillsBuild credential validating core data concepts, data types, and
-                            analytics practices.</p>
+                        <p class="cert-desc">Covers core data concepts, data types, and analytics practices.</p>
                         <a href="https://www.credly.com/badges/d874bb76-1133-4892-9435-4e0c663f7d48" target="_blank"
                             rel="noopener noreferrer" class="btn-cert-badge">
                             <i class="fas fa-external-link-alt"></i> View Certificate
@@ -746,13 +819,20 @@
                                 <p class="cert-issuer-name">Coursera / IBM</p>
                             </div>
                         </div>
-                        <p class="cert-desc">Hands-on Python training for data science, AI applications, and software
-                            development.</p>
+                        <p class="cert-desc">Covers Python fundamentals applied to data science, AI, and software
+                            development tasks.</p>
                         <a href="https://www.coursera.org/account/accomplishments/verify/95HPWH970CP7?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
                             target="_blank" rel="noopener noreferrer" class="btn-cert-badge">
                             <i class="fas fa-external-link-alt"></i> View Certificate
                         </a>
                     </div>
+
+                    <button id="certs-see-more-btn" class="cert-badge-card cert-see-more-tile"
+                        aria-expanded="false" aria-controls="certs-more-wrapper">
+                        <i class="fas fa-ellipsis" aria-hidden="true"></i>
+                        <span id="certs-btn-label">See more certifications</span>
+                        <i class="fas fa-chevron-down" id="certs-chevron"></i>
+                    </button>
 
                 </div>
 
@@ -770,8 +850,7 @@
                                     <p class="cert-issuer-name">Google Cloud Skills Boost</p>
                                 </div>
                             </div>
-                            <p class="cert-desc">Proficiency in modern GenAI tools and frameworks with innovative
-                                applications using generative AI technologies.</p>
+                            <p class="cert-desc">Covers core generative AI concepts and tools on Google Cloud.</p>
                             <a href="https://www.cloudskillsboost.google/public_profiles/d92eb8ed-3cfb-4cf8-a107-380ae821b260"
                                 target="_blank" rel="noopener noreferrer" class="btn-cert-badge">
                                 <i class="fas fa-external-link-alt"></i> View Certificate
@@ -794,8 +873,8 @@
                                     <p class="cert-issuer-name">University / Workshop</p>
                                 </div>
                             </div>
-                            <p class="cert-desc">Hands-on big data processing with Apache Hadoop and Spark for
-                                large-scale data engineering pipelines.</p>
+                            <p class="cert-desc">Covers Hadoop and Spark fundamentals for large-scale data processing
+                                pipelines.</p>
                             <a href="certificates/big-data-analytics-hadoop-spark.png" target="_blank" rel="noopener noreferrer"
                                 class="btn-cert-badge">
                                 <i class="fas fa-external-link-alt"></i> View Certificate
@@ -803,15 +882,6 @@
                         </div>
 
                     </div>
-                </div>
-
-                <!-- See more / collapse toggle -->
-                <div class="certs-toggle-wrapper">
-                    <button id="certs-see-more-btn" class="btn-see-more" aria-expanded="false"
-                        aria-controls="certs-more-wrapper">
-                        <span id="certs-btn-label">See more</span>
-                        <i class="fas fa-chevron-down" id="certs-chevron"></i>
-                    </button>
                 </div>
             </div>
         </section>
