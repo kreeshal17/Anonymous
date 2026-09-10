@@ -825,6 +825,10 @@ ul {
     overflow: hidden;
 }
 
+.experience-card + .experience-card {
+    margin-top: 24px;
+}
+
 .experience-card::before {
     content: '';
     position: absolute;
