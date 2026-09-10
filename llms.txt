@@ -1,0 +1,76 @@
+# Krishal Karna
+
+> Backend and applied ML engineer. Builds Django + DRF backends, scikit-learn
+> pipelines, and LangGraph/Gemini LLM systems — and the Next.js frontends that
+> make them usable. Final-year Computer Science student at Jain (Deemed-to-be)
+> University, Bangalore, graduating June 2027. EdCIL COMPEX Scholar.
+> Open to backend, ML, and AI engineering roles for the 2027 batch.
+
+## Summary
+
+Krishal Karna is a backend and applied ML engineer based in Bangalore, India.
+He is a final-year Computer Science & Engineering student at Jain
+(Deemed-to-be) University, Bangalore, graduating in June 2027, with a CGPA of
+9.5/10 (top 1% of batch) and an EdCIL COMPEX Scholarship, a Government of
+India merit award covering full tuition. He builds Django and Django REST
+Framework backends, scikit-learn ML pipelines, LangGraph LLM systems, and n8n
+automations, along with the Next.js frontends that make them usable. His
+flagship project, DataLens AI, is a full-stack data quality platform combining
+automated CSV profiling, three scikit-learn models, and a LangGraph + Gemini
+layer that explains data quality issues in plain language. He previously
+interned as a Full Stack Developer at Mahalaxmi Tech Group Pvt. Ltd., building
+Next.js pages wired to Django REST APIs. He has solved 250+ data structures
+and algorithms problems on LeetCode and writes a technical SQL series on
+Hashnode. He is open to backend engineering, applied ML, and AI engineering
+roles for the 2027 graduating batch.
+
+## Experience
+
+- Full Stack Developer Intern — Mahalaxmi Tech Group Pvt. Ltd. (Remote) — Jan 2026 – Mar 2026 — Built Next.js pages and reusable UI components wired to Django REST APIs, in a PR-based GitHub workflow with code review.
+- Technical Team Lead — Enigma Club, Jain University — Oct 2025 – Apr 2026 — Led the technical team across club events, hosted Innovation Duel 2025, and organized AI/ML and web development workshops.
+
+## Projects
+
+- DataLens AI — Full-stack data quality platform: CSV profiling, an Isolation Forest / KNN imputation / TF-IDF similarity ML pipeline, and a LangGraph + Gemini layer explaining root causes. — Django REST, Next.js, TypeScript, PostgreSQL, scikit-learn, LangGraph, Gemini, Docker, AWS EC2 — https://dataquality-ai.vercel.app/ — https://github.com/kreeshal17/Datalens-AI
+- Luma AI Studio — AI coding agent that generates and incrementally edits React components via a LangGraph + Gemini tool-calling loop with persistent multi-turn sessions. — Next.js, FastAPI, LangGraph, Gemini, PostgreSQL — https://codewithluma.vercel.app/ — https://github.com/kreeshal17/LUMA-AI-STUDIO
+- BookMandu — Multi-vendor book marketplace with a delivery-gated review system: only verified buyers who actually received the book can review it. — Next.js, Prisma, PostgreSQL, Tailwind, Vercel AI SDK — https://bookmandu.vercel.app/ — https://github.com/kreeshal17/bookbazaar
+- Production-Grade Retail SQL Analytics — Analyzed 1M+ retail sales records with CTEs, window functions, and A/B testing, surfacing a statistically significant 6–9% sales uplift. — SQL, Statistics, A/B Testing, CTEs — https://github.com/kreeshal17/production-grade-sql-analytics
+- Jeevan Mitra — AI-powered wellness platform with real-time voice consultations, health tracking, and anonymous peer support chat. — Next.js, Firebase, Vapi SDK, Gemini — https://jeevan-mitra.vercel.app/ — https://github.com/kreeshal17/jeevan-mitra
+- AI-Powered CSV Analysis Agent — Conversational analytics over any CSV with dynamic schema inference and real-time chart generation. — FastAPI, Streamlit, Python — https://analysis-csv.streamlit.app/ — https://github.com/kreeshal17/CSV-Analysis-Agent
+- IPL Analytics Power BI Dashboard — End-to-end Power BI analytics on IPL match data (2008–2025) with dynamic DAX calculations. — Power BI, DAX, Data Viz — https://github.com/kreeshal17/ipl-analytics-powerbi
+- Customer Segmentation using RFM + K-Means — K-Means clustering on RFM metrics with an interactive Power BI dashboard. — Python, K-Means, RFM, Power BI — https://github.com/kreeshal17/E-commerce-Customer-Order-Data-for-Clusterin
+- Anime Recommendation Engine — Genre-based K-Means clustering for anime similarity recommendations via a Flask REST API. — Python, K-Means, Flask — https://github.com/kreeshal17/Anime-recommendation
+- News Veracity Pipeline Advanced — Hybrid fake news detection combining TF-IDF ensemble models with evidence-aware web verification. — Flask, React, TF-IDF, NLP — https://github.com/kreeshal17/news-veracity-pipeline-advanced
+- Text Summarization App — Full-stack NLP app summarizing documents using TextRank, TF-IDF, and PageRank. — Flask, React, TextRank, NLP — https://github.com/kreeshal17/text-summarization-app
+- Smart Rental Tracking System — QR-based asset check-in/out with demand forecasting and anomaly detection, built for the Caterpillar hackathon. — Bun, Hono, Prisma, PostgreSQL, Next.js
+- Events Platform Backend — Backend service for an events platform. — https://github.com/kreeshal17/event-platform-Backend-
+
+## Skills
+
+Languages: Python, TypeScript, JavaScript, SQL, Java
+Backend: Django, Django REST Framework, FastAPI, JWT auth, REST API design
+ML & LLM: scikit-learn, pandas, NumPy, LangChain, LangGraph, Google Gemini
+Databases: PostgreSQL, MySQL, Prisma
+Frontend: Next.js, React, Tailwind CSS
+Infra: Docker, AWS EC2, Gunicorn, Vercel, Railway, Git, n8n
+
+## Writing
+
+- Learn MySQL series — Hashnode — https://completesql.hashnode.dev/series/learn-mysql — SQL from fundamentals through query design.
+
+## Certifications
+
+- HackerRank Advanced SQL — https://www.hackerrank.com/certificates/iframe/615ca67bee15
+- IBM SkillsBuild Data Fundamentals — https://www.credly.com/badges/d874bb76-1133-4892-9435-4e0c663f7d48
+- Python for Data Science, AI & Dev (Coursera/IBM) — https://www.coursera.org/account/accomplishments/verify/95HPWH970CP7
+- Google Cloud Generative AI (Google Cloud Skills Boost) — https://www.cloudskillsboost.google/public_profiles/d92eb8ed-3cfb-4cf8-a107-380ae821b260
+- Big Data Analytics, Hadoop & Spark (University/Workshop) — https://krishalkarna.com.np/certificates/big-data-analytics-hadoop-spark.png
+
+## Contact
+
+Email: karnakreeshal@gmail.com
+LinkedIn: https://www.linkedin.com/in/krishalkarna
+GitHub: https://github.com/kreeshal17
+LeetCode: https://leetcode.com/u/kreeshal17/
+Kaggle: https://www.kaggle.com/stunningtechz
+Portfolio: https://krishalkarna.com.np/

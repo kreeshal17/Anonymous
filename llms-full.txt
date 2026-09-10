@@ -1,0 +1,212 @@
+# Krishal Karna — Full Content
+
+> Expanded version of /llms.txt with the complete detail behind every project,
+> for crawlers and assistants that want more than the summary.
+
+## About
+
+Krishal Karna is a backend and applied ML engineer based in Bangalore, India
+— a final-year B.E. Computer Science & Engineering student at Jain
+(Deemed-to-be) University, Bangalore, graduating in June 2027 with a CGPA of
+9.5/10 (top 1% of batch). He is an EdCIL COMPEX Scholar — a Government of
+India merit scholarship covering full tuition. He builds Django and Django
+REST Framework backends, scikit-learn ML pipelines, LangGraph LLM systems,
+and n8n automations — most recently DataLens AI, a full-stack data quality
+platform — along with the Next.js frontends that make them usable. He is
+open to backend engineering, applied ML, and AI engineering roles for the
+2027 graduating batch.
+
+## How I Got Here
+
+Java + DSA + Spring Boot (year 1) -> scikit-learn & applied ML (year 2) ->
+FastAPI model serving (year 3) -> Django + DRF (now).
+
+Krishal started backend-heavy in Java, got pulled into machine learning in
+his second year, and learned to serve models as APIs with FastAPI. He has
+since moved to Django and DRF for production apps, where the model is one
+component of a real product rather than the whole demo.
+
+Going deeper right now: multi-agent LangGraph workflows, RAG and retrieval
+pipelines, model serving at scale, Django internals and query optimization.
+
+## Experience
+
+### Full Stack Developer Intern — Mahalaxmi Tech Group Pvt. Ltd. (Remote)
+Jan 2026 – Mar 2026
+- Built Next.js pages and reusable UI components wired to Django REST APIs he also developed.
+- Worked cross-stack on feature delivery — API integration, debugging, and schema changes spanning both frontend and backend.
+- Operated in a PR-based GitHub workflow with code review as part of the delivery cycle.
+
+### Technical Team Lead — Enigma Club, Jain University
+Oct 2025 – Apr 2026
+- Led the technical team across club events, driving end-to-end execution from ideation to delivery.
+- Hosted Innovation Duel 2025 — presented live at the podium, managing a multi-team competitive AI/tech challenge event.
+- Organized hands-on workshops covering AI/ML, web development, and competitive programming.
+- Mentored junior members on project execution, technical planning, and collaborative development workflows.
+
+## Featured Projects
+
+### DataLens AI
+Live: https://dataquality-ai.vercel.app/
+Repo: https://github.com/kreeshal17/Datalens-AI
+Stack: Django REST, Next.js, TypeScript, PostgreSQL, scikit-learn, LangGraph, Gemini, Docker, AWS EC2
+
+Full-stack data quality platform that ingests CSV datasets, profiles row- and
+column-level statistics, and computes an overall quality score. The ML
+pipeline uses Isolation Forest for anomaly detection, KNN imputation for
+missing values, and TF-IDF + cosine similarity for near-duplicate detection.
+LLM-driven root cause analysis built with LangGraph and Google Gemini
+explains why each quality issue occurred. JWT auth, Dockerized backend on
+AWS EC2 behind Gunicorn, Postgres on Neon, frontend on Vercel.
+
+Problem: "Is this dataset any good?" is normally answered by hand.
+Approach: Automated profiling plus three ML passes, with an LLM layer explaining causes in structured output.
+Result: Upload a CSV, get a scored, diagnosed, explained quality verdict.
+
+Under the hood:
+- Profiling — row- and column-level statistics (type inference, null density, cardinality, distribution shape) rolled into a single quality score trackable across uploads.
+- The scikit-learn pass:
+  - Isolation Forest -> Which rows don't belong?
+  - KNN imputation -> What should the missing values have been?
+  - TF-IDF + cosine similarity -> Which rows are near-duplicates of each other?
+- Root cause — a LangGraph + Gemini layer converts raw findings into plain-language explanations plus structured fix recommendations under an enforced schema, so the frontend renders them instead of parsing prose.
+- Shipping it — Docker + Gunicorn on EC2, managed Postgres, frontend on Vercel. ML runs inside the request cycle, so latency was a design constraint rather than an afterthought.
+
+### Luma AI Studio
+Live: https://codewithluma.vercel.app/
+Repo: https://github.com/kreeshal17/LUMA-AI-STUDIO
+Stack: Next.js, FastAPI, LangGraph, Gemini, PostgreSQL
+
+Full-stack AI coding agent generating/editing React components from natural
+language. LangGraph tool-calling loop backed by Gemini, live Sandpack
+preview, persistent multi-turn sessions, GitHub OAuth repo push, deployed on
+Vercel + Railway.
+
+Problem: Generating a React component from a prompt is the easy half; the hard half is the second prompt — "now make the sidebar collapsible" — without regenerating and breaking everything else.
+Approach: Component-driven architecture where each generation is a diff against persisted session state rather than a fresh render, with a live Sandpack preview and session history in Postgres.
+Result: Multi-turn incremental editing with GitHub OAuth push straight to a repo.
+
+### BookMandu
+Live: https://bookmandu.vercel.app/
+Repo: https://github.com/kreeshal17/bookbazaar
+Stack: Next.js, Prisma, PostgreSQL, Tailwind, Vercel AI SDK
+
+Multi-vendor book marketplace: seller onboarding with identity verification,
+real-time stock management, delivery-gated review system, AI chat assistant,
+JWT auth, Redis caching, Cloudinary-backed listings, custom domain.
+
+Problem: A review from someone who never bought the book is worth nothing, but most marketplaces let anyone post one anyway.
+Approach: A delivery-gated review system — only verified buyers who actually received the book can leave a review — that's a trust-design decision, not a CRUD feature.
+Result: A multi-vendor marketplace where reviews mean something, backed by seller onboarding, real-time stock, and an AI chat assistant.
+
+### Production-Grade Retail SQL Analytics
+Repo: https://github.com/kreeshal17/production-grade-sql-analytics
+Stack: SQL, Statistics, A/B Testing, CTEs
+
+Analyzed 1M+ sales records using CTEs, window functions, A/B testing and
+t-tests at 95% CI, surfaced pricing optimizations driving 6–9% statistically
+significant sales uplift.
+
+Problem: Whether a pricing change actually worked is normally answered by gut feel, not statistics.
+Approach: CTEs, window functions, and A/B testing with t-tests at 95% confidence over 1M+ retail sales records.
+Result: Pricing optimizations with a statistically significant 6–9% sales uplift.
+
+## More Projects
+
+### Jeevan Mitra
+Live: https://jeevan-mitra.vercel.app/ · Repo: https://github.com/kreeshal17/jeevan-mitra
+Stack: Next.js, Firebase, Vapi SDK, Gemini
+AI-powered wellness platform combining real-time AI voice consultations,
+daily health tracking, gamified wellness journeys, and anonymous peer
+support chat (no login required) into one unified ecosystem.
+
+### AI-Powered CSV Analysis Agent
+Live: https://analysis-csv.streamlit.app/ · Repo: https://github.com/kreeshal17/CSV-Analysis-Agent
+Stack: FastAPI, Streamlit, Python
+Conversational analytics over any CSV via FastAPI + Streamlit, dynamic
+schema inference, real-time chart generation, sub-2s latency on 100K-row
+datasets.
+
+### IPL Analytics Power BI Dashboard
+Repo: https://github.com/kreeshal17/ipl-analytics-powerbi
+Stack: Power BI, DAX, Data Viz, Analytics
+End-to-end Power BI analytics using IPL match and ball-by-ball data
+(2008–2025): season-wise insights into team performance, player
+achievements, batting/bowling statistics via interactive visualizations and
+dynamic DAX calculations.
+
+### Customer Segmentation using RFM + K-Means
+Repo: https://github.com/kreeshal17/E-commerce-Customer-Order-Data-for-Clusterin
+Stack: Python, K-Means, RFM, Power BI
+Unsupervised K-Means clustering on RFM (Recency, Frequency, Monetary)
+metrics with an interactive Power BI dashboard visualizing segments for
+targeted marketing and retention insights.
+
+### Anime Recommendation Engine
+Repo: https://github.com/kreeshal17/Anime-recommendation
+Stack: Python, K-Means, Flask, REST API
+Genre-based feature extraction and K-Means clustering for anime similarity
+recommendations, with a Flask REST API (CORS-enabled, JSON responses) for
+frontend integration.
+
+### News Veracity Pipeline Advanced
+Repo: https://github.com/kreeshal17/news-veracity-pipeline-advanced
+Stack: Flask, React, TF-IDF, NLP
+Hybrid fake news detection platform combining TF-IDF ensemble models and
+evidence-aware web verification within a Flask API and React + Tailwind
+dashboard. Supports reusable saved model artifacts and device-aware
+inference routing.
+
+### Text Summarization App
+Repo: https://github.com/kreeshal17/text-summarization-app
+Stack: Flask, React, TextRank, NLP
+Full-stack NLP application summarizing long documents using the TextRank
+algorithm with TF-IDF and PageRank, built with Flask backend and React
+frontend.
+
+### Smart Rental Tracking System
+Stack: Bun, Hono, Prisma, PostgreSQL, Next.js
+QR-based asset check-in/out with demand forecasting and anomaly detection,
+built for the Caterpillar hackathon.
+
+### Events Platform Backend
+Repo: https://github.com/kreeshal17/event-platform-Backend-
+
+## Skills
+
+- Languages: Python, TypeScript, JavaScript, SQL, Java
+- Backend: Django, Django REST Framework, FastAPI, JWT auth, REST API design
+- ML & LLM: scikit-learn, pandas, NumPy, LangChain, LangGraph, Google Gemini
+- Databases: PostgreSQL, MySQL, Prisma
+- Frontend: Next.js, React, Tailwind CSS
+- Infra: Docker, AWS EC2, Gunicorn, Vercel, Railway, Git, n8n
+
+## Writing
+
+Learn MySQL series (Hashnode) — https://completesql.hashnode.dev/series/learn-mysql
+SQL from fundamentals through query design. Recent posts:
+- Mastering SQL: From Basics to Advanced — CTEs, Window Functions & Stored Procedures
+- Mastering MySQL Fundamentals: A Complete Guide for Interview Preparation
+- Introduction to Databases and MySQL
+
+## Certifications
+
+- Advanced SQL — HackerRank — covers joins, subqueries, window functions, and query optimization for analytics use cases. — https://www.hackerrank.com/certificates/iframe/615ca67bee15
+- Data Fundamentals — IBM SkillsBuild — covers core data concepts, data types, and analytics practices. — https://www.credly.com/badges/d874bb76-1133-4892-9435-4e0c663f7d48
+- Python for Data Science, AI & Dev — Coursera / IBM — covers Python fundamentals applied to data science, AI, and software development tasks. — https://www.coursera.org/account/accomplishments/verify/95HPWH970CP7
+- Generative AI — Google Cloud Skills Boost — covers core generative AI concepts and tools on Google Cloud. — https://www.cloudskillsboost.google/public_profiles/d92eb8ed-3cfb-4cf8-a107-380ae821b260
+- Big Data Analytics (Hadoop & Spark) — University/Workshop — covers Hadoop and Spark fundamentals for large-scale data processing pipelines. — https://krishalkarna.com.np/certificates/big-data-analytics-hadoop-spark.png
+
+## Other proof of work
+
+250+ data structures and algorithms problems solved on LeetCode (arrays,
+graphs, DP, SQL) — https://leetcode.com/u/kreeshal17/
+
+## Contact
+
+Email: karnakreeshal@gmail.com
+LinkedIn: https://www.linkedin.com/in/krishalkarna
+GitHub: https://github.com/kreeshal17
+LeetCode: https://leetcode.com/u/kreeshal17/
+Kaggle: https://www.kaggle.com/stunningtechz
+Portfolio: https://krishalkarna.com.np/

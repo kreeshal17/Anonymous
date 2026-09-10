@@ -1,141 +1,285 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishal Karna | Full-Stack AI Engineer · Agentic AI Developer · Data Scientist — Portfolio</title>
+    <!-- Set theme before first paint to avoid a flash of the wrong theme -->
+    <script>
+        (function () {
+            var saved = localStorage.getItem('theme');
+            var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <title>Krishal Karna | Backend + Applied ML Engineer — Portfolio</title>
     <meta name="description"
-        content="Krishal Karna — Full-Stack AI Engineer, Aegntic AI Developer, and Data Scientist from Jain University Bangalore. CGPA 9.4/10, top 2%, EdCIL COMPEX Scholar. Builds LLM agents with LangGraph & Gemini, full-stack apps with Next.js & FastAPI, and data science pipelines with Python, SQL, Tableau & Power BI. Kaggle contributor. View projects, certifications and resume.">
-    <meta name="keywords"
-        content="Krishal Karna, krishalkarna, krishal karna portfolio, Full-Stack AI Engineer, GenAI Developer, Data Scientist, Data Analyst, LLM Engineer, LangGraph, LangChain, Gemini, RAG, Next.js, FastAPI, Python, Power BI, Kaggle, Zapier, n8n, SQL Analytics, Machine Learning, Jain University Bangalore, EdCIL COMPEX Scholar, AI portfolio India">
+        content="Krishal Karna is a backend and applied ML engineer — Django and FastAPI backends, scikit-learn and LangGraph LLM pipelines, Next.js frontends to use them.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Krishal Karna">
-    <meta name="theme-color" content="#4f46e5">
+    <meta name="theme-color" content="#b45309">
     <link rel="canonical" href="https://krishalkarna.com.np/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Krishal Karna | Full-Stack AI Engineer · Agentic AI Developer · Data Scientist">
+    <meta property="og:title" content="Krishal Karna | Backend + Applied ML Engineer">
     <meta property="og:description"
-        content="Krishal Karna — builds production LLM agents, full-stack AI apps & data science pipelines. CGPA 9.4, top 2%, EdCIL COMPEX Scholar, Kaggle contributor. Based in Bangalore.">
+        content="Krishal Karna builds Django and FastAPI backends, scikit-learn and LangGraph LLM pipelines, and the Next.js frontends that make them usable.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://krishalkarna.com.np/">
     <meta property="og:image" content="https://krishalkarna.com.np/photo.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Krishal Karna — Full-Stack AI Engineer portfolio">
+    <!-- TODO(krishal): og:image is declared 1200x630 (the correct OG landscape ratio) but photo.png
+         is actually a 1212x813 portrait-ish headshot, not a designed landscape card with your name/title
+         composited on it. Metadata below now matches the real file dimensions so previews don't distort
+         it, but you still want a proper designed 1200x630 OG card here — see the TODO list at the end. -->
+    <meta property="og:image:width" content="1212">
+    <meta property="og:image:height" content="813">
+    <meta property="og:image:alt" content="Krishal Karna — Backend + Applied ML Engineer portfolio">
     <meta property="og:site_name" content="Krishal Karna Portfolio">
     <meta property="og:locale" content="en_IN">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Krishal Karna | Full-Stack AI Engineer · GenAI Developer · Data Scientist">
+    <meta name="twitter:title" content="Krishal Karna | Backend + Applied ML Engineer">
     <meta name="twitter:description"
-        content="Krishal Karna — LLM agents, full-stack AI apps & data science. CGPA 9.4/10, EdCIL COMPEX Scholar, Kaggle contributor. Jain University Bangalore.">
+        content="Krishal Karna builds Django and FastAPI backends, scikit-learn and LangGraph LLM pipelines, and the Next.js frontends that make them usable.">
     <meta name="twitter:site" content="@krishalkarna">
     <meta name="twitter:creator" content="@krishalkarna">
     <meta name="twitter:image" content="https://krishalkarna.com.np/photo.png">
     <meta name="twitter:image:alt" content="Krishal Karna portfolio">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Fonts: self-hosted (see @font-face in styles.css), preloaded for above-the-fold text -->
+    <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="fonts/space-grotesk-700-latin.woff2" crossorigin>
 
     <!-- Preload critical asset -->
-    <link rel="preload" as="image" href="photo.png">
+    <link rel="preload" as="image" href="photo.webp" type="image/webp">
 
     <!-- Favicon & Web App Manifest -->
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
-    <link rel="manifest" href="/manifest.json">
-    <!-- JSON-LD Person Schema — rich structured data for Google Knowledge Panel -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+    <link rel="manifest" href="manifest.json">
+    <!-- JSON-LD — single @graph: Person, WebSite, ProfilePage, one SoftwareSourceCode per featured
+         project, and an ItemList enumerating them. FAQPage is appended separately near the FAQ section.
+         TODO(krishal): degree is left as "Computer Science" without B.E./B.Tech pending your
+         confirmation of that wording. -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Krishal Karna",
-        "givenName": "Krishal",
-        "familyName": "Karna",
-        "alternateName": ["krishalkarna", "kreeshal17"],
-        "jobTitle": "Full-Stack AI Engineer · Agentic AI Developer · Data Scientist",
-        "description": "Krishal Karna is a Full-Stack AI Engineer, Agentic   AI Developer, and Data Scientist. He builds production LLM agents using LangGraph & Gemini, full-stack applications with Next.js & FastAPI, and data science pipelines with Python, SQL, Tableau & Power BI. Final-year CS student at Jain University Bangalore, CGPA 9.4/10, top 2% of batch, EdCIL COMPEX Scholar.",
-        "url": "https://krishalkarna.com.np/",
-        "image": {
-            "@type": "ImageObject",
-            "url": "https://krishalkarna.com.np/photo.png",
-            "width": 400,
-            "height": 400
-        },
-        "email": "karnakreeshal@gmail.com",
-        "telephone": "+91-8431172114",
-        "nationality": {"@type": "Country", "name": "Nepal"},
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Bangalore",
-            "addressRegion": "Karnataka",
-            "addressCountry": "IN"
-        },
-        "alumniOf": {
-            "@type": "CollegeOrUniversity",
-            "name": "Jain (Deemed-to-be) University",
-            "url": "https://www.jainuniversity.ac.in/",
-            "address": {"@type": "PostalAddress", "addressLocality": "Bangalore", "addressCountry": "IN"}
-        },
-        "sameAs": [
-            "https://github.com/kreeshal17",
-            "https://krishalkarna.com.np",
-            "https://leetcode.com/u/kreeshal17/",
-            "https://www.kaggle.com/stunningtechz"
-        ],
-        "knowsAbout": [
-            "Artificial Intelligence", "Generative AI", "Large Language Models",
-            "Full-Stack Development", "Data Science", "Data Analytics",
-            "Machine Learning", "K-Means Clustering", "Natural Language Processing",
-            "LangGraph", "LangChain", "Gemini", "OpenAI",
-            "Next.js", "FastAPI", "React", "TypeScript",
-            "Python", "SQL", "PostgreSQL", "Snowflake",
-            "Power BI","Tableau", "DAX", "Pandas", "NumPy", "Scikit-learn",
-            "RAG Systems", "Prompt Engineering", "Vector Databases", "FAISS",
-            "A/B Testing", "Statistical Testing", "ETL",
-            "Kaggle", "Zapier", "n8n", "Streamlit"
-        ],
-        "hasOccupation": {
-            "@type": "Occupation",
-            "name": "Full-Stack AI Engineer",
-            "occupationLocation": {"@type": "City", "name": "Bangalore"}
-        },
-        "award": "EdCIL COMPEX Merit Scholarship — Government of India"
-    }
-    </script>
-
-    <!-- JSON-LD WebSite with SearchAction -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Krishal Karna Portfolio",
-        "alternateName": "krishalkarna.com.np",
-        "url": "https://krishalkarna.com.np/",
-        "description": "Portfolio of Krishal Karna — Full-Stack AI Engineer and Data Scientist.",
-        "author": {"@type": "Person", "name": "Krishal Karna"}
-    }
-    </script>
-
-    <!-- JSON-LD BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://krishalkarna.com.np/"},
-            {"@type": "ListItem", "position": 2, "name": "About", "item": "https://krishalkarna.com.np/#about"},
-            {"@type": "ListItem", "position": 3, "name": "Projects", "item": "https://krishalkarna.com.np/#projects"},
-            {"@type": "ListItem", "position": 4, "name": "Skills", "item": "https://krishalkarna.com.np/#skills"},
-            {"@type": "ListItem", "position": 5, "name": "Certifications", "item": "https://krishalkarna.com.np/#certificates"},
-            {"@type": "ListItem", "position": 6, "name": "Contact", "item": "https://krishalkarna.com.np/#contact"}
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": "https://krishalkarna.com.np/#person",
+                "name": "Krishal Karna",
+                "givenName": "Krishal",
+                "familyName": "Karna",
+                "alternateName": ["krishalkarna", "kreeshal17"],
+                "jobTitle": "Backend + Applied ML Engineer",
+                "description": "Krishal Karna is a backend and applied ML engineer. He builds Django and Django REST Framework backends, scikit-learn ML pipelines, LangGraph LLM systems, and n8n automations, plus the Next.js frontends that make them usable. Final-year Computer Science student at Jain (Deemed-to-be) University, Bangalore, graduating June 2027, CGPA 9.5/10, top 1% of batch, EdCIL COMPEX Scholar.",
+                "url": "https://krishalkarna.com.np/",
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://krishalkarna.com.np/photo.png",
+                    "width": 1212,
+                    "height": 813
+                },
+                "email": "karnakreeshal@gmail.com",
+                "nationality": {"@type": "Country", "name": "Nepal"},
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Bangalore",
+                    "addressRegion": "Karnataka",
+                    "addressCountry": "IN"
+                },
+                "alumniOf": {
+                    "@type": "CollegeOrUniversity",
+                    "name": "Jain (Deemed-to-be) University",
+                    "url": "https://www.jainuniversity.ac.in/",
+                    "address": {"@type": "PostalAddress", "addressLocality": "Bangalore", "addressCountry": "IN"}
+                },
+                "sameAs": [
+                    "https://github.com/kreeshal17",
+                    "https://www.linkedin.com/in/krishalkarna",
+                    "https://leetcode.com/u/kreeshal17/",
+                    "https://www.kaggle.com/stunningtechz",
+                    "https://completesql.hashnode.dev/series/learn-mysql"
+                ],
+                "knowsAbout": [
+                    "Python", "TypeScript", "JavaScript", "SQL", "Java",
+                    "Django", "Django REST Framework", "FastAPI", "JWT Authentication", "REST API Design",
+                    "scikit-learn", "pandas", "NumPy", "LangChain", "LangGraph", "Google Gemini",
+                    "PostgreSQL", "MySQL", "Prisma",
+                    "Next.js", "React", "Tailwind CSS",
+                    "Docker", "AWS EC2", "Gunicorn", "Vercel", "Railway", "Git", "n8n"
+                ],
+                "hasOccupation": {
+                    "@type": "Occupation",
+                    "name": "Backend + Applied ML Engineer",
+                    "occupationLocation": {"@type": "City", "name": "Bangalore"}
+                },
+                "award": "EdCIL COMPEX Merit Scholarship — Government of India"
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://krishalkarna.com.np/#website",
+                "name": "Krishal Karna Portfolio",
+                "alternateName": "krishalkarna.com.np",
+                "url": "https://krishalkarna.com.np/",
+                "description": "Portfolio of Krishal Karna — Backend + Applied ML Engineer.",
+                "author": {"@id": "https://krishalkarna.com.np/#person"}
+            },
+            {
+                "@type": "ProfilePage",
+                "@id": "https://krishalkarna.com.np/#profilepage",
+                "url": "https://krishalkarna.com.np/",
+                "name": "Krishal Karna — Portfolio",
+                "isPartOf": {"@id": "https://krishalkarna.com.np/#website"},
+                "mainEntity": {"@id": "https://krishalkarna.com.np/#person"}
+            },
+            {
+                "@type": "Blog",
+                "@id": "https://krishalkarna.com.np/#blog",
+                "name": "Learn MySQL series",
+                "description": "SQL from fundamentals through query design.",
+                "url": "https://completesql.hashnode.dev/series/learn-mysql",
+                "author": {"@id": "https://krishalkarna.com.np/#person"}
+            },
+            {
+                "@type": "SoftwareSourceCode",
+                "@id": "https://krishalkarna.com.np/#project-datalens",
+                "name": "DataLens AI",
+                "description": "Full-stack data quality platform that ingests CSV datasets, profiles row- and column-level statistics, computes a quality score, and uses Isolation Forest, KNN imputation, and TF-IDF similarity plus a LangGraph + Gemini layer to diagnose and explain data quality issues.",
+                "programmingLanguage": ["Python", "TypeScript"],
+                "codeRepository": "https://github.com/kreeshal17/Datalens-AI",
+                "url": "https://dataquality-ai.vercel.app/",
+                "author": {"@id": "https://krishalkarna.com.np/#person"}
+            },
+            {
+                "@type": "SoftwareSourceCode",
+                "@id": "https://krishalkarna.com.np/#project-luma",
+                "name": "Luma AI Studio",
+                "description": "Full-stack AI coding agent that generates and incrementally edits React components from natural language, using a LangGraph tool-calling loop backed by Gemini with persistent multi-turn sessions.",
+                "programmingLanguage": ["TypeScript", "Python"],
+                "codeRepository": "https://github.com/kreeshal17/LUMA-AI-STUDIO",
+                "url": "https://codewithluma.vercel.app/",
+                "author": {"@id": "https://krishalkarna.com.np/#person"}
+            },
+            {
+                "@type": "SoftwareSourceCode",
+                "@id": "https://krishalkarna.com.np/#project-bookmandu",
+                "name": "BookMandu",
+                "description": "Multi-vendor book marketplace with a delivery-gated review system — only verified buyers who actually received a book can review it — plus seller onboarding, real-time stock management, and an AI chat assistant.",
+                "programmingLanguage": ["TypeScript"],
+                "codeRepository": "https://github.com/kreeshal17/bookbazaar",
+                "url": "https://bookmandu.vercel.app/",
+                "author": {"@id": "https://krishalkarna.com.np/#person"}
+            },
+            {
+                "@type": "SoftwareSourceCode",
+                "@id": "https://krishalkarna.com.np/#project-sql",
+                "name": "Production-Grade Retail SQL Analytics",
+                "description": "End-to-end SQL analytics project analyzing 1M+ retail sales records using CTEs, window functions, and A/B testing to surface statistically significant pricing optimizations.",
+                "programmingLanguage": ["SQL"],
+                "codeRepository": "https://github.com/kreeshal17/production-grade-sql-analytics",
+                "url": "https://github.com/kreeshal17/production-grade-sql-analytics",
+                "author": {"@id": "https://krishalkarna.com.np/#person"}
+            },
+            {
+                "@type": "ItemList",
+                "@id": "https://krishalkarna.com.np/#featured-projects",
+                "name": "Featured Projects",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "item": {"@id": "https://krishalkarna.com.np/#project-datalens"}},
+                    {"@type": "ListItem", "position": 2, "item": {"@id": "https://krishalkarna.com.np/#project-luma"}},
+                    {"@type": "ListItem", "position": 3, "item": {"@id": "https://krishalkarna.com.np/#project-bookmandu"}},
+                    {"@type": "ListItem", "position": 4, "item": {"@id": "https://krishalkarna.com.np/#project-sql"}}
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://krishalkarna.com.np/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What does Krishal Karna do?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Krishal Karna is a backend and applied ML engineer. Krishal Karna builds Django and Django REST Framework backends, scikit-learn ML pipelines, and LangGraph LLM systems, along with the Next.js frontends that make them usable."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What backend and ML technologies does Krishal Karna work with?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Krishal Karna works with Django, Django REST Framework, and FastAPI on the backend, and scikit-learn, LangChain, LangGraph, and Google Gemini for machine learning and LLM systems. Krishal Karna also works with PostgreSQL, MySQL, Next.js, React, and Docker."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is DataLens AI?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "DataLens AI is a full-stack data quality platform built by Krishal Karna. It ingests CSV datasets, profiles row- and column-level statistics, and uses Isolation Forest, KNN imputation, and TF-IDF similarity alongside a LangGraph and Google Gemini layer to score, diagnose, and explain data quality issues."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is Luma AI Studio?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Luma AI Studio is an AI coding agent built by Krishal Karna that generates and incrementally edits React components from natural language. It uses a LangGraph tool-calling loop backed by Google Gemini, with a live Sandpack preview and persistent multi-turn sessions."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is Krishal Karna available for hire?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, Krishal Karna is open to backend engineering, applied ML, and AI engineering roles for the 2027 graduating batch. Krishal Karna can be contacted by email or LinkedIn."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Where is Krishal Karna based?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Krishal Karna is based in Bangalore, India."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "When does Krishal Karna graduate?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Krishal Karna is a final-year Computer Science & Engineering student at Jain (Deemed-to-be) University, Bangalore, graduating in June 2027."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does Krishal Karna write about SQL or backend engineering?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, Krishal Karna writes a technical SQL series called Learn MySQL on Hashnode. The series covers SQL from fundamentals through query design."
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://krishalkarna.com.np/"},
+                    {"@type": "ListItem", "position": 2, "name": "About", "item": "https://krishalkarna.com.np/#about"},
+                    {"@type": "ListItem", "position": 3, "name": "Experience", "item": "https://krishalkarna.com.np/#experience"},
+                    {"@type": "ListItem", "position": 4, "name": "How I Got Here", "item": "https://krishalkarna.com.np/#journey"},
+                    {"@type": "ListItem", "position": 5, "name": "Projects", "item": "https://krishalkarna.com.np/#projects"},
+                    {"@type": "ListItem", "position": 6, "name": "Writing", "item": "https://krishalkarna.com.np/#writing"},
+                    {"@type": "ListItem", "position": 7, "name": "Skills", "item": "https://krishalkarna.com.np/#skills"},
+                    {"@type": "ListItem", "position": 8, "name": "Certifications", "item": "https://krishalkarna.com.np/#certificates"},
+                    {"@type": "ListItem", "position": 9, "name": "FAQ", "item": "https://krishalkarna.com.np/#faq"},
+                    {"@type": "ListItem", "position": 10, "name": "Contact", "item": "https://krishalkarna.com.np/#contact"}
+                ]
+            }
         ]
     }
     </script>
@@ -144,10 +288,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
     <!-- Navigation -->
     <header>
         <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
@@ -177,27 +323,33 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section class="hero" id="hero" aria-label="Introduction">
             <div class="container hero-content">
                 <div class="hero-text">
                     <p class="hero-greeting">Hello, I'm</p>
                     <h1>Krishal Karna</h1>
-                    <p class="hero-title">Full-Stack AI Engineer · Agentic AI Developer · Data Analyst</p>
-                    <p class="hero-tagline">I build production AI systems and turn complex data into clear,
-                        actionable insight — from LLM-powered agents to statistical analytics at scale.</p>
+                    <p class="hero-title">Backend + Applied ML Engineer</p>
+                    <p class="hero-tagline">I build the backend and the model. Then I build the UI so people can
+                        actually use it.</p>
+                    <p class="hero-stack">Django · DRF · FastAPI · PostgreSQL · scikit-learn · LangGraph · Gemini</p>
+                    <p class="hero-currently"><span class="hero-currently-label">Currently</span> building
+                        multi-agent LangGraph workflows and going deeper on RAG, model serving, and Django
+                        internals.</p>
                     <div class="hero-cta">
                         <a href="#projects" class="btn btn-primary" id="cta-projects">View Projects</a>
-                        <a href="/resume.pdf" class="btn btn-outline" id="cta-resume" target="_blank"
+                        <a href="resume.pdf" class="btn btn-outline" id="cta-resume" target="_blank"
                             rel="noopener">View Resume</a>
                     </div>
                     <div class="hero-socials">
-                        <a href="https://github.com/kreeshal17" target="_blank" rel="noopener"
+                        <a href="https://github.com/kreeshal17" target="_blank" rel="noopener me"
                             aria-label="GitHub profile"><i class="fab fa-github"></i></a>
-                        <a href="https://www.kaggle.com/stunningtechz" target="_blank" rel="noopener"
+                        <a href="https://www.linkedin.com/in/krishalkarna" target="_blank" rel="noopener me"
+                            aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.kaggle.com/stunningtechz" target="_blank" rel="noopener me"
                             aria-label="Kaggle profile"><i class="fab fa-kaggle"></i></a>
-                        <a href="https://leetcode.com/u/kreeshal17/" target="_blank" rel="noopener"
+                        <a href="https://leetcode.com/u/kreeshal17/" target="_blank" rel="noopener me"
                             aria-label="LeetCode profile"><i class="fas fa-code"></i></a>
                         <a href="mailto:karnakreeshal@gmail.com" aria-label="Send email"><i
                                 class="fas fa-envelope"></i></a>
@@ -205,9 +357,38 @@
                 </div>
                 <div class="hero-image-wrapper">
                     <div class="hero-image-ring">
-                        <img src="photo.png" alt="Krishal Karna — Full-Stack AI Engineer and Agentic AI Developer"
-                            class="hero-image" width="380" height="380" loading="eager">
+                        <picture>
+                            <source srcset="photo.webp" type="image/webp">
+                            <img src="photo.png" alt="Krishal Karna — Backend + Applied ML Engineer"
+                                class="hero-image" width="1212" height="813" loading="eager"
+                                fetchpriority="high">
+                        </picture>
                     </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="stat-bar">
+                    <div class="stat-item">
+                        <span class="stat-number">9.5</span>
+                        <span class="stat-label">CGPA / 10</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Top 1%</span>
+                        <span class="stat-label">of Batch</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2027</span>
+                        <span class="stat-label">Graduation</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">COMPEX</span>
+                        <span class="stat-label">Scholar</span>
+                    </div>
+                    <!-- TODO(krishal): refresh this count periodically. -->
+                    <a href="https://leetcode.com/u/kreeshal17/" target="_blank" rel="noopener" class="stat-item">
+                        <span class="stat-number">250+</span>
+                        <span class="stat-label">LeetCode Solved</span>
+                    </a>
                 </div>
             </div>
             <div class="hero-scroll-indicator" aria-hidden="true">
@@ -216,54 +397,64 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="section about" aria-label="About Krishal Karna">
+        <section id="about" class="section about" aria-labelledby="about-heading">
             <div class="container">
-                <h2 class="section-heading">About Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Final-year <strong>B.E. Computer Science &amp; Engineering</strong> student at <strong>Jain
-                                (Deemed-to-be) University, Bangalore</strong> — <strong>CGPA 9.4/10</strong> (top 2% of
-                            batch).</p>
-                        <p><strong>EdCIL COMPEX Scholar</strong> — Government of India merit scholarship covering full
-                            tuition.</p>
-                        <p>Currently building production AI systems and data analytics projects — from full-stack
-                            LLM-powered agents with LangGraph to statistical analysis on million-row datasets.</p>
-                        <p>Open to <strong>Data Analyst, Data Scientist, GenAI Engineer, and Full-Stack AI
-                                Engineer</strong> roles.</p>
-                    </div>
-                    <div class="about-highlights">
-                        <div class="highlight-card">
-                            <span class="highlight-number">9.4</span>
-                            <span class="highlight-label">CGPA / 10</span>
-                        </div>
-                        <div class="highlight-card">
-                            <span class="highlight-number">Top 2%</span>
-                            <span class="highlight-label">of Batch</span>
-                        </div>
-                        <div class="highlight-card">
-                            <span class="highlight-number">2027</span>
-                            <span class="highlight-label">Graduation</span>
-                        </div>
-                        <div class="highlight-card">
-                            <span class="highlight-number">COMPEX</span>
-                            <span class="highlight-label">Scholar</span>
-                        </div>
-                    </div>
+                <h2 class="section-heading" id="about-heading">About Me</h2>
+                <div class="about-text">
+                    <!-- TODO(krishal): degree shown as "B.E." below — confirm B.E. vs B.Tech. -->
+                    <p>Krishal Karna is a backend and applied ML engineer based in Bangalore, India — a
+                        final-year B.E. Computer Science &amp; Engineering student at Jain (Deemed-to-be)
+                        University, Bangalore, graduating in June 2027 with a <strong>CGPA of 9.5/10</strong>
+                        (top 1% of batch).</p>
+                    <p>He is an EdCIL COMPEX Scholar — a Government of India merit scholarship covering full
+                        tuition.</p>
+                    <p>He builds Django and Django REST Framework backends, scikit-learn ML pipelines, LangGraph
+                        LLM systems, and n8n automations — most recently <strong>DataLens AI</strong>, a
+                        full-stack data quality platform — along with the Next.js frontends that make them
+                        usable.</p>
+                    <p>Open to backend engineering, applied ML, and AI engineering roles for the 2027 graduating
+                        batch.</p>
                 </div>
             </div>
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="section experience" aria-label="Experience">
+        <section id="experience" class="section experience" aria-labelledby="experience-heading">
             <div class="container">
-                <h2 class="section-heading">Experience</h2>
+                <h2 class="section-heading" id="experience-heading">Experience</h2>
+                <div class="experience-timeline">
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div class="exp-info">
+                            <h3>Full Stack Developer Intern</h3>
+                            <p class="exp-org"><a href="https://www.mtgpl.com.np/" target="_blank"
+                                    rel="noopener">Mahalaxmi Tech Group Pvt. Ltd.</a> · Remote</p>
+                        </div>
+                        <span class="exp-date"><time datetime="2026-01">Jan 2026</time> – <time
+                                datetime="2026-03">Mar 2026</time></span>
+                    </div>
+                    <div class="exp-body">
+                        <ul class="exp-details">
+                            <li>Built Next.js pages and reusable UI components wired to Django REST APIs I also
+                                developed.</li>
+                            <li>Worked cross-stack on feature delivery — API integration, debugging, and schema
+                                changes spanning both frontend and backend.</li>
+                            <li>Operated in a PR-based GitHub workflow with code review as part of the delivery
+                                cycle.</li>
+                            <!-- TODO(krishal): add one bullet with a measurable outcome — users served, load time
+                                 cut, endpoints shipped, whatever is true. -->
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="experience-card">
                     <div class="exp-header">
                         <div class="exp-info">
                             <h3>Technical Team Lead</h3>
                             <p class="exp-org">Enigma Club, Jain University</p>
                         </div>
-                        <span class="exp-date">Oct 2025 – Apr 2026</span>
+                        <span class="exp-date"><time datetime="2025-10">Oct 2025</time> – <time
+                                datetime="2026-04">Apr 2026</time></span>
                     </div>
                     <div class="exp-body">
                         <ul class="exp-details">
@@ -277,36 +468,139 @@
                                 development workflows.</li>
                         </ul>
                         <div class="exp-photo-wrapper">
-                            <img src="soloo.jpeg"
-                                alt="Krishal Karna presenting at Innovation Duel 2025 event — Enigma Club, Jain University"
-                                class="exp-photo" loading="lazy">
+                            <picture>
+                                <source srcset="soloo.webp" type="image/webp">
+                                <img src="soloo.jpeg"
+                                    alt="Krishal Karna presenting at Innovation Duel 2025 event — Enigma Club, Jain University"
+                                    class="exp-photo" width="1280" height="853" loading="lazy">
+                            </picture>
                         </div>
                     </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How I Got Here Section -->
+        <section id="journey" class="section journey" aria-labelledby="journey-heading">
+            <div class="container">
+                <h2 class="section-heading" id="journey-heading">How I Got Here</h2>
+                <div class="journey-timeline">
+                    <div class="journey-step">
+                        <span class="journey-year">Year 1</span>
+                        <span class="journey-stage">Java + DSA + Spring Boot</span>
+                    </div>
+                    <span class="journey-arrow" aria-hidden="true">&rarr;</span>
+                    <div class="journey-step">
+                        <span class="journey-year">Year 2</span>
+                        <span class="journey-stage">scikit-learn &amp; applied ML</span>
+                    </div>
+                    <span class="journey-arrow" aria-hidden="true">&rarr;</span>
+                    <div class="journey-step">
+                        <span class="journey-year">Year 3</span>
+                        <span class="journey-stage">FastAPI model serving</span>
+                    </div>
+                    <span class="journey-arrow" aria-hidden="true">&rarr;</span>
+                    <div class="journey-step journey-step-current">
+                        <span class="journey-year">Now</span>
+                        <span class="journey-stage">Django + DRF</span>
+                    </div>
+                </div>
+                <div class="journey-text">
+                    <p>Krishal started backend-heavy in Java, got pulled into machine learning in his second
+                        year, and learned to serve models as APIs with FastAPI. He has since moved to Django
+                        and DRF for production apps, where the model is one component of a real product rather
+                        than the whole demo.</p>
+                    <p class="journey-current"><strong>Going deeper right now:</strong> multi-agent LangGraph
+                        workflows · RAG and retrieval pipelines · model serving at scale · Django internals and
+                        query optimization.</p>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="section projects" aria-label="Featured Projects">
+        <section id="projects" class="section projects" aria-labelledby="projects-heading">
             <div class="container">
-                <h2 class="section-heading">Featured Projects</h2>
+                <h2 class="section-heading" id="projects-heading">Featured Projects</h2>
 
-                <!-- Filter Tabs -->
-                <div class="project-filters" role="tablist" aria-label="Project categories">
-                    <button class="filter-tab active" id="tab-ai" role="tab" data-filter="ai" aria-selected="true"
-                        aria-controls="projects-grid">
-                        <i class="fas fa-robot"></i> AI &amp; Full-Stack
-                    </button>
-                    <button class="filter-tab" id="tab-ds" role="tab" data-filter="ds" aria-selected="false"
-                        aria-controls="projects-grid">
-                        <i class="fas fa-flask"></i> Data Science
-                    </button>
-                </div>
+                <div class="projects-grid">
 
-                <div class="projects-grid" id="projects-grid" role="tabpanel">
+                    <article class="project-card featured" id="project-datalens">
+                        <div class="project-thumb" aria-hidden="true"><!-- TODO(krishal): add a screenshot for this project --><span>Screenshot coming soon</span></div>
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+                            <div class="project-links">
+                                <a href="https://dataquality-ai.vercel.app/" target="_blank" rel="noopener"
+                                    aria-label="DataLens AI live demo" class="project-link-icon"><i
+                                        class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/kreeshal17/Datalens-AI" target="_blank" rel="noopener"
+                                    aria-label="DataLens AI GitHub" class="project-link-icon"><i
+                                        class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">DataLens AI</h3>
+                        <div class="project-tags">
+                            <span>Django REST</span><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>scikit-learn</span><span>LangGraph</span><span>Gemini</span><span>Docker</span><span>AWS EC2</span>
+                        </div>
+                        <p class="project-desc">Full-stack data quality platform that ingests CSV datasets, profiles
+                            row- and column-level statistics, and computes an overall quality score. The ML pipeline
+                            uses Isolation Forest for anomaly detection, KNN imputation for missing values, and
+                            TF-IDF + cosine similarity for near-duplicate detection. LLM-driven root cause analysis
+                            built with LangGraph and Google Gemini explains why each quality issue occurred. JWT
+                            auth, Dockerized backend on AWS EC2 behind Gunicorn, Postgres on Neon, frontend on
+                            Vercel.</p>
+                        <dl class="par-rows">
+                            <dt>Problem</dt>
+                            <dd>"Is this dataset any good?" is normally answered by hand.</dd>
+                            <dt>Approach</dt>
+                            <dd>Automated profiling plus three ML passes, with an LLM layer explaining causes in
+                                structured output.</dd>
+                            <dt>Result</dt>
+                            <dd>Upload a CSV, get a scored, diagnosed, explained quality verdict.</dd>
+                        </dl>
+                        <details class="project-details">
+                            <summary>Under the hood</summary>
+                            <div class="project-details-body">
+                                <h4>Profiling</h4>
+                                <p>Row- and column-level statistics — type inference, null density, cardinality,
+                                    distribution shape — rolled into a single quality score trackable across
+                                    uploads.</p>
+                                <h4>The scikit-learn pass</h4>
+                                <table class="model-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Model</th>
+                                            <th scope="col">Question it answers</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Isolation Forest</td>
+                                            <td>Which rows don't belong?</td>
+                                        </tr>
+                                        <tr>
+                                            <td>KNN imputation</td>
+                                            <td>What should the missing values have been?</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TF-IDF + cosine similarity</td>
+                                            <td>Which rows are near-duplicates of each other?</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h4>Root cause</h4>
+                                <p>A LangGraph + Gemini layer converts raw findings into plain-language explanations
+                                    plus structured fix recommendations under an enforced schema, so the frontend
+                                    renders them instead of parsing prose.</p>
+                                <h4>Shipping it</h4>
+                                <p>Docker + Gunicorn on EC2, managed Postgres, frontend on Vercel. ML runs inside the
+                                    request cycle, so latency was a design constraint rather than an afterthought.</p>
+                            </div>
+                        </details>
+                    </article>
 
-                    <!-- ===== AI & Full-Stack ===== -->
-                    <article class="project-card" data-cat="ai" id="project-luma">
+                    <article class="project-card featured" id="project-luma">
+                        <div class="project-thumb" aria-hidden="true"><!-- TODO(krishal): add a screenshot for this project --><span>Screenshot coming soon</span></div>
                         <div class="project-header">
                             <div class="project-icon"><i class="fas fa-robot"></i></div>
                             <div class="project-links">
@@ -325,9 +619,22 @@
                         <p class="project-desc">Full-stack AI coding agent generating/editing React components from
                             natural language. LangGraph tool-calling loop backed by Gemini, live Sandpack preview,
                             persistent multi-turn sessions, GitHub OAuth repo push, deployed on Vercel + Railway.</p>
+                        <dl class="par-rows">
+                            <dt>Problem</dt>
+                            <dd>Generating a React component from a prompt is the easy half; the hard half is the
+                                second prompt — "now make the sidebar collapsible" — without regenerating and
+                                breaking everything else.</dd>
+                            <dt>Approach</dt>
+                            <dd>Component-driven architecture where each generation is a diff against persisted
+                                session state rather than a fresh render, with a live Sandpack preview and session
+                                history in Postgres.</dd>
+                            <dt>Result</dt>
+                            <dd>Multi-turn incremental editing with GitHub OAuth push straight to a repo.</dd>
+                        </dl>
                     </article>
 
-                    <article class="project-card" data-cat="ai" id="project-bookmandu">
+                    <article class="project-card featured" id="project-bookmandu">
+                        <div class="project-thumb" aria-hidden="true"><!-- TODO(krishal): add a screenshot for this project --><span>Screenshot coming soon</span></div>
                         <div class="project-header">
                             <div class="project-icon"><i class="fas fa-book-open"></i></div>
                             <div class="project-links">
@@ -347,264 +654,251 @@
                         <p class="project-desc">Multi-vendor book marketplace: seller onboarding with identity
                             verification, real-time stock management, delivery-gated review system, AI chat assistant,
                             JWT auth, Redis caching, Cloudinary-backed listings, custom domain.</p>
+                        <dl class="par-rows">
+                            <dt>Problem</dt>
+                            <dd>A review from someone who never bought the book is worth nothing, but most
+                                marketplaces let anyone post one anyway.</dd>
+                            <dt>Approach</dt>
+                            <dd>A delivery-gated review system — only verified buyers who actually received the book
+                                can leave a review — that's a trust-design decision, not a CRUD feature.</dd>
+                            <dt>Result</dt>
+                            <dd>A multi-vendor marketplace where reviews mean something, backed by seller onboarding,
+                                real-time stock, and an AI chat assistant.</dd>
+                        </dl>
                     </article>
 
-                    <article class="project-card" data-cat="ai" id="project-jeevan">
-                        <div class="project-header">
-                            <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
-                            <div class="project-links">
-                                <a href="https://jeevan-mitra.vercel.app/" target="_blank" rel="noopener"
-                                    aria-label="Jeevan Mitra live demo" class="project-link-icon"><i
-                                        class="fas fa-external-link-alt"></i></a>
-                                <a href="https://github.com/kreeshal17/jeevan-mitra" target="_blank" rel="noopener"
-                                    aria-label="Jeevan Mitra GitHub" class="project-link-icon"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="project-title">Jeevan Mitra</h3>
-                        <div class="project-tags">
-                            <span>Next.js</span><span>Firebase</span><span>Vapi SDK</span><span>Gemini</span>
-                        </div>
-                        <p class="project-desc">AI-powered wellness platform combining real-time AI voice consultations,
-                            daily health tracking, gamified wellness journeys, and anonymous peer support chat (no login
-                            required) into one unified ecosystem.</p>
-                    </article>
-
-                    <article class="project-card" data-cat="ai" id="project-csv">
-                        <div class="project-header">
-                            <div class="project-icon"><i class="fas fa-chart-line"></i></div>
-                            <div class="project-links">
-                                <a href="https://analysis-csv.streamlit.app/" target="_blank" rel="noopener"
-                                    aria-label="CSV Analysis Agent live demo" class="project-link-icon"><i
-                                        class="fas fa-external-link-alt"></i></a>
-                                <a href="https://github.com/kreeshal17/CSV-Analysis-Agent" target="_blank"
-                                    rel="noopener" aria-label="CSV Analysis Agent GitHub" class="project-link-icon"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="project-title">AI-Powered CSV Analysis Agent</h3>
-                        <div class="project-tags">
-                            <span>FastAPI</span><span>Streamlit</span><span>Python</span><span>AI Agent</span>
-                        </div>
-                        <p class="project-desc">Conversational analytics over any CSV via FastAPI + Streamlit, dynamic
-                            schema inference, real-time chart generation, sub-2s latency on 100K-row datasets.</p>
-                    </article>
-
-                    <!-- ===== Data Science (hidden by default) ===== -->
-                    <article class="project-card hidden" data-cat="ds" id="project-sql">
+                    <article class="project-card featured" id="project-sql">
+                        <div class="project-thumb" aria-hidden="true"><!-- TODO(krishal): add a screenshot for this project --><span>Screenshot coming soon</span></div>
                         <div class="project-header">
                             <div class="project-icon"><i class="fas fa-database"></i></div>
                             <div class="project-links">
-                                <a href="https://github.com/kreeshal17" target="_blank" rel="noopener"
-                                    aria-label="Retail SQL Analytics GitHub" class="project-link-icon"><i
-                                        class="fab fa-github"></i></a>
+                                <a href="https://github.com/kreeshal17/production-grade-sql-analytics" target="_blank"
+                                    rel="noopener" aria-label="Retail SQL Analytics GitHub"
+                                    class="project-link-icon"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                         <h3 class="project-title">Production-Grade Retail SQL Analytics</h3>
                         <div class="project-tags">
                             <span>SQL</span><span>Statistics</span><span>A/B Testing</span><span>CTEs</span>
                         </div>
-                        <p class="project-desc">Analyzed 1M+ sales records using CTEs, window functions, A/B testing and
-                            t-tests at 95% CI, surfaced pricing optimizations driving 6–9% statistically significant
-                            sales uplift.</p>
+                        <p class="project-desc">Analyzed 1M+ sales records using CTEs, window functions, A/B testing
+                            and t-tests at 95% CI, surfaced pricing optimizations driving 6–9% statistically
+                            significant sales uplift.</p>
+                        <dl class="par-rows">
+                            <dt>Problem</dt>
+                            <dd>Whether a pricing change actually worked is normally answered by gut feel, not
+                                statistics.</dd>
+                            <dt>Approach</dt>
+                            <dd>CTEs, window functions, and A/B testing with t-tests at 95% confidence over 1M+
+                                retail sales records.</dd>
+                            <dt>Result</dt>
+                            <dd>Pricing optimizations with a statistically significant 6–9% sales uplift.</dd>
+                        </dl>
                     </article>
 
-                    <article class="project-card hidden" data-cat="ds" id="project-ipl">
-                        <div class="project-header">
-                            <div class="project-icon"><i class="fas fa-cricket-bat-ball" style="font-size:1rem"></i>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/kreeshal17/ipl-analytics-powerbi" target="_blank"
-                                    rel="noopener" aria-label="IPL Analytics GitHub" class="project-link-icon"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
+                </div>
+
+                <h3 class="more-projects-heading">More Projects</h3>
+                <div class="more-projects-grid">
+
+                    <article class="more-project-card" id="project-jeevan">
+                        <h4>Jeevan Mitra</h4>
+                        <div class="project-tags"><span>Next.js</span><span>Firebase</span><span>Gemini</span></div>
+                        <p>AI-powered wellness platform combining real-time voice consultations, daily health
+                            tracking, and anonymous peer support chat.</p>
+                        <div class="project-links">
+                            <a href="https://jeevan-mitra.vercel.app/" target="_blank" rel="noopener"
+                                aria-label="Jeevan Mitra live demo" class="project-link-icon"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/kreeshal17/jeevan-mitra" target="_blank" rel="noopener"
+                                aria-label="Jeevan Mitra GitHub" class="project-link-icon"><i
+                                    class="fab fa-github"></i></a>
                         </div>
-                        <h3 class="project-title">IPL Analytics Power BI Dashboard</h3>
-                        <div class="project-tags">
-                            <span>Power BI</span><span>DAX</span><span>Data Viz</span><span>Analytics</span>
-                        </div>
-                        <p class="project-desc">End-to-end Power BI analytics using IPL match and ball-by-ball data
-                            (2008–2025). Season-wise insights into team performance, player achievements,
-                            batting/bowling
-                            statistics via interactive visualizations and dynamic DAX calculations.</p>
                     </article>
 
-                    <article class="project-card hidden" data-cat="ds" id="project-rfm">
-                        <div class="project-header">
-                            <div class="project-icon"><i class="fas fa-users"></i></div>
-                            <div class="project-links">
-                                <a href="https://github.com/kreeshal17/E-commerce-Customer-Order-Data-for-Clustering"
-                                    target="_blank" rel="noopener" aria-label="Customer Segmentation GitHub"
-                                    class="project-link-icon"><i class="fab fa-github"></i></a>
-                                <a href="https://kaggle.com/code/stunningtechz/customer-segmentation-using-rfm-kmeans-clustering"
-                                    target="_blank" rel="noopener" aria-label="Customer Segmentation Kaggle"
-                                    class="project-link-icon"><i class="fab fa-kaggle"></i></a>
-                            </div>
+                    <article class="more-project-card" id="project-csv">
+                        <h4>AI-Powered CSV Analysis Agent</h4>
+                        <div class="project-tags"><span>FastAPI</span><span>Streamlit</span><span>Python</span></div>
+                        <p>Conversational analytics over any CSV with dynamic schema inference and real-time chart
+                            generation.</p>
+                        <div class="project-links">
+                            <a href="https://analysis-csv.streamlit.app/" target="_blank" rel="noopener"
+                                aria-label="CSV Analysis Agent live demo" class="project-link-icon"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/kreeshal17/CSV-Analysis-Agent" target="_blank" rel="noopener"
+                                aria-label="CSV Analysis Agent GitHub" class="project-link-icon"><i
+                                    class="fab fa-github"></i></a>
                         </div>
-                        <h3 class="project-title">Customer Segmentation using RFM + K-Means</h3>
-                        <div class="project-tags">
-                            <span>Python</span><span>K-Means</span><span>RFM</span><span>Power BI</span>
-                        </div>
-                        <p class="project-desc">Unsupervised K-Means clustering on RFM (Recency, Frequency, Monetary)
-                            metrics with an interactive Power BI dashboard visualizing segments for targeted marketing
-                            and retention insights.</p>
                     </article>
 
-                    <article class="project-card hidden" data-cat="ds" id="project-anime">
-                        <div class="project-header">
-                            <div class="project-icon"><i class="fas fa-film"></i></div>
-                            <div class="project-links">
-                                <a href="https://github.com/kreeshal17/Anime-recommendation" target="_blank"
-                                    rel="noopener" aria-label="Anime Recommendation GitHub" class="project-link-icon"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
+                    <article class="more-project-card" id="project-ipl">
+                        <h4>IPL Analytics Power BI Dashboard</h4>
+                        <div class="project-tags"><span>Power BI</span><span>DAX</span><span>Data Viz</span></div>
+                        <p>End-to-end Power BI analytics on IPL match data (2008–2025) with dynamic DAX
+                            calculations.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/kreeshal17/ipl-analytics-powerbi" target="_blank"
+                                rel="noopener" aria-label="IPL Analytics GitHub" class="project-link-icon"><i
+                                    class="fab fa-github"></i></a>
                         </div>
-                        <h3 class="project-title">Anime Recommendation Engine</h3>
-                        <div class="project-tags">
-                            <span>Python</span><span>K-Means</span><span>Flask</span><span>REST API</span>
-                        </div>
-                        <p class="project-desc">Genre-based feature extraction and K-Means clustering for anime
-                            similarity recommendations, with a Flask REST API (CORS-enabled, JSON responses) for
-                            frontend integration.</p>
                     </article>
 
-                    <article class="project-card hidden" data-cat="ds" id="project-news">
-                        <div class="project-header">
-                            <div class="project-icon"><i class="fas fa-newspaper"></i></div>
-                            <div class="project-links">
-                                <a href="https://github.com/kreeshal17/news-veracity-pipeline-advanced" target="_blank"
-                                    rel="noopener" aria-label="News Veracity Pipeline GitHub"
-                                    class="project-link-icon"><i class="fab fa-github"></i></a>
-                            </div>
+                    <article class="more-project-card" id="project-rfm">
+                        <h4>Customer Segmentation using RFM + K-Means</h4>
+                        <div class="project-tags"><span>Python</span><span>K-Means</span><span>RFM</span></div>
+                        <p>K-Means clustering on RFM metrics with an interactive Power BI dashboard for targeted
+                            marketing.</p>
+                        <!-- TODO(krishal): Kaggle notebook link removed — the old URL 404s and I couldn't
+                             find the current slug via the public profile. Send me the real notebook URL
+                             and I'll add it back. -->
+                        <div class="project-links">
+                            <a href="https://github.com/kreeshal17/E-commerce-Customer-Order-Data-for-Clusterin"
+                                target="_blank" rel="noopener" aria-label="Customer Segmentation GitHub"
+                                class="project-link-icon"><i class="fab fa-github"></i></a>
                         </div>
-                        <h3 class="project-title">News Veracity Pipeline Advanced</h3>
-                        <div class="project-tags">
-                            <span>Flask</span><span>React</span><span>TF-IDF</span><span>NLP</span>
-                        </div>
-                        <p class="project-desc">Hybrid fake news detection platform combining TF-IDF ensemble models and
-                            evidence-aware web verification within a Flask API and React + Tailwind dashboard. Supports
-                            reusable saved model artifacts and device-aware inference routing.</p>
                     </article>
 
-                    <article class="project-card hidden" data-cat="ds" id="project-summarizer">
-                        <div class="project-header">
-                            <div class="project-icon"><i class="fas fa-file-alt"></i></div>
-                            <div class="project-links">
-                                <a href="https://github.com/kreeshal17/text-summarization-app" target="_blank"
-                                    rel="noopener" aria-label="Text Summarization App GitHub"
-                                    class="project-link-icon"><i class="fab fa-github"></i></a>
-                            </div>
+                    <article class="more-project-card" id="project-anime">
+                        <h4>Anime Recommendation Engine</h4>
+                        <div class="project-tags"><span>Python</span><span>K-Means</span><span>Flask</span></div>
+                        <p>Genre-based K-Means clustering for anime similarity recommendations via a Flask REST
+                            API.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/kreeshal17/Anime-recommendation" target="_blank"
+                                rel="noopener" aria-label="Anime Recommendation GitHub" class="project-link-icon"><i
+                                    class="fab fa-github"></i></a>
                         </div>
-                        <h3 class="project-title">Text Summarization App</h3>
-                        <div class="project-tags">
-                            <span>Flask</span><span>React</span><span>TextRank</span><span>NLP</span>
+                    </article>
+
+                    <article class="more-project-card" id="project-news">
+                        <h4>News Veracity Pipeline Advanced</h4>
+                        <div class="project-tags"><span>Flask</span><span>React</span><span>TF-IDF</span></div>
+                        <p>Hybrid fake news detection combining TF-IDF ensemble models with evidence-aware web
+                            verification.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/kreeshal17/news-veracity-pipeline-advanced" target="_blank"
+                                rel="noopener" aria-label="News Veracity Pipeline GitHub"
+                                class="project-link-icon"><i class="fab fa-github"></i></a>
                         </div>
-                        <p class="project-desc">Full-stack NLP application summarizing long documents using the TextRank
-                            algorithm with TF-IDF and PageRank, built with Flask backend and React frontend.</p>
+                    </article>
+
+                    <article class="more-project-card" id="project-summarizer">
+                        <h4>Text Summarization App</h4>
+                        <div class="project-tags"><span>Flask</span><span>React</span><span>TextRank</span></div>
+                        <p>Full-stack NLP app summarizing documents using TextRank, TF-IDF, and PageRank.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/kreeshal17/text-summarization-app" target="_blank"
+                                rel="noopener" aria-label="Text Summarization App GitHub"
+                                class="project-link-icon"><i class="fab fa-github"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="more-project-card" id="project-rental">
+                        <h4>Smart Rental Tracking System</h4>
+                        <div class="project-tags"><span>Bun</span><span>Hono</span><span>Next.js</span></div>
+                        <p>QR-based asset check-in/out with demand forecasting and anomaly detection, built for the
+                            Caterpillar hackathon.</p>
+                        <!-- TODO(krishal): no repo/live URL supplied for this one — send me a link and
+                             I'll wire it up. -->
+                    </article>
+
+                    <article class="more-project-card" id="project-events">
+                        <h4>Events Platform Backend</h4>
+                        <!-- TODO(krishal): no tags or description supplied for this one — send me the
+                             stack and a one-line summary and I'll fill it in. -->
+                        <div class="project-links">
+                            <a href="https://github.com/kreeshal17/event-platform-Backend-" target="_blank"
+                                rel="noopener" aria-label="Events Platform Backend GitHub"
+                                class="project-link-icon"><i class="fab fa-github"></i></a>
+                        </div>
                     </article>
 
                 </div>
             </div>
         </section>
 
+        <!-- Writing Section -->
+        <section id="writing" class="section writing" aria-labelledby="writing-heading">
+            <div class="container">
+                <h2 class="section-heading" id="writing-heading">Writing</h2>
+                <div class="writing-feature">
+                    <h3><a href="https://completesql.hashnode.dev/series/learn-mysql" target="_blank"
+                            rel="noopener">Learn MySQL series</a></h3>
+                    <p>SQL from fundamentals through query design, published on Hashnode.</p>
+                </div>
+                <!-- TODO(krishal): these 3 titles were pulled from the series RSS feed on 2026-09-11 —
+                     update manually when you publish new posts, since this site has no build step to
+                     re-fetch them automatically. -->
+                <ul class="writing-posts">
+                    <li><a href="https://completesql.hashnode.dev/mastering-sql-from-basics-to-advanced-ctes-window-functions-and-stored-procedures"
+                            target="_blank" rel="noopener">Mastering SQL: From Basics to Advanced — CTEs, Window
+                            Functions &amp; Stored Procedures</a></li>
+                    <li><a href="https://completesql.hashnode.dev/mastering-mysql-fundamentals-a-complete-guide-for-interview-preparation"
+                            target="_blank" rel="noopener">Mastering MySQL Fundamentals: A Complete Guide for
+                            Interview Preparation</a></li>
+                    <li><a href="https://completesql.hashnode.dev/introduction-to-databases-and-mysql" target="_blank"
+                            rel="noopener">Introduction to Databases and MySQL</a></li>
+                </ul>
+            </div>
+        </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="section skills" aria-label="Skills and expertise">
+        <section id="skills" class="section skills" aria-labelledby="skills-heading">
             <div class="container">
-                <h2 class="section-heading">Skills &amp; Expertise</h2>
-                <div class="skills-container">
-
-                    <div class="skill-group">
-                        <h3 class="skill-group-title"><i class="fas fa-brain"></i> AI / GenAI</h3>
-                        <div class="skill-tags">
-                            <span>LLM Applications</span>
-                            <span>RAG Systems</span>
-                            <span>LangChain</span>
-                            <span>LangGraph</span>
-                            <span>FAISS</span>
-                            <span>Vector Databases</span>
-                            <span>Prompt Engineering</span>
-                            <span>Embeddings</span>
-                        </div>
+                <h2 class="section-heading" id="skills-heading">Skills &amp; Expertise</h2>
+                <!-- TODO(krishal): dropped from the old skills wall — LLM Applications, RAG Systems,
+                     FAISS, Vector Databases, Prompt Engineering, Embeddings, Sandpack, Streamlit,
+                     Jupyter Notebook, Zapier, MongoDB, Snowflake, ChromaDB, generic "Machine Learning",
+                     ETL, Power BI, Tableau, Statistical Testing, A/B Testing, AWS S3/IAM, Linux, GitHub
+                     (kept Git). Confirm if any of these should come back in. -->
+                <dl class="skills-table">
+                    <div class="skill-row">
+                        <dt>Languages</dt>
+                        <dd class="skill-tags">
+                            <span>Python</span><span>TypeScript</span><span>JavaScript</span><span>SQL</span><span>Java</span>
+                        </dd>
                     </div>
-
-                    <div class="skill-group">
-                        <h3 class="skill-group-title"><i class="fas fa-layer-group"></i> Full-Stack</h3>
-                        <div class="skill-tags">
-                            <span>Next.js</span>
-                            <span>React</span>
-                            <span>FastAPI</span>
-                            <span>TypeScript</span>
-                            <span>REST APIs</span>
-                            <span>Sandpack</span>
-                            <span>Streamlit</span>
-                        </div>
+                    <div class="skill-row">
+                        <dt>Backend</dt>
+                        <dd class="skill-tags">
+                            <span class="core">Django</span><span class="core">Django REST Framework</span><span>FastAPI</span><span>JWT Auth</span><span>REST API Design</span>
+                        </dd>
                     </div>
-
-                    <div class="skill-group">
-                        <h3 class="skill-group-title"><i class="fas fa-cogs"></i>Tools and Automation</h3>
-                        <div class="skill-tags">
-                            <span>Git</span>
-                            <span>GitHub</span>
-                            <span>Vercel</span>
-                            <span>Railway</span>
-                            <span>Jupyter Notebook</span>
-                            <span>n8n</span>
-                            <span>Zapier</span>
-                        </div>
+                    <div class="skill-row">
+                        <dt>ML &amp; LLM</dt>
+                        <dd class="skill-tags">
+                            <span class="core">scikit-learn</span><span>pandas</span><span>NumPy</span><span>LangChain</span><span class="core">LangGraph</span><span>Google Gemini</span>
+                        </dd>
                     </div>
-
-                    <div class="skill-group">
-                        <h3 class="skill-group-title"><i class="fas fa-database"></i> Languages &amp; Databases</h3>
-                        <div class="skill-tags">
-                            <span>Python</span>
-                            <SPAN>JAVA</SPAN>
-                            <span>SQL</span>
-                            <span>PostgreSQL</span>
-                            <span>MySQL</span>
-                            <span>MongoDB</span>
-                            <span>Snowflake</span>
-                            <span>ChromaDB</span>
-                            <span>FAISS</span>
-
-                        </div>
+                    <div class="skill-row">
+                        <dt>Databases</dt>
+                        <dd class="skill-tags">
+                            <span class="core">PostgreSQL</span><span>MySQL</span><span>Prisma</span>
+                        </dd>
                     </div>
-
-                    <div class="skill-group">
-                        <h3 class="skill-group-title"><i class="fas fa-chart-bar"></i> Data &amp; Analytics</h3>
-                        <div class="skill-tags">
-                            <span>Pandas</span>
-                            <span>NumPy</span>
-                            <span>Machine Learning</span>
-                            <span>ETL</span>
-                            <span>Power BI</span>
-                            <span>Tableau</span>
-                            <span>Statistical Testing</span>
-                            <span>A/B Testing</span>
-                        </div>
+                    <div class="skill-row">
+                        <dt>Frontend</dt>
+                        <dd class="skill-tags">
+                            <span class="core">Next.js</span><span>React</span><span>Tailwind CSS</span>
+                        </dd>
                     </div>
-
-                    <div class="skill-group">
-                        <h3 class="skill-group-title"><i class="fas fa-wrench"></i> DevOps & Cloud</h3>
-                        <div class="skill-tags">
-
-                            <span>Docker</span>
-                            <span>AWS (EC2, S3, IAM)</span>
-                            <span>Linux</span>
-
-                        </div>
+                    <div class="skill-row">
+                        <dt>Infra</dt>
+                        <dd class="skill-tags">
+                            <span>Docker</span><span>AWS EC2</span><span>Gunicorn</span><span>Vercel</span><span>Railway</span><span>Git</span><span>n8n</span>
+                        </dd>
                     </div>
-
-                </div>
+                </dl>
             </div>
         </section>
 
         <!-- Certifications Section — Badge-Style Cards -->
-        <section id="certificates" class="section certificates" aria-label="Certifications">
+        <section id="certificates" class="section certificates" aria-labelledby="certificates-heading">
             <div class="container">
-                <h2 class="section-heading">Certifications</h2>
+                <h2 class="section-heading" id="certificates-heading">Certifications</h2>
 
-                <!-- Priority row: 4 most relevant -->
+                <!-- 3 real certs + a "see more" tile that sits in the 4th grid cell, directly
+                     below the 2nd card in this 2-column layout. -->
                 <div class="certificates-grid" id="certs-primary">
 
                     <div class="cert-badge-card">
@@ -617,30 +911,16 @@
                                 <p class="cert-issuer-name">HackerRank</p>
                             </div>
                         </div>
-                        <p class="cert-desc">Validated advanced SQL skills for analytics and database querying with
-                            real-world scenarios.</p>
+                        <p class="cert-desc">Covers joins, subqueries, window functions, and query optimization for
+                            analytics use cases.</p>
                         <a href="https://www.hackerrank.com/certificates/iframe/615ca67bee15" target="_blank"
                             rel="noopener noreferrer" class="btn-cert-badge">
                             <i class="fas fa-external-link-alt"></i> View Certificate
                         </a>
                     </div>
 
-                    <div class="cert-badge-card">
-                        <div class="cert-badge-header">
-                            <div class="cert-issuer-logo cert-logo-ibm" aria-hidden="true">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <div class="cert-meta">
-                                <h3 class="cert-title">IBM Applied AI</h3>
-                                <p class="cert-issuer-name">IBM SkillsBuild</p>
-                            </div>
-                        </div>
-                        <p class="cert-desc">Mastered essential AI concepts and tools including machine learning and
-                            natural language processing.</p>
-                        <a href="https://www.ibm.com/" target="_blank" rel="noopener noreferrer" class="btn-cert-badge">
-                            <i class="fas fa-external-link-alt"></i> View Certificate
-                        </a>
-                    </div>
+                    <!-- TODO(krishal): "IBM Applied AI" card removed — it linked to ibm.com's homepage,
+                         not a real certificate verification URL. Send me the real one to re-add it. -->
 
                     <div class="cert-badge-card">
                         <div class="cert-badge-header">
@@ -652,8 +932,7 @@
                                 <p class="cert-issuer-name">IBM SkillsBuild</p>
                             </div>
                         </div>
-                        <p class="cert-desc">IBM SkillsBuild credential validating core data concepts, data types, and
-                            analytics practices.</p>
+                        <p class="cert-desc">Covers core data concepts, data types, and analytics practices.</p>
                         <a href="https://www.credly.com/badges/d874bb76-1133-4892-9435-4e0c663f7d48" target="_blank"
                             rel="noopener noreferrer" class="btn-cert-badge">
                             <i class="fas fa-external-link-alt"></i> View Certificate
@@ -670,13 +949,20 @@
                                 <p class="cert-issuer-name">Coursera / IBM</p>
                             </div>
                         </div>
-                        <p class="cert-desc">Hands-on Python training for data science, AI applications, and software
-                            development.</p>
+                        <p class="cert-desc">Covers Python fundamentals applied to data science, AI, and software
+                            development tasks.</p>
                         <a href="https://www.coursera.org/account/accomplishments/verify/95HPWH970CP7?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
                             target="_blank" rel="noopener noreferrer" class="btn-cert-badge">
                             <i class="fas fa-external-link-alt"></i> View Certificate
                         </a>
                     </div>
+
+                    <button id="certs-see-more-btn" class="cert-badge-card cert-see-more-tile"
+                        aria-expanded="false" aria-controls="certs-more-wrapper">
+                        <i class="fas fa-ellipsis" aria-hidden="true"></i>
+                        <span id="certs-btn-label">See more certifications</span>
+                        <i class="fas fa-chevron-down" id="certs-chevron"></i>
+                    </button>
 
                 </div>
 
@@ -694,103 +980,18 @@
                                     <p class="cert-issuer-name">Google Cloud Skills Boost</p>
                                 </div>
                             </div>
-                            <p class="cert-desc">Proficiency in modern GenAI tools and frameworks with innovative
-                                applications using generative AI technologies.</p>
+                            <p class="cert-desc">Covers core generative AI concepts and tools on Google Cloud.</p>
                             <a href="https://www.cloudskillsboost.google/public_profiles/d92eb8ed-3cfb-4cf8-a107-380ae821b260"
                                 target="_blank" rel="noopener noreferrer" class="btn-cert-badge">
                                 <i class="fas fa-external-link-alt"></i> View Certificate
                             </a>
                         </div>
 
-                        <div class="cert-badge-card">
-                            <div class="cert-badge-header">
-                                <div class="cert-issuer-logo cert-logo-ibm" aria-hidden="true">
-                                    <i class="fas fa-server"></i>
-                                </div>
-                                <div class="cert-meta">
-                                    <h3 class="cert-title">IBM DB &amp; Transaction Practitioner</h3>
-                                    <p class="cert-issuer-name">IBM SkillsBuild</p>
-                                </div>
-                            </div>
-                            <p class="cert-desc">Advanced proficiency in data science and database transaction concepts,
-                                IBM-certified.</p>
-                            <a href="https://www.ibm.com/" target="_blank" rel="noopener noreferrer"
-                                class="btn-cert-badge">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-
-                        <div class="cert-badge-card">
-                            <div class="cert-badge-header">
-                                <div class="cert-issuer-logo cert-logo-coursera" aria-hidden="true">
-                                    <i class="fas fa-microchip"></i>
-                                </div>
-                                <div class="cert-meta">
-                                    <h3 class="cert-title">Certified OS</h3>
-                                    <p class="cert-issuer-name">Coursera</p>
-                                </div>
-                            </div>
-                            <p class="cert-desc">Expertise in operating system concepts including process management,
-                                memory allocation, and file systems.</p>
-                            <a href="https://www.coursera.org/account/accomplishments/verify/57GY6HNA0JZY"
-                                target="_blank" rel="noopener noreferrer" class="btn-cert-badge">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-
-                        <div class="cert-badge-card">
-                            <div class="cert-badge-header">
-                                <div class="cert-issuer-logo cert-logo-microsoft" aria-hidden="true">
-                                    <i class="fab fa-microsoft"></i>
-                                </div>
-                                <div class="cert-meta">
-                                    <h3 class="cert-title">Microsoft AI Fundamentals</h3>
-                                    <p class="cert-issuer-name">Microsoft / Coursera</p>
-                                </div>
-                            </div>
-                            <p class="cert-desc">Comprehensive AI fundamentals aligned with Microsoft industry
-                                standards.</p>
-                            <a href="https://www.coursera.org/account/accomplishments/verify/57GY6HNA0JZY"
-                                target="_blank" rel="noopener noreferrer" class="btn-cert-badge">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-
-                        <div class="cert-badge-card">
-                            <div class="cert-badge-header">
-                                <div class="cert-issuer-logo cert-logo-codecademy" aria-hidden="true">
-                                    <i class="fas fa-code-branch"></i>
-                                </div>
-                                <div class="cert-meta">
-                                    <h3 class="cert-title">Learn Git &amp; Codecademy</h3>
-                                    <p class="cert-issuer-name">Codecademy</p>
-                                </div>
-                            </div>
-                            <p class="cert-desc">Version control mastery with Git and GitHub workflows for collaborative
-                                software development.</p>
-                            <a href="https://www.ibm.com/" target="_blank" rel="noopener noreferrer"
-                                class="btn-cert-badge">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
-
-                        <div class="cert-badge-card">
-                            <div class="cert-badge-header">
-                                <div class="cert-issuer-logo cert-logo-graph" aria-hidden="true">
-                                    <i class="fas fa-project-diagram"></i>
-                                </div>
-                                <div class="cert-meta">
-                                    <h3 class="cert-title">Graph Theory Mastery</h3>
-                                    <p class="cert-issuer-name">Coursera</p>
-                                </div>
-                            </div>
-                            <p class="cert-desc">Expert-level knowledge of graph algorithms and their applications
-                                through advanced practical learning.</p>
-                            <a href="https://www.coursera.org/account/accomplishments/verify/BCSL7VRWGO2N"
-                                target="_blank" rel="noopener noreferrer" class="btn-cert-badge">
-                                <i class="fas fa-external-link-alt"></i> View Certificate
-                            </a>
-                        </div>
+                        <!-- TODO(krishal): "IBM DB & Transaction Practitioner", "Certified OS",
+                             "Microsoft AI Fundamentals" and "Learn Git & Codecademy" cards removed:
+                             the first two linked to ibm.com's homepage / a Coursera code already used
+                             by another cert, and none had a real verification URL supplied. Send me
+                             real verification links for any of these and I'll re-add them. -->
 
                         <div class="cert-badge-card">
                             <div class="cert-badge-header">
@@ -802,9 +1003,9 @@
                                     <p class="cert-issuer-name">University / Workshop</p>
                                 </div>
                             </div>
-                            <p class="cert-desc">Hands-on big data processing with Apache Hadoop and Spark for
-                                large-scale data engineering pipelines.</p>
-                            <a href="bda_with_hadop_and_spark" target="_blank" rel="noopener noreferrer"
+                            <p class="cert-desc">Covers Hadoop and Spark fundamentals for large-scale data processing
+                                pipelines.</p>
+                            <a href="certificates/big-data-analytics-hadoop-spark.png" target="_blank" rel="noopener noreferrer"
                                 class="btn-cert-badge">
                                 <i class="fas fa-external-link-alt"></i> View Certificate
                             </a>
@@ -812,48 +1013,94 @@
 
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- See more / collapse toggle -->
-                <div class="certs-toggle-wrapper">
-                    <button id="certs-see-more-btn" class="btn-see-more" aria-expanded="false"
-                        aria-controls="certs-more-wrapper">
-                        <span id="certs-btn-label">See more</span>
-                        <i class="fas fa-chevron-down" id="certs-chevron"></i>
-                    </button>
+        <!-- FAQ Section -->
+        <section id="faq" class="section faq" aria-labelledby="faq-heading">
+            <div class="container">
+                <h2 class="section-heading" id="faq-heading">FAQ</h2>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>What does Krishal Karna do?</summary>
+                        <p>Krishal Karna is a backend and applied ML engineer. Krishal Karna builds Django and
+                            Django REST Framework backends, scikit-learn ML pipelines, and LangGraph LLM systems,
+                            along with the Next.js frontends that make them usable.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What backend and ML technologies does Krishal Karna work with?</summary>
+                        <p>Krishal Karna works with Django, Django REST Framework, and FastAPI on the backend, and
+                            scikit-learn, LangChain, LangGraph, and Google Gemini for machine learning and LLM
+                            systems. Krishal Karna also works with PostgreSQL, MySQL, Next.js, React, and Docker.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What is DataLens AI?</summary>
+                        <p>DataLens AI is a full-stack data quality platform built by Krishal Karna. It ingests CSV
+                            datasets, profiles row- and column-level statistics, and uses Isolation Forest, KNN
+                            imputation, and TF-IDF similarity alongside a LangGraph and Google Gemini layer to
+                            score, diagnose, and explain data quality issues.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What is Luma AI Studio?</summary>
+                        <p>Luma AI Studio is an AI coding agent built by Krishal Karna that generates and
+                            incrementally edits React components from natural language. It uses a LangGraph
+                            tool-calling loop backed by Google Gemini, with a live Sandpack preview and persistent
+                            multi-turn sessions.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Is Krishal Karna available for hire?</summary>
+                        <p>Yes, Krishal Karna is open to backend engineering, applied ML, and AI engineering roles
+                            for the 2027 graduating batch. Krishal Karna can be contacted by email or LinkedIn.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Where is Krishal Karna based?</summary>
+                        <p>Krishal Karna is based in Bangalore, India.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>When does Krishal Karna graduate?</summary>
+                        <p>Krishal Karna is a final-year Computer Science &amp; Engineering student at Jain
+                            (Deemed-to-be) University, Bangalore, graduating in June 2027.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Does Krishal Karna write about SQL or backend engineering?</summary>
+                        <p>Yes, Krishal Karna writes a technical SQL series called Learn MySQL on Hashnode. The
+                            series covers SQL from fundamentals through query design.</p>
+                    </details>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section contact" aria-label="Contact">
+        <section id="contact" class="section contact" aria-labelledby="contact-heading">
             <div class="container">
-                <h2 class="section-heading">Get In Touch</h2>
-                <p class="contact-intro">I'm open to opportunities in Data Analytics, Data Science, GenAI Engineering,
-                    and Full-Stack AI roles. Let's connect.</p>
-                <div class="contact-grid">
+                <h2 class="section-heading" id="contact-heading">Get In Touch</h2>
+                <p class="contact-intro">Open to backend engineering, applied ML, and AI engineering roles. Let's
+                    connect.</p>
+                <address class="contact-grid">
                     <a href="mailto:karnakreeshal@gmail.com" class="contact-card" id="contact-email">
                         <i class="fas fa-envelope"></i>
                         <span class="contact-label">Email</span>
                         <span class="contact-value">karnakreeshal@gmail.com</span>
                     </a>
-                    <a href="tel:+918431172114" class="contact-card" id="contact-phone">
-                        <i class="fas fa-phone"></i>
-                        <span class="contact-label">Phone</span>
-                        <span class="contact-value">+91-8431172114</span>
+                    <a href="https://www.linkedin.com/in/krishalkarna" target="_blank" rel="noopener me"
+                        class="contact-card" id="contact-linkedin">
+                        <i class="fab fa-linkedin"></i>
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">krishalkarna</span>
                     </a>
-                    <a href="https://github.com/kreeshal17" target="_blank" rel="noopener" class="contact-card"
+                    <a href="https://github.com/kreeshal17" target="_blank" rel="noopener me" class="contact-card"
                         id="contact-github">
                         <i class="fab fa-github"></i>
                         <span class="contact-label">GitHub</span>
                         <span class="contact-value">kreeshal17</span>
                     </a>
-                    <a href="https://www.kaggle.com/stunningtechz" target="_blank" rel="noopener" class="contact-card"
+                    <a href="https://www.kaggle.com/stunningtechz" target="_blank" rel="noopener me" class="contact-card"
                         id="contact-kaggle">
                         <i class="fab fa-kaggle"></i>
                         <span class="contact-label">Kaggle</span>
                         <span class="contact-value">stunningtechz</span>
                     </a>
-                </div>
+                </address>
             </div>
         </section>
     </main>
@@ -863,23 +1110,25 @@
         <div class="container footer-content">
             <div class="footer-left">
                 <p class="footer-name">Krishal Karna</p>
-                <p class="footer-tagline">Full-Stack AI Engineer · GenAI Developer · Data Analyst</p>
+                <p class="footer-tagline">Backend + Applied ML Engineer</p>
             </div>
             <div class="footer-links">
-                <a href="https://github.com/kreeshal17" target="_blank" rel="noopener" aria-label="GitHub"><i
+                <a href="https://github.com/kreeshal17" target="_blank" rel="noopener me" aria-label="GitHub"><i
                         class="fab fa-github"></i></a>
-                <a href="https://www.kaggle.com/stunningtechz" target="_blank" rel="noopener" aria-label="Kaggle"><i
+                <a href="https://www.linkedin.com/in/krishalkarna" target="_blank" rel="noopener me" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://www.kaggle.com/stunningtechz" target="_blank" rel="noopener me" aria-label="Kaggle"><i
                         class="fab fa-kaggle"></i></a>
-                <a href="https://leetcode.com/u/kreeshal17/" target="_blank" rel="noopener" aria-label="LeetCode"><i
+                <a href="https://leetcode.com/u/kreeshal17/" target="_blank" rel="noopener me" aria-label="LeetCode"><i
                         class="fas fa-code"></i></a>
                 <a href="mailto:karnakreeshal@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
-            <p class="footer-copy">&copy; 2025 Krishal Karna. All rights reserved.</p>
+            <p class="footer-copy">&copy; <span id="footer-year">2026</span> Krishal Karna. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

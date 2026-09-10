@@ -1,21 +1,21 @@
 {
     "name": "Krishal Karna — Portfolio",
     "short_name": "Krishal Karna",
-    "description": "Portfolio of Krishal Karna — Full-Stack AI Engineer, Generative AI Developer, and Data Scientist.",
+    "description": "Portfolio of Krishal Karna — Backend + Applied ML Engineer.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#0f0f1a",
-    "theme_color": "#4f46e5",
+    "theme_color": "#b45309",
     "lang": "en",
     "icons": [
         {
-            "src": "/favicon.png",
+            "src": "favicon-192.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "/favicon.png",
+            "src": "favicon-512.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any"

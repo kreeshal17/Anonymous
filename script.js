@@ -25,11 +25,11 @@
     document.body.appendChild(scrollProgress);
 
     // --- Theme ---
+    // The inline script in <head> already set data-theme before first paint
+    // (from localStorage, falling back to prefers-color-scheme). This just
+    // syncs the toggle icon to whatever that resolved to.
     function initTheme() {
-        const saved = localStorage.getItem('theme');
-        // Default to dark if no saved preference
-        const theme = saved || 'dark';
-        html.setAttribute('data-theme', theme);
+        const theme = html.getAttribute('data-theme') || 'dark';
         updateThemeIcon(theme);
     }
 
@@ -129,9 +129,10 @@
 
             if (scrollPos >= top && scrollPos < bottom) {
                 navAnchors.forEach(function (a) {
-                    a.classList.remove('active');
                     if (a.getAttribute('href') === '#' + id) {
-                        a.classList.add('active');
+                        a.setAttribute('aria-current', 'true');
+                    } else {
+                        a.removeAttribute('aria-current');
                     }
                 });
             }
@@ -139,51 +140,6 @@
     }
 
     window.addEventListener('scroll', updateActiveNav);
-
-    // --- Project Filter Tabs ---
-    var filterTabs = document.querySelectorAll('.filter-tab');
-    var projectCards = document.querySelectorAll('.project-card');
-
-    function switchFilter(selectedTab) {
-        var filter = selectedTab.getAttribute('data-filter');
-
-        // Update active tab styles
-        filterTabs.forEach(function (tab) {
-            tab.classList.remove('active');
-            tab.setAttribute('aria-selected', 'false');
-        });
-        selectedTab.classList.add('active');
-        selectedTab.setAttribute('aria-selected', 'true');
-
-        // Show / hide cards with staggered fade-in
-        var visibleIndex = 0;
-        projectCards.forEach(function (card) {
-            card.classList.remove('fade-in');
-            if (card.getAttribute('data-cat') === filter) {
-                card.classList.remove('hidden');
-                // Stagger the animation delay
-                var delay = visibleIndex * 60;
-                card.style.animationDelay = delay + 'ms';
-                // Trigger reflow then add class
-                void card.offsetWidth;
-                card.classList.add('fade-in');
-                visibleIndex++;
-            } else {
-                card.classList.add('hidden');
-                card.style.animationDelay = '';
-            }
-        });
-    }
-
-    filterTabs.forEach(function (tab) {
-        tab.addEventListener('click', function () {
-            switchFilter(this);
-        });
-    });
-
-    // Trigger AI tab on page load to ensure clean state
-    var defaultTab = document.getElementById('tab-ai');
-    if (defaultTab) switchFilter(defaultTab);
 
     // --- Section Reveal on Scroll ---
     var revealSections = document.querySelectorAll('.section');
@@ -202,6 +158,35 @@
         revealObserver.observe(section);
     });
 
+    // --- Staggered Reveal for Cards/Rows Within Each Section ---
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion) {
+        var staggerGroups = document.querySelectorAll(
+            '.projects-grid, .more-projects-grid, .experience-timeline, .skills-table, ' +
+            '.certificates-grid, .certs-expanded-grid, .faq-list, .journey-timeline, .writing-posts'
+        );
+
+        var itemObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    itemObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        staggerGroups.forEach(function (group) {
+            Array.prototype.forEach.call(group.children, function (child, index) {
+                child.classList.add('reveal-item');
+                child.style.setProperty('--reveal-index', index % 8);
+                itemObserver.observe(child);
+            });
+        });
+    }
+
     // --- Certificate See More ---
     var certBtn = document.getElementById('certs-see-more-btn');
     var certMore = document.getElementById('certs-more-wrapper');
@@ -214,14 +199,20 @@
                 certMore.classList.remove('expanded');
                 certBtn.classList.remove('open');
                 certBtn.setAttribute('aria-expanded', 'false');
-                certBtnLabel.textContent = 'See more';
+                certBtnLabel.textContent = 'See more certifications';
             } else {
                 certMore.classList.add('expanded');
                 certBtn.classList.add('open');
                 certBtn.setAttribute('aria-expanded', 'true');
-                certBtnLabel.textContent = 'See less';
+                certBtnLabel.textContent = 'See fewer certifications';
             }
         });
+    }
+
+    // --- Footer Year ---
+    var footerYear = document.getElementById('footer-year');
+    if (footerYear) {
+        footerYear.textContent = new Date().getFullYear();
     }
 
     // --- Init ---
