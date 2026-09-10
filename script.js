@@ -25,11 +25,11 @@
     document.body.appendChild(scrollProgress);
 
     // --- Theme ---
+    // The inline script in <head> already set data-theme before first paint
+    // (from localStorage, falling back to prefers-color-scheme). This just
+    // syncs the toggle icon to whatever that resolved to.
     function initTheme() {
-        const saved = localStorage.getItem('theme');
-        // Default to dark if no saved preference
-        const theme = saved || 'dark';
-        html.setAttribute('data-theme', theme);
+        const theme = html.getAttribute('data-theme') || 'dark';
         updateThemeIcon(theme);
     }
 

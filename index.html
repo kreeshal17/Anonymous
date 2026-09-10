@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Set theme before first paint to avoid a flash of the wrong theme -->
+    <script>
+        (function () {
+            var saved = localStorage.getItem('theme');
+            var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
     <title>Krishal Karna | Backend + Applied ML Engineer — Portfolio</title>
     <meta name="description"
         content="Krishal Karna is a backend and applied ML engineer — Django and FastAPI backends, scikit-learn and LangGraph LLM pipelines, Next.js frontends to use them.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Krishal Karna">
-    <meta name="theme-color" content="#4f46e5">
+    <meta name="theme-color" content="#b45309">
     <link rel="canonical" href="https://krishalkarna.com.np/">
 
     <!-- Open Graph -->
@@ -39,10 +47,9 @@
     <meta name="twitter:image" content="https://krishalkarna.com.np/photo.png">
     <meta name="twitter:image:alt" content="Krishal Karna portfolio">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Fonts: self-hosted (see @font-face in styles.css), preloaded for above-the-fold text -->
+    <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable-latin.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="fonts/space-grotesk-700-latin.woff2" crossorigin>
 
     <!-- Preload critical asset -->
     <link rel="preload" as="image" href="photo.png">

@@ -109,6 +109,7 @@
 }
 
 .cert-issuer-name {
+    font-family: var(--font-mono);
     font-size: 0.78rem;
     color: var(--accent);
     font-weight: 600;
@@ -204,63 +205,166 @@
 
 /* ============================================
    KRISHAL KARNA — PORTFOLIO STYLES
-   Light-default, dark-mode toggle
+   Dark-default, light-mode toggle
    ============================================ */
+
+/* --- Self-hosted fonts (Latin subset, variable where available) --- */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('fonts/inter-variable-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2000-206F, U+2122, U+2191, U+2193, U+2212;
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/space-grotesk-700-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2000-206F, U+2122, U+2191, U+2193, U+2212;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 100 800;
+    font-display: swap;
+    src: url('fonts/jetbrains-mono-variable-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2000-206F, U+2122, U+2191, U+2193, U+2212;
+}
 
 /* --- Design Tokens --- */
 :root {
     --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Space Grotesk', 'Inter', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
 
-    /* Light mode (default) */
-    --bg: #fafafa;
+    /* 8px spacing scale */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 16px;
+    --space-4: 24px;
+    --space-5: 32px;
+    --space-6: 48px;
+    --space-7: 64px;
+    --space-8: 96px;
+
+    /* Neutral ramp (warm gray, 9 steps) */
+    --gray-50:  #fafaf9;
+    --gray-100: #f5f5f4;
+    --gray-200: #e7e5e4;
+    --gray-300: #d6d3d1;
+    --gray-400: #a8a29e;
+    --gray-500: #78716c;
+    --gray-600: #57534e;
+    --gray-700: #44403c;
+    --gray-800: #292524;
+    --gray-900: #1c1917;
+
+    /* Light mode */
+    --bg: var(--gray-50);
     --bg-alt: #ffffff;
-    --text: #1a1a2e;
-    --text-secondary: #555770;
-    --accent: #4f46e5;
-    --accent-hover: #4338ca;
-    --accent-subtle: rgba(79, 70, 229, 0.08);
-    --accent-glow: rgba(79, 70, 229, 0.15);
-    --border: rgba(0, 0, 0, 0.06);
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08);
-    --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.04);
-    --radius: 12px;
-    --radius-sm: 8px;
-    --radius-xs: 6px;
+    --text: var(--gray-900);
+    --text-secondary: var(--gray-600);
+    --accent: #b45309;
+    --accent-hover: #92400e;
+    --accent-subtle: rgba(180, 83, 9, 0.08);
+    --accent-glow: rgba(180, 83, 9, 0.15);
+    --border: var(--gray-200);
+    --shadow-sm: 0 1px 3px rgba(28, 25, 23, 0.04);
+    --shadow-md: 0 4px 20px rgba(28, 25, 23, 0.06);
+    --shadow-lg: 0 12px 40px rgba(28, 25, 23, 0.08);
+    --shadow-card: 0 2px 12px rgba(28, 25, 23, 0.04);
+    --radius: 10px;
+    --radius-sm: 6px;
+    --radius-xs: 4px;
     --nav-bg: rgba(255, 255, 255, 0.85);
     --cert-card-bg: #ffffff;
-    --highlight-bg: #f0eef9;
-    --tag-bg: #f0eef9;
-    --tag-text: #4f46e5;
+    --highlight-bg: #fdf1e2;
+    --tag-bg: #fdf1e2;
+    --tag-text: #b45309;
     --contact-card-bg: #ffffff;
-    --footer-bg: #1a1a2e;
-    --footer-text: #c0c0d0;
+    --footer-bg: var(--gray-900);
+    --footer-text: var(--gray-300);
 }
 
+/* System-preference dark mode (no stored/manual choice yet) */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg: var(--gray-900);
+        --bg-alt: var(--gray-800);
+        --text: var(--gray-50);
+        --text-secondary: var(--gray-400);
+        --accent: #fbbf24;
+        --accent-hover: #fcd34d;
+        --accent-subtle: rgba(251, 191, 36, 0.1);
+        --accent-glow: rgba(251, 191, 36, 0.2);
+        --border: rgba(255, 255, 255, 0.08);
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+        --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.4);
+        --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.3);
+        --nav-bg: rgba(28, 25, 23, 0.9);
+        --cert-card-bg: var(--gray-800);
+        --highlight-bg: rgba(251, 191, 36, 0.08);
+        --tag-bg: rgba(251, 191, 36, 0.12);
+        --tag-text: #fbbf24;
+        --contact-card-bg: var(--gray-800);
+        --footer-bg: #120f0d;
+        --footer-text: var(--gray-400);
+    }
+}
+
+/* Manual toggle always wins, in both directions */
 [data-theme="dark"] {
-    --bg: #0f0f1a;
-    --bg-alt: #1a1a2e;
-    --text: #e8e8f0;
-    --text-secondary: #9999b0;
-    --accent: #818cf8;
-    --accent-hover: #a5b4fc;
-    --accent-subtle: rgba(129, 140, 248, 0.1);
-    --accent-glow: rgba(129, 140, 248, 0.2);
-    --border: rgba(255, 255, 255, 0.06);
+    --bg: var(--gray-900);
+    --bg-alt: var(--gray-800);
+    --text: var(--gray-50);
+    --text-secondary: var(--gray-400);
+    --accent: #fbbf24;
+    --accent-hover: #fcd34d;
+    --accent-subtle: rgba(251, 191, 36, 0.1);
+    --accent-glow: rgba(251, 191, 36, 0.2);
+    --border: rgba(255, 255, 255, 0.08);
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
     --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.3);
     --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.4);
     --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.3);
-    --radius: 12px;
-    --nav-bg: rgba(15, 15, 26, 0.9);
-    --cert-card-bg: #1a1a2e;
-    --highlight-bg: rgba(129, 140, 248, 0.08);
-    --tag-bg: rgba(129, 140, 248, 0.12);
-    --tag-text: #a5b4fc;
-    --contact-card-bg: #1a1a2e;
-    --footer-bg: #0a0a14;
-    --footer-text: #888;
+    --nav-bg: rgba(28, 25, 23, 0.9);
+    --cert-card-bg: var(--gray-800);
+    --highlight-bg: rgba(251, 191, 36, 0.08);
+    --tag-bg: rgba(251, 191, 36, 0.12);
+    --tag-text: #fbbf24;
+    --contact-card-bg: var(--gray-800);
+    --footer-bg: #120f0d;
+    --footer-text: var(--gray-400);
+}
+
+[data-theme="light"] {
+    --bg: var(--gray-50);
+    --bg-alt: #ffffff;
+    --text: var(--gray-900);
+    --text-secondary: var(--gray-600);
+    --accent: #b45309;
+    --accent-hover: #92400e;
+    --accent-subtle: rgba(180, 83, 9, 0.08);
+    --accent-glow: rgba(180, 83, 9, 0.15);
+    --border: var(--gray-200);
+    --shadow-sm: 0 1px 3px rgba(28, 25, 23, 0.04);
+    --shadow-md: 0 4px 20px rgba(28, 25, 23, 0.06);
+    --shadow-lg: 0 12px 40px rgba(28, 25, 23, 0.08);
+    --shadow-card: 0 2px 12px rgba(28, 25, 23, 0.04);
+    --nav-bg: rgba(255, 255, 255, 0.85);
+    --cert-card-bg: #ffffff;
+    --highlight-bg: #fdf1e2;
+    --tag-bg: #fdf1e2;
+    --tag-text: #b45309;
+    --contact-card-bg: #ffffff;
+    --footer-bg: var(--gray-900);
+    --footer-text: var(--gray-300);
 }
 
 /* --- Reset --- */
@@ -286,6 +390,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
     transition: background 0.35s ease, color 0.35s ease;
     overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
 }
 
 a {
@@ -578,6 +686,7 @@ ul {
 }
 
 .hero-stack {
+    font-family: var(--font-mono);
     font-size: 0.85rem;
     color: var(--accent);
     font-weight: 500;
@@ -800,10 +909,11 @@ ul {
 
 .highlight-number {
     display: block;
+    font-family: var(--font-mono);
     font-size: 1.6rem;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--accent);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     margin-bottom: 4px;
 }
 
@@ -875,7 +985,8 @@ ul {
 }
 
 .exp-date {
-    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
     color: var(--text-secondary);
     background: var(--accent-subtle);
     padding: 6px 14px;
@@ -940,6 +1051,7 @@ ul {
 }
 
 .journey-year {
+    font-family: var(--font-mono);
     font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -1000,6 +1112,7 @@ ul {
 }
 
 .par-rows dt {
+    font-family: var(--font-mono);
     font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -1083,6 +1196,7 @@ ul {
 }
 
 .model-table th {
+    font-family: var(--font-mono);
     color: var(--text-secondary);
     font-weight: 600;
     font-size: 0.75rem;
@@ -1240,12 +1354,14 @@ ul {
 }
 
 .project-tags span {
-    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
     font-weight: 500;
     padding: 4px 10px;
-    border-radius: 20px;
-    background: var(--tag-bg);
-    color: var(--tag-text);
+    border-radius: var(--radius-xs);
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
     letter-spacing: 0.01em;
 }
 
@@ -1348,10 +1464,11 @@ ul {
 }
 
 .skill-tags span {
-    font-size: 0.82rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
     font-weight: 500;
     padding: 6px 14px;
-    border-radius: 20px;
+    border-radius: var(--radius-xs);
     background: var(--tag-bg);
     color: var(--tag-text);
     transition: all 0.2s;
