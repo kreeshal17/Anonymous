@@ -52,7 +52,7 @@
     <link rel="preload" as="font" type="font/woff2" href="fonts/space-grotesk-700-latin.woff2" crossorigin>
 
     <!-- Preload critical asset -->
-    <link rel="preload" as="image" href="photo.png">
+    <link rel="preload" as="image" href="photo.webp" type="image/webp">
 
     <!-- Favicon & Web App Manifest -->
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -357,8 +357,12 @@
                 </div>
                 <div class="hero-image-wrapper">
                     <div class="hero-image-ring">
-                        <img src="photo.png" alt="Krishal Karna — Backend + Applied ML Engineer"
-                            class="hero-image" width="380" height="380" loading="eager">
+                        <picture>
+                            <source srcset="photo.webp" type="image/webp">
+                            <img src="photo.png" alt="Krishal Karna — Backend + Applied ML Engineer"
+                                class="hero-image" width="1212" height="813" loading="eager"
+                                fetchpriority="high">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -464,9 +468,12 @@
                                 development workflows.</li>
                         </ul>
                         <div class="exp-photo-wrapper">
-                            <img src="soloo.jpeg"
-                                alt="Krishal Karna presenting at Innovation Duel 2025 event — Enigma Club, Jain University"
-                                class="exp-photo" loading="lazy">
+                            <picture>
+                                <source srcset="soloo.webp" type="image/webp">
+                                <img src="soloo.jpeg"
+                                    alt="Krishal Karna presenting at Innovation Duel 2025 event — Enigma Club, Jain University"
+                                    class="exp-photo" width="1280" height="853" loading="lazy">
+                            </picture>
                         </div>
                     </div>
                 </div>
