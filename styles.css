@@ -1186,44 +1186,38 @@ ul {
 /* ============================================
    SKILLS
    ============================================ */
-.skills-container {
+.skills-table {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.skill-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: 140px 1fr;
+    gap: 20px;
+    align-items: baseline;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
 }
 
-.skill-group {
-    background: var(--bg-alt);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 28px;
-    transition: all 0.3s ease;
+.skill-row:last-child {
+    border-bottom: none;
 }
 
-.skill-group:hover {
-    border-color: var(--accent);
-    box-shadow: var(--shadow-md);
-}
-
-.skill-group-title {
-    font-size: 1rem;
+.skill-row dt {
+    font-size: 0.82rem;
     font-weight: 700;
     color: var(--text);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.skill-group-title i {
-    color: var(--accent);
-    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
 }
 
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin: 0;
 }
 
 .skill-tags span {
@@ -1234,6 +1228,12 @@ ul {
     background: var(--tag-bg);
     color: var(--tag-text);
     transition: all 0.2s;
+}
+
+.skill-tags span.core {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
 }
 
 .skill-tags span:hover {
@@ -1432,8 +1432,9 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .skills-container {
+    .skill-row {
         grid-template-columns: 1fr;
+        gap: 8px;
     }
 
     .contact-grid {
@@ -1550,10 +1551,6 @@ footer {
     }
 
     .project-card {
-        padding: 22px;
-    }
-
-    .skill-group {
         padding: 22px;
     }
 
