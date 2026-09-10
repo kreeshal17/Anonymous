@@ -907,6 +907,74 @@ ul {
 }
 
 /* ============================================
+   HOW I GOT HERE — stepped journey timeline
+   ============================================ */
+.journey-timeline {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.journey-step {
+    flex: 1 1 160px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: all 0.3s ease;
+}
+
+.journey-step:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-sm);
+}
+
+.journey-step-current {
+    border-color: var(--accent);
+    background: var(--accent-subtle);
+}
+
+.journey-year {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+}
+
+.journey-stage {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.journey-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    flex: 0 0 auto;
+}
+
+.journey-text p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 16px;
+    max-width: 70ch;
+}
+
+.journey-current {
+    color: var(--text) !important;
+}
+
+/* ============================================
    FEATURED PROJECTS GRID
    ============================================ */
 .projects-grid {
@@ -1443,6 +1511,14 @@ footer {
 
     .contact-grid {
         grid-template-columns: 1fr;
+    }
+
+    .journey-timeline {
+        flex-direction: column;
+    }
+
+    .journey-arrow {
+        transform: rotate(90deg);
     }
 
     /* Experience: stack photo below bullets on tablet */
