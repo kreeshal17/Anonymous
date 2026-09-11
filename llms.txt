@@ -43,7 +43,7 @@ roles for the 2027 graduating batch.
 - News Veracity Pipeline Advanced — Hybrid fake news detection combining TF-IDF ensemble models with evidence-aware web verification. — Flask, React, TF-IDF, NLP — https://github.com/kreeshal17/news-veracity-pipeline-advanced
 - Text Summarization App — Full-stack NLP app summarizing documents using TextRank, TF-IDF, and PageRank. — Flask, React, TextRank, NLP — https://github.com/kreeshal17/text-summarization-app
 - Smart Rental Tracking System — QR-based asset check-in/out with demand forecasting and anomaly detection, built for the Caterpillar hackathon. — Bun, Hono, Prisma, PostgreSQL, Next.js
-- Events Platform Backend — Backend service for an events platform. — https://github.com/kreeshal17/event-platform-Backend-
+- Events Platform Backend — Django REST API for an events platform with JWT auth, OTP verification, and concurrency-safe enrollment, deployed on AWS EC2. — Django REST, PostgreSQL, Redis — https://github.com/kreeshal17/event-platform-Backend-
 
 ## Skills
 

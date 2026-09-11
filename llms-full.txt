@@ -171,6 +171,9 @@ built for the Caterpillar hackathon.
 
 ### Events Platform Backend
 Repo: https://github.com/kreeshal17/event-platform-Backend-
+Stack: Django REST, PostgreSQL, Redis
+Django REST API for an events platform with JWT auth, OTP verification, and
+concurrency-safe enrollment, deployed on AWS EC2.
 
 ## Skills
 

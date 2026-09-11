@@ -60,7 +60,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
     <link rel="manifest" href="manifest.json">
     <!-- JSON-LD — single @graph: Person, WebSite, ProfilePage, one SoftwareSourceCode per featured
-         project, and an ItemList enumerating them. FAQPage is appended separately near the FAQ section.
+         project, and an ItemList enumerating them.
          TODO(krishal): degree is left as "Computer Science" without B.E./B.Tech pending your
          confirmation of that wording. -->
     <script type="application/ld+json">
@@ -196,76 +196,6 @@
                 ]
             },
             {
-                "@type": "FAQPage",
-                "@id": "https://krishalkarna.com.np/#faq",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "What does Krishal Karna do?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Krishal Karna is a backend and applied ML engineer. Krishal Karna builds Django and Django REST Framework backends, scikit-learn ML pipelines, and LangGraph LLM systems, along with the Next.js frontends that make them usable."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What backend and ML technologies does Krishal Karna work with?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Krishal Karna works with Django, Django REST Framework, and FastAPI on the backend, and scikit-learn, LangChain, LangGraph, and Google Gemini for machine learning and LLM systems. Krishal Karna also works with PostgreSQL, MySQL, Next.js, React, and Docker."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What is DataLens AI?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "DataLens AI is a full-stack data quality platform built by Krishal Karna. It ingests CSV datasets, profiles row- and column-level statistics, and uses Isolation Forest, KNN imputation, and TF-IDF similarity alongside a LangGraph and Google Gemini layer to score, diagnose, and explain data quality issues."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What is Luma AI Studio?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Luma AI Studio is an AI coding agent built by Krishal Karna that generates and incrementally edits React components from natural language. It uses a LangGraph tool-calling loop backed by Google Gemini, with a live Sandpack preview and persistent multi-turn sessions."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Is Krishal Karna available for hire?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes, Krishal Karna is open to backend engineering, applied ML, and AI engineering roles for the 2027 graduating batch. Krishal Karna can be contacted by email or LinkedIn."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Where is Krishal Karna based?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Krishal Karna is based in Bangalore, India."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "When does Krishal Karna graduate?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Krishal Karna is a final-year Computer Science & Engineering student at Jain (Deemed-to-be) University, Bangalore, graduating in June 2027."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Does Krishal Karna write about SQL or backend engineering?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes, Krishal Karna writes a technical SQL series called Learn MySQL on Hashnode. The series covers SQL from fundamentals through query design."
-                        }
-                    }
-                ]
-            },
-            {
                 "@type": "BreadcrumbList",
                 "itemListElement": [
                     {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://krishalkarna.com.np/"},
@@ -276,8 +206,7 @@
                     {"@type": "ListItem", "position": 6, "name": "Writing", "item": "https://krishalkarna.com.np/#writing"},
                     {"@type": "ListItem", "position": 7, "name": "Skills", "item": "https://krishalkarna.com.np/#skills"},
                     {"@type": "ListItem", "position": 8, "name": "Certifications", "item": "https://krishalkarna.com.np/#certificates"},
-                    {"@type": "ListItem", "position": 9, "name": "FAQ", "item": "https://krishalkarna.com.np/#faq"},
-                    {"@type": "ListItem", "position": 10, "name": "Contact", "item": "https://krishalkarna.com.np/#contact"}
+                    {"@type": "ListItem", "position": 9, "name": "Contact", "item": "https://krishalkarna.com.np/#contact"}
                 ]
             }
         ]
@@ -472,7 +401,7 @@
                                 <source srcset="soloo.webp" type="image/webp">
                                 <img src="soloo.jpeg"
                                     alt="Krishal Karna presenting at Innovation Duel 2025 event — Enigma Club, Jain University"
-                                    class="exp-photo" width="1280" height="853" loading="lazy">
+                                    class="exp-photo" loading="lazy">
                             </picture>
                         </div>
                     </div>
@@ -526,7 +455,10 @@
                 <div class="projects-grid">
 
                     <article class="project-card featured" id="project-datalens">
-                        <div class="project-thumb" aria-hidden="true"><!-- TODO(krishal): add a screenshot for this project --><span>Screenshot coming soon</span></div>
+                        <div class="project-thumb">
+                            <img src="thumb-datalens.webp" alt="DataLens AI landing page" loading="lazy" width="1280"
+                                height="720">
+                        </div>
                         <div class="project-header">
                             <div class="project-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
                             <div class="project-links">
@@ -549,15 +481,18 @@
                             built with LangGraph and Google Gemini explains why each quality issue occurred. JWT
                             auth, Dockerized backend on AWS EC2 behind Gunicorn, Postgres on Neon, frontend on
                             Vercel.</p>
-                        <dl class="par-rows">
-                            <dt>Problem</dt>
-                            <dd>"Is this dataset any good?" is normally answered by hand.</dd>
-                            <dt>Approach</dt>
-                            <dd>Automated profiling plus three ML passes, with an LLM layer explaining causes in
-                                structured output.</dd>
-                            <dt>Result</dt>
-                            <dd>Upload a CSV, get a scored, diagnosed, explained quality verdict.</dd>
-                        </dl>
+                        <details class="par-details">
+                            <summary>See more</summary>
+                            <dl class="par-rows">
+                                <dt>Problem</dt>
+                                <dd>"Is this dataset any good?" is normally answered by hand.</dd>
+                                <dt>Approach</dt>
+                                <dd>Automated profiling plus three ML passes, with an LLM layer explaining causes in
+                                    structured output.</dd>
+                                <dt>Result</dt>
+                                <dd>Upload a CSV, get a scored, diagnosed, explained quality verdict.</dd>
+                            </dl>
+                        </details>
                         <details class="project-details">
                             <summary>Under the hood</summary>
                             <div class="project-details-body">
@@ -600,7 +535,10 @@
                     </article>
 
                     <article class="project-card featured" id="project-luma">
-                        <div class="project-thumb" aria-hidden="true"><!-- TODO(krishal): add a screenshot for this project --><span>Screenshot coming soon</span></div>
+                        <div class="project-thumb">
+                            <img src="thumb-luma.webp" alt="Luma AI Studio sign-in page" loading="lazy" width="1280"
+                                height="720">
+                        </div>
                         <div class="project-header">
                             <div class="project-icon"><i class="fas fa-robot"></i></div>
                             <div class="project-links">
@@ -619,22 +557,28 @@
                         <p class="project-desc">Full-stack AI coding agent generating/editing React components from
                             natural language. LangGraph tool-calling loop backed by Gemini, live Sandpack preview,
                             persistent multi-turn sessions, GitHub OAuth repo push, deployed on Vercel + Railway.</p>
-                        <dl class="par-rows">
-                            <dt>Problem</dt>
-                            <dd>Generating a React component from a prompt is the easy half; the hard half is the
-                                second prompt — "now make the sidebar collapsible" — without regenerating and
-                                breaking everything else.</dd>
-                            <dt>Approach</dt>
-                            <dd>Component-driven architecture where each generation is a diff against persisted
-                                session state rather than a fresh render, with a live Sandpack preview and session
-                                history in Postgres.</dd>
-                            <dt>Result</dt>
-                            <dd>Multi-turn incremental editing with GitHub OAuth push straight to a repo.</dd>
-                        </dl>
+                        <details class="par-details">
+                            <summary>See more</summary>
+                            <dl class="par-rows">
+                                <dt>Problem</dt>
+                                <dd>Generating a React component from a prompt is the easy half; the hard half is
+                                    the second prompt — "now make the sidebar collapsible" — without regenerating
+                                    and breaking everything else.</dd>
+                                <dt>Approach</dt>
+                                <dd>Component-driven architecture where each generation is a diff against persisted
+                                    session state rather than a fresh render, with a live Sandpack preview and
+                                    session history in Postgres.</dd>
+                                <dt>Result</dt>
+                                <dd>Multi-turn incremental editing with GitHub OAuth push straight to a repo.</dd>
+                            </dl>
+                        </details>
                     </article>
 
                     <article class="project-card featured" id="project-bookmandu">
-                        <div class="project-thumb" aria-hidden="true"><!-- TODO(krishal): add a screenshot for this project --><span>Screenshot coming soon</span></div>
+                        <div class="project-thumb">
+                            <img src="thumb-bookmandu.webp" alt="BookMandu homepage" loading="lazy" width="1280"
+                                height="720">
+                        </div>
                         <div class="project-header">
                             <div class="project-icon"><i class="fas fa-book-open"></i></div>
                             <div class="project-links">
@@ -654,21 +598,27 @@
                         <p class="project-desc">Multi-vendor book marketplace: seller onboarding with identity
                             verification, real-time stock management, delivery-gated review system, AI chat assistant,
                             JWT auth, Redis caching, Cloudinary-backed listings, custom domain.</p>
-                        <dl class="par-rows">
-                            <dt>Problem</dt>
-                            <dd>A review from someone who never bought the book is worth nothing, but most
-                                marketplaces let anyone post one anyway.</dd>
-                            <dt>Approach</dt>
-                            <dd>A delivery-gated review system — only verified buyers who actually received the book
-                                can leave a review — that's a trust-design decision, not a CRUD feature.</dd>
-                            <dt>Result</dt>
-                            <dd>A multi-vendor marketplace where reviews mean something, backed by seller onboarding,
-                                real-time stock, and an AI chat assistant.</dd>
-                        </dl>
+                        <details class="par-details">
+                            <summary>See more</summary>
+                            <dl class="par-rows">
+                                <dt>Problem</dt>
+                                <dd>A review from someone who never bought the book is worth nothing, but most
+                                    marketplaces let anyone post one anyway.</dd>
+                                <dt>Approach</dt>
+                                <dd>A delivery-gated review system — only verified buyers who actually received the
+                                    book can leave a review — that's a trust-design decision, not a CRUD feature.</dd>
+                                <dt>Result</dt>
+                                <dd>A multi-vendor marketplace where reviews mean something, backed by seller
+                                    onboarding, real-time stock, and an AI chat assistant.</dd>
+                            </dl>
+                        </details>
                     </article>
 
                     <article class="project-card featured" id="project-sql">
-                        <div class="project-thumb" aria-hidden="true"><!-- TODO(krishal): add a screenshot for this project --><span>Screenshot coming soon</span></div>
+                        <div class="project-thumb">
+                            <img src="thumb-sql.webp" alt="Production-Grade Retail SQL Analytics GitHub repository"
+                                loading="lazy" width="1280" height="720">
+                        </div>
                         <div class="project-header">
                             <div class="project-icon"><i class="fas fa-database"></i></div>
                             <div class="project-links">
@@ -684,16 +634,19 @@
                         <p class="project-desc">Analyzed 1M+ sales records using CTEs, window functions, A/B testing
                             and t-tests at 95% CI, surfaced pricing optimizations driving 6–9% statistically
                             significant sales uplift.</p>
-                        <dl class="par-rows">
-                            <dt>Problem</dt>
-                            <dd>Whether a pricing change actually worked is normally answered by gut feel, not
-                                statistics.</dd>
-                            <dt>Approach</dt>
-                            <dd>CTEs, window functions, and A/B testing with t-tests at 95% confidence over 1M+
-                                retail sales records.</dd>
-                            <dt>Result</dt>
-                            <dd>Pricing optimizations with a statistically significant 6–9% sales uplift.</dd>
-                        </dl>
+                        <details class="par-details">
+                            <summary>See more</summary>
+                            <dl class="par-rows">
+                                <dt>Problem</dt>
+                                <dd>Whether a pricing change actually worked is normally answered by gut feel, not
+                                    statistics.</dd>
+                                <dt>Approach</dt>
+                                <dd>CTEs, window functions, and A/B testing with t-tests at 95% confidence over 1M+
+                                    retail sales records.</dd>
+                                <dt>Result</dt>
+                                <dd>Pricing optimizations with a statistically significant 6–9% sales uplift.</dd>
+                            </dl>
+                        </details>
                     </article>
 
                 </div>
@@ -804,8 +757,9 @@
 
                     <article class="more-project-card" id="project-events">
                         <h4>Events Platform Backend</h4>
-                        <!-- TODO(krishal): no tags or description supplied for this one — send me the
-                             stack and a one-line summary and I'll fill it in. -->
+                        <div class="project-tags"><span>Django REST</span><span>PostgreSQL</span><span>Redis</span></div>
+                        <p>Django REST API for an events platform with JWT auth, OTP verification, and
+                            concurrency-safe enrollment, deployed on AWS EC2.</p>
                         <div class="project-links">
                             <a href="https://github.com/kreeshal17/event-platform-Backend-" target="_blank"
                                 rel="noopener" aria-label="Events Platform Backend GitHub"
@@ -1012,60 +966,6 @@
                         </div>
 
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section id="faq" class="section faq" aria-labelledby="faq-heading">
-            <div class="container">
-                <h2 class="section-heading" id="faq-heading">FAQ</h2>
-                <div class="faq-list">
-                    <details class="faq-item">
-                        <summary>What does Krishal Karna do?</summary>
-                        <p>Krishal Karna is a backend and applied ML engineer. Krishal Karna builds Django and
-                            Django REST Framework backends, scikit-learn ML pipelines, and LangGraph LLM systems,
-                            along with the Next.js frontends that make them usable.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>What backend and ML technologies does Krishal Karna work with?</summary>
-                        <p>Krishal Karna works with Django, Django REST Framework, and FastAPI on the backend, and
-                            scikit-learn, LangChain, LangGraph, and Google Gemini for machine learning and LLM
-                            systems. Krishal Karna also works with PostgreSQL, MySQL, Next.js, React, and Docker.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>What is DataLens AI?</summary>
-                        <p>DataLens AI is a full-stack data quality platform built by Krishal Karna. It ingests CSV
-                            datasets, profiles row- and column-level statistics, and uses Isolation Forest, KNN
-                            imputation, and TF-IDF similarity alongside a LangGraph and Google Gemini layer to
-                            score, diagnose, and explain data quality issues.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>What is Luma AI Studio?</summary>
-                        <p>Luma AI Studio is an AI coding agent built by Krishal Karna that generates and
-                            incrementally edits React components from natural language. It uses a LangGraph
-                            tool-calling loop backed by Google Gemini, with a live Sandpack preview and persistent
-                            multi-turn sessions.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Is Krishal Karna available for hire?</summary>
-                        <p>Yes, Krishal Karna is open to backend engineering, applied ML, and AI engineering roles
-                            for the 2027 graduating batch. Krishal Karna can be contacted by email or LinkedIn.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Where is Krishal Karna based?</summary>
-                        <p>Krishal Karna is based in Bangalore, India.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>When does Krishal Karna graduate?</summary>
-                        <p>Krishal Karna is a final-year Computer Science &amp; Engineering student at Jain
-                            (Deemed-to-be) University, Bangalore, graduating in June 2027.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Does Krishal Karna write about SQL or backend engineering?</summary>
-                        <p>Yes, Krishal Karna writes a technical SQL series called Learn MySQL on Hashnode. The
-                            series covers SQL from fundamentals through query design.</p>
-                    </details>
                 </div>
             </div>
         </section>
