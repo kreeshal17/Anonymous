@@ -214,8 +214,14 @@
     }
     </script>
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Icons: loaded non-render-blocking (media=print swapped to all on load) since the full
+         Font Awesome bundle was the single biggest render-blocking resource on the page -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </noscript>
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
@@ -228,7 +234,7 @@
     <header>
         <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
             <div class="container nav-container">
-                <a href="#" class="logo" aria-label="Krishal Karna — Home">
+                <a href="#" class="logo" aria-label="KK — Krishal Karna, Home">
                     <span class="logo-kk">KK</span>
                 </a>
                 <ul class="nav-links" id="nav-links" role="menubar">
